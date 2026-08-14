@@ -16,484 +16,1166 @@ export interface Product {
 
 export const products: Product[] = [
   {
-    id: 'melon-plus',
-    name: 'Melon Plus',
-    category: 'liquids',
-    image: '/uploads/melon plus.png',
-    shortDescription: 'Micronutrient Mixture Fertilizers',
-    fullDescription: `BENEFIT OF MELON PLUS:
-1. Improves photosynthesis in plants and entire plants will become greenish.
-2. It will help to overcome micronutrient deficiency in all crops.
-3. It contains both macro and micro nutrient along with plant Harmons.
-4. Application of Melon plus improves and Increases uptake of nutrients available in soil.
-5. Improves disease resistance in all crops.
-6. Required in small quantity but increases yield both qualitative and quantitatively.
-7. Repeated application with 15-20 days interval will keep crop Healthy better.
+    id: 'bhoomi-shakthi',
+    name: 'Bhoomi Shakthi',
+    category: 'organic',
+    image: '/poduct/BHOOMI SHAKTHI.webp',
+    shortDescription: 'Potassium Humate 98%',
+    fullDescription: `Bhoomi Shakthi is a Bio-stimulate boost enhancer for soil and crop containing Potassium Humate 98%. This organic granular formulation improves soil health, enhances root growth, increases nutrient uptake, and boosts yield & quality. The product works as a soil conditioner and helps improve overall crop productivity.
 
-RECOMMENDED DOSAGE:
-500ml of Melon plus in ~200ltr of water per acre. A different product among all general liquid with unique quality.
+Key Benefits:
+• Improves Soil Health
+• Enhances Root Growth  
+• Increases Nutrient Uptake
+• Boosts Yield & Quality
 
-COMPOSITION:
-Zn-3.0%, Fe-2.0%, Mn-1.0%, B-0.5%`,
-    features: ['Enhanced melon formula', 'Maximum yield', 'Quality improvement', 'Advanced nutrition'],
-    usage: ['Apply at key growth stages', 'Use 3-4 kg per 100 sq ft', 'Water deeply', 'Monitor fruit development'],
-    ingredients: ['Enhanced nutrients', 'Quality promoters', 'Organic matter', 'Beneficial microbes'],
-    safetyTips: ['Follow growth stage timing', 'Monitor fruit quality', 'Store properly', 'Use clean equipment'],
-    price: '₹1,900',
+Recommended Dosage:
+• 1 kg per acre at the time of sowing/planting, top-dressing.
+
+For Better Efficacy:
+• Use along with fertilizers as per regular farmer practice.
+
+Packaging Size: 1 kg.`,
+    features: [
+      'Potassium Humate 98% concentration',
+      'Bio-stimulate boost enhancer',
+      'Improves soil health significantly',
+      'Enhances root growth and development',
+      'Increases nutrient uptake efficiency',
+      'Boosts yield and quality of crops',
+      'Organic granular formulation',
+      'Soil conditioner properties'
+    ],
+    usage: [
+      '1 kg per acre at sowing/planting time',
+      'Apply during top-dressing',
+      'Use along with fertilizers as regular practice',
+      'Suitable for wide range of crops',
+      'Effective for soil conditioning',
+      'Apply to vegetables, fruits, field crops'
+    ],
+    ingredients: [
+      'Potassium Humate (98%)',
+      'Organic soil enhancers',
+      'Soil conditioning compounds',
+      'Root growth promoters',
+      'Nutrient uptake enhancers',
+      'Yield boosting agents'
+    ],
+    safetyTips: [
+      'Follow recommended dosage of 1kg per acre',
+      'Use with regular fertilizer practice',
+      'Safe for all crop types',
+      'Store in cool, dry place',
+      'Organic and eco-friendly'
+    ],
+    price: '₹450',
     inStock: true,
     application: 'All Crops'
   },
   {
-    id: 'green-care',
-    name: 'Green Care',
+    id: 'win-amino-plus',
+    name: 'Win Amino Plus',
     category: 'liquids',
-    image: '/uploads/green care.png',
-    shortDescription: 'Micronutrient Mixture Fertilizers',
-    fullDescription: `BENEFIT OF GREEN CARE:
-1. Green Care will help better utilisation of major nutrients.
-2. Green Care will help to increase the immunity power of plants against adverse conditions.
-3. Green Care will take part in enzymatic functions and act as a catalytic agent to produce vigorous growth.
-4. Green Care will help to increase yield and quality of the farm produce.
+    image: '/poduct/WIN AMINO PLUS.webp',
+    shortDescription: 'Bioactive Protein Hyrolysate 25%',
+    fullDescription: `Win Amino Plus is a unique residue free plant bio stimulator base on protein hydrolyzed, amino acids and vitamins. Win Amino Plus enhances chlorophyll content, reproductive growth of plant ultimately makes flowering and branches stronger. Win Amino Plus accelerates plant growth speed and improves the metabolism system. Win Amino Plus enhances the flowering capacity of the plant and works as a yield booster. Win Amino Plus increases the number of fruits and reduce the pre-dropping of fruits & flowers, An adequate dose of produce increase and maintain fruit size and shine.
 
-RECOMMENDED DOSAGE:
-Green Care 3-5ml per 1 litre of water, Depending upon the Crop age & Growth Stages.
-Green Care is recommended for Cereal crops, Oil Seeds, Vegetables & All Plantation Crops.
+Effectiveness:
+• Suitable to improve productivity of a wide range of crops such as vegetables, fruit crops, plantation, field crops, ornamental, fiber crops. Home and gardens etc.
 
-COMPOSITION:
-Zn-3.0%. Fe-0.5%. Mn-0.2%. B-0.5%.`,
-    features: ['Gentle formula', 'Regular maintenance', 'Stress-free application', 'Consistent nutrition'],
-    usage: ['Apply every 2-3 weeks', 'Dilute 1:100 with water', 'Foliar or soil application', 'Adjust for plant type'],
-    ingredients: ['Balanced nutrients', 'Organic acids', 'Micronutrients', 'Growth promoters'],
-    safetyTips: ['Follow dilution rates', 'Monitor plant health', 'Store in cool place', 'Use clean equipment'],
-    price: '₹1,450',
+For Better Efficacy:
+• Use along with fertilizers as per regular farmer practice.
+
+Packaging Size: 250 ml`,
+    features: [
+      'Unique residue free plant bio stimulator',
+      'Based on protein hydrolyzed with amino acids & vitamins',
+      'Enhances chlorophyll content',
+      'Strengthens flowering and branches',
+      'Accelerates plant growth speed',
+      'Works as yield booster',
+      'Reduces pre-dropping of fruits & flowers',
+      'Maintains fruit size and shine'
+    ],
+    usage: [
+      '25 ml per 10 ltr of water',
+      '2.5 ml per ltr of water',
+      '250 to 300 ml per acre',
+      'Use along with fertilizers as regular practice',
+      'Apply during growth and flowering stages',
+      'Suitable for wide range of crops'
+    ],
+    ingredients: [
+      'Bioactive protein hydrolysate (25%)',
+      'Hydrolyzed amino acids',
+      'Essential vitamins',
+      'Bio stimulator compounds',
+      'Chlorophyll enhancers',
+      'Metabolism improvers'
+    ],
+    safetyTips: [
+      'Residue free formulation',
+      'Follow recommended dosage',
+      'Use with regular fertilizer practice',
+      'Safe for all crop types',
+      'Store in cool, dry place'
+    ],
+    price: '₹750',
     inStock: true,
     application: 'All Crops'
   },
   {
-    id: 'sun-shine',
-    name: 'Sun Shine',
+    id: 'win-crop-don',
+    name: 'Win Crop Don',
     category: 'liquids',
-    image: '/uploads/sun sgine.png',
-    shortDescription: 'Micronutrient Mixture Fertilizers',
-    fullDescription: `BENEFIT OF SUN SHINE:
-1. Sun Shine will help better utilisation of major nutrients.
-2. Sun Shine will help to increase the immunity power of plants against adverse conditions.
-3. Sun Shine will take part in enzymatic functions and act as a catalytic agent to produce vigorous growth.
-4. Sun Shine will help to increase yield and quality of the farm produce.
+    image: '/poduct/WIN CROP DON.webp',
+    shortDescription: 'Biostimulant',
+    fullDescription: `Win Crop Don is a naturally derived organic product which can make the plant healthy, vigorous and improves resistance against pests and diseases.
 
-RECOMMENDED DOSAGE:
-Use Sun Shine 3-5 ml per 1 litre of water, Depending upon the Crop age & Growth Stages.
-Sun Shine is recommended for Cereal crops, Oil Seeds, Vegetables & All Plantation Crops.
+Product Features:
+• Win Crop Don is a naturally derived organic product which can make the plant healthy, vigorous and improves resistance against pests and diseases.
 
-COMPOSITION:
-Zn-3.0%. B-0.5%.`,
-    features: ['Sun-powered formula', 'Photosynthesis enhancement', 'Vibrant growth', 'Natural compounds'],
-    usage: ['Apply in morning hours', 'Use 2-4 kg per acre', 'Reapply every 4-6 weeks', 'Maintain adequate sunlight'],
-    ingredients: ['Natural compounds', 'Organic matter', 'Photosynthesis enhancers', 'Beneficial microbes'],
-    safetyTips: ['Apply during daylight', 'Ensure adequate sunlight', 'Store in cool place', 'Follow application rates'],
-    price: '₹1,550',
+Effectiveness:
+• Improve the resistance against pest and diseases.
+
+Recommended Dosage:
+• 2.5 ml per 1 ltr. of water
+• 250 ml per acre
+
+For Better Efficacy:
+• Use along with fertilizers as per regular farmer practice.
+
+Packaging Size: 250 ml | 500 ml | 1 ltr.`,
+    features: [
+      'Naturally derived organic product',
+      'Makes plants healthy and vigorous',
+      'Improves resistance against pests and diseases',
+      'Biostimulant properties',
+      'Enhances plant defense mechanisms',
+      'Organic crop protection solution'
+    ],
+    usage: [
+      '2.5 ml per 1 litre of water',
+      '250 ml per acre',
+      'Use along with fertilizers as regular practice',
+      'Apply to improve plant resistance',
+      'Suitable for pest and disease management',
+      'Regular application throughout growing season'
+    ],
+    ingredients: [
+      'Naturally derived organic compounds',
+      'Plant health enhancers',
+      'Resistance building factors',
+      'Biostimulant compounds',
+      'Pest and disease resistance promoters'
+    ],
+    safetyTips: [
+      'Follow recommended dosage: 2.5ml per litre',
+      'Use with regular fertilizer practice',
+      'Naturally derived and safe',
+      'Store in cool, dry place',
+      'Safe for organic farming'
+    ],
+    price: '₹890',
+    inStock: true,
+    application: 'All Crops - Pest & Disease Resistance'
+  },
+  {
+    id: 'win-flower',
+    name: 'Win Flower',
+    category: 'liquids',
+    image: '/poduct/WIN FLOWER.webp',
+    shortDescription: 'Bioactive Protein Hyrolysate 25%',
+    fullDescription: `Win Flower initiates flower bud differentiation and helps in the quick emergence of flower or inflorescence. Win Flower induces early flowering and more retention of flower & fruits in many of the field and horticultural crops. Win Flower control flower and fruit drops result in healthy, vigorous, growth, significant increase in quantity and quality yield.
+
+Effectiveness:
+• Suitable to improve productivity of a wide range of crops such as vegetables, fruit crops, plantation, field crops, ornamental, fiber crops. Home and gardens etc.
+
+For Better Efficacy:
+• Use along with fertilizers as per regular farmer practice.
+
+Packaging Size: 500 ml`,
+    features: [
+      'Initiates flower bud differentiation',
+      'Helps quick emergence of flower/inflorescence',
+      'Induces early flowering',
+      'Promotes flower & fruit retention',
+      'Controls flower and fruit drops',
+      'Results in healthy, vigorous growth',
+      'Significant increase in quantity and quality yield',
+      'Bioactive protein hydrolysate 25%'
+    ],
+    usage: [
+      '25 ml per 10 ltr of water',
+      '2.5 ml per ltr of water',
+      '250 to 300 ml per acre',
+      'Use along with fertilizers as regular practice',
+      'Apply during pre-flowering and flowering stages',
+      'Suitable for field and horticultural crops'
+    ],
+    ingredients: [
+      'Bioactive protein hydrolysate (25%)',
+      'Flower bud differentiation compounds',
+      'Flowering induction factors',
+      'Retention enhancers',
+      'Drop control agents',
+      'Yield improvement compounds'
+    ],
+    safetyTips: [
+      'Follow recommended dosage',
+      'Use with regular fertilizer practice',
+      'Apply at right flowering stage',
+      'Store in cool, dry place',
+      'Suitable for organic farming'
+    ],
+    price: '₹680',
+    inStock: true,
+    application: 'Flowering Plants'
+  },
+  {
+    id: 'win-fruits',
+    name: 'Win Fruits',
+    category: 'liquids',
+    image: '/poduct/WIN FRUITS.webp',
+    shortDescription: 'Biomass Hydrolysate',
+    fullDescription: `Win Fruits initiates flower bud differentiation and helps in the quick emergence of fruits. Win Fruits induces early flowering and more retention of fruits in many of the field and horticultural crops. Win Fruits control fruit drops result in healthy, vigorous, growth, significantly increase in quantity and quality yield.
+
+Effectiveness:
+• Suitable to improve productivity of a wide range of crops such as vegetables, fruit crops, plantation, field crops, ornamental, fiber crops. Home and gardens etc.
+
+For Better Efficacy:
+• Use along with fertilizers as per regular farmer practice.
+
+Packaging Size: 500 ml`,
+    features: [
+      'Initiates flower bud differentiation',
+      'Helps quick emergence of fruits',
+      'Induces early flowering',
+      'Promotes fruit retention',
+      'Controls fruit drops effectively',
+      'Results in healthy, vigorous growth',
+      'Significantly increases quantity and quality yield',
+      'Biomass hydrolysate formula'
+    ],
+    usage: [
+      '750-1500 ml per hectare',
+      'Drenching/Drip irrigation: 2500 ml per hectare',
+      'Use along with fertilizers as regular practice',
+      'Apply during flowering and fruit development',
+      'Suitable for field and horticultural crops',
+      'Effective for wide range of crops'
+    ],
+    ingredients: [
+      'Biomass hydrolysate',
+      'Flower bud differentiation compounds',
+      'Fruit development enhancers',
+      'Retention promoting factors',
+      'Drop control agents',
+      'Yield improvement compounds'
+    ],
+    safetyTips: [
+      'Follow recommended dosage',
+      'Use with regular fertilizer practice',
+      'Apply at flowering and fruiting stages',
+      'Store in cool, dry place',
+      'Safe for horticultural crops'
+    ],
+    price: '₹920',
+    inStock: true,
+    application: 'Fruit Crops'
+  },
+  {
+    id: 'win-gold-magic',
+    name: 'Win Gold Magic',
+    category: 'liquids',
+    image: '/poduct/WIN GOLD MAGIC.webp',
+    shortDescription: 'Biostimulant',
+    fullDescription: `Win Gold Magic is a consortium of NPK duly fortified with highly active Humic substances.
+
+Product Features:
+• Win Gold Magic is a consortium of NPK duly fortified with highly active Humic substances
+• Improves plant capacity to uptake and utilize the nutrients in a more efficient way.
+• Improves seed germination and ensures early establishment of the plants.
+• Promotes canopy growth, tillering / branching and crop productivity.
+• Strengthens resistance power and helps the plants to withstand biotic and abiotic stresses
+• Improves the soil structure and enhances its ability to hold more water and nutrients.
+• 100% water soluble: no-deposit, no-clogging on drip irrigation systems.
+• Promotes higher yield and better quality of the produce.
+
+Effectiveness:
+• Suitable to improve productivity of a wide range of crops such as vegetables, fruit crops, plantation, field crops, ornamental, fiber crops. Home and gardens etc.
+
+Recommended Dosage:
+• Seed Dressing: Mix 5ml of Win Gold Magic with 1 kg of seed thoroughly and sow. During growth flowering and fruit formation stages: Apply Win Magic at 2 ml per litre of water as a spray (Shake the container before use).
+• 750 to 1500 ml per hectare (300 to 600 ml per acre)for foliar spray and up to 2500 ml per hectare (1000 ml per acre) for drenching or drip irrigation.
+
+For Better Efficacy:
+• Use along with fertilizers as per regular farmer practice.
+
+Packaging Size: 500 ml | 5 ltr`,
+    features: [
+      'NPK consortium with humic substances',
+      'Improves nutrient uptake efficiency',
+      'Enhances seed germination',
+      'Promotes canopy growth & productivity',
+      'Strengthens stress resistance',
+      '100% water soluble formula',
+      'Improves soil structure',
+      'Higher yield and better quality'
+    ],
+    usage: [
+      'Seed dressing: 5ml per kg seed',
+      'Foliar spray: 2ml per litre water',
+      '750-1500ml per hectare for foliar spray',
+      'Up to 2500ml per hectare for drip irrigation',
+      'Shake container before use',
+      'Use with regular fertilizers'
+    ],
+    ingredients: [
+      'NPK nutrients',
+      'Highly active humic substances',
+      'Biostimulant compounds',
+      'Water soluble nutrients',
+      'Stress resistance factors'
+    ],
+    safetyTips: [
+      'Shake container before use',
+      'Follow recommended dosage',
+      'Compatible with drip irrigation',
+      'Store in cool, dry place',
+      'Use with regular fertilizer practice'
+    ],
+    price: '₹1200',
     inStock: true,
     application: 'All Crops'
   },
   {
-    id: 'melon-soil',
-    name: 'Melon Soil',
+    id: 'win-hap-granules',
+    name: 'Win HAP Granules',
+    category: 'granular',
+    image: '/poduct/WIN HAP GRANULES.webp',
+    shortDescription: 'Bioactive Humic Substances Granules',
+    fullDescription: `Win HAP Granules is a plant Biostimulant in granular form containing Humic substances & nutrients.
+
+Product Features:
+• Win HAP Granules is a plant Biostimulant in granular form containing Humic substances & nutrients.
+• It contains active forms of Humic Substances like Humic acid, Fulvic acids, Humins and exhibits Phytohormones like activity.
+• The product accelerates plant metabolic processes and enhances Nutrient uptake thereby increasing yield.
+• Win HAP granules helps the crops to manage abiotic and biotic stress.
+• Enhance quality and shelf life of the produce.
+• Enhances population and activity of soil microbes.
+
+Effectiveness:
+• Win HAP granules enhances growth and productivity of a wide range of crops such as field crops plantation crops, vegetables, fruits, ornamental cotton fibre and crops in home garden.
+
+For Better Efficacy:
+• Use along with fertilizers as per regular farmer practice.
+
+Packaging Size: 2 kg | 5 kg.`,
+    features: [
+      'Plant biostimulant in granular form',
+      'Contains humic substances & nutrients',
+      'Active forms of humic acid, fulvic acids, humins',
+      'Exhibits phytohormones like activity',
+      'Accelerates plant metabolic processes',
+      'Enhances nutrient uptake and yield',
+      'Helps manage abiotic and biotic stress',
+      'Enhances quality and shelf life',
+      'Boosts soil microbial activity'
+    ],
+    usage: [
+      '12.5- 25 kg per hectare',
+      'Use along with fertilizers as regular practice',
+      'Apply during planting or growing season',
+      'Broadcast or incorporate into soil',
+      'Suitable for wide range of crops',
+      'Effective for field and plantation crops'
+    ],
+    ingredients: [
+      'Bioactive humic substances',
+      'Humic acid',
+      'Fulvic acids',
+      'Humins',
+      'Essential nutrients',
+      'Phytohormone-like compounds',
+      'Soil microbe enhancers'
+    ],
+    safetyTips: [
+      'Follow recommended dosage',
+      'Use with regular fertilizer practice',
+      'Safe for all crop types',
+      'Enhances soil microbial activity',
+      'Store in dry place'
+    ],
+    price: '₹580',
+    inStock: true,
+    application: 'All Crops'
+  },
+  {
+    id: 'win-hap-liquid',
+    name: 'Win HAP Liquid',
+    category: 'liquids',
+    image: '/poduct/WIN HAP LIQUID.webp',
+    shortDescription: 'Bioactive Humic Substances',
+    fullDescription: `Win HAP Liquid is a plant Biostimulant containing 6% Humic substances derived from Renewable Agro Biomass.
+
+Product Features:
+• Win HAP Liquid is a plant Biostimulant containing 6% Humic substances derived from Renewable Agro Biomass
+• It contains active forms of Humic. Substances like Humic acid. Fulvic acids and Humins and exhibits Phytohormones like activity.
+• The product accelerates plant metabolic processes and enhances nutrient uptake thereby increasing yield.
+• The product helps crops to manage abiotic and biotic stress.
+• Ecohume enhance quality and shelf life of the products.
+
+Effectiveness:
+• Suitable to improve productivity of a wide range of crops such as vegetables, fruit crops, plantation, field crops, ornamental, fiber crops. Home and gardens etc.
+
+For Better Efficacy:
+• Win HAP Liquid applications at vegetative stage and early reproductive growth state is more effective.
+• Use along with fertilizers as per regular farmer practice.
+
+Packaging Size: 500 ml | 1 ltr. | 5 ltr.`,
+    features: [
+      'Plant biostimulant with 6% humic substances',
+      'Derived from renewable agro biomass',
+      'Contains humic acid, fulvic acids and humins',
+      'Exhibits phytohormones like activity',
+      'Accelerates plant metabolic processes',
+      'Enhances nutrient uptake and yield',
+      'Helps manage abiotic and biotic stress',
+      'Improves quality and shelf life'
+    ],
+    usage: [
+      '750-1500 ml per hectare',
+      'Drenching/Drip irrigation: 2500 ml per hectare',
+      'Apply at vegetative stage for better efficacy',
+      'Apply during early reproductive growth',
+      'Use along with fertilizers as regular practice',
+      'Suitable for wide range of crops'
+    ],
+    ingredients: [
+      'Bioactive humic substances (6%)',
+      'Humic acid',
+      'Fulvic acids',
+      'Humins',
+      'Phytohormone-like compounds',
+      'Renewable agro biomass derivatives'
+    ],
+    safetyTips: [
+      'Most effective at vegetative stage',
+      'Follow recommended dosage',
+      'Use with regular fertilizer practice',
+      'Derived from renewable sources',
+      'Store in cool, dry place'
+    ],
+    price: '₹650',
+    inStock: true,
+    application: 'All Crops'
+  },
+  {
+    id: 'win-hi-growth',
+    name: 'Win Hi-Growth',
+    category: 'liquids',
+    image: '/poduct/WIN HI-GROWTH.webp',
+    shortDescription: 'Bioactive Fulvic Acid, Amino Acid and Vitamins',
+    fullDescription: `Win Hi-Growth is a Plant Growth Promoter (Enriched with Amino Peptides). Win Hi-Growth and development of healthy roots of the plant which absorb essential nutrients and moisture from the soil and make the plants strong. Win Hi-Growth increases the plant photo synthetic activity, strength in the plant to face adverse weather conditions. Win Hi-Growth increases the quality and yield of crops and profits at low cost investment. Win Hi-Growth develops resistance against pests and diseases completely safe for humans, animals and the environment.
+
+Effectiveness:
+• Suitable to improve productivity of a wide range of crops such as vegetables, fruit crops, plantation, field crops, ornamental, fiber crops. Home and gardens etc.
+
+For Better Efficacy:
+• Use along with fertilizers as per regular farmer practice.
+
+Packaging Size: 500 ml`,
+    features: [
+      'Plant Growth Promoter with Amino Peptides',
+      'Develops healthy root system',
+      'Increases photosynthetic activity',
+      'Builds strength against adverse weather',
+      'Improves quality and yield at low cost',
+      'Develops pest and disease resistance',
+      'Safe for humans, animals and environment'
+    ],
+    usage: [
+      '25 ml per 10 ltr of water',
+      '2.5 ml per ltr of water',
+      '250 to 300 ml per acre',
+      'Use along with fertilizers as regular practice',
+      'Apply during growth stages',
+      'Suitable for wide range of crops'
+    ],
+    ingredients: [
+      'Bioactive fulvic acid',
+      'Amino acids and peptides',
+      'Essential vitamins',
+      'Plant growth promoters',
+      'Root development compounds',
+      'Photosynthesis enhancers'
+    ],
+    safetyTips: [
+      'Follow recommended dosage',
+      'Use with regular fertilizer practice',
+      'Safe for humans and animals',
+      'Environment friendly',
+      'Store in cool, dry place'
+    ],
+    price: '₹780',
+    inStock: true,
+    application: 'All Crops'
+  },
+  {
+    id: 'win-kissan-100',
+    name: 'Win Kissan 100',
+    category: 'liquids',
+    image: '/poduct/Win Kissan 100.webp',
+    shortDescription: 'Wetter, Spreader & Penetrator',
+    fullDescription: `WIN KISSAN 100 is a new generation multi-action, highly concentrated non-ionic spray adjuvant with minimum 82% active ingredients.
+
+Product Features:
+• WIN KISSAN 100 is a new generation multi-action, highly concentrated non-ionic spray adjuvant with minimum 82% active ingredients.
+• It is specially designed as an excellent activator wetter, spreader, penetrator and acts to increases yield by improving the crop coverage.
+• It improves effectiveness Agrochemicals by inducing uniform spread of spray droplets reduces bouncing back and loss of spray fluid and enhances spray retention time on plant surfaces.
+• It has a unique property to maintain soil moisture by improving water penetration and absorption in the soil.
+• It facilitated uniform mixing of powder pesticides and fertilizers.
+• It is biodegradable, environmental friendly and compatible with wide range of agrochemicals such as insecticides, herbicides, PGP's and foliar fertilizers.
+
+Effectiveness:
+• Can be used for all crops including vegetables, fruits, floriculture and plantation as a tank mix.
+
+Recommended Dosage:
+• 5 ml in 15 litres of water (with recommended dosage of insecticides, fungicides, foliar fertilizers and plant nutrients as per label instruction)
+• 20 ml in 15 litres of water (with herbicides)
+• 160 ml in 80 litres of water per acre (for irrigation)
+
+For Better Efficacy:
+• Ensure complete coverage of canopy
+• Follow the label
+
+Packaging Size: 100 ml | 500 ml | 5 ltr`,
+    features: [
+      'Multi-action spray adjuvant',
+      'Minimum 82% active ingredients',
+      'Excellent wetter, spreader & penetrator',
+      'Improves crop coverage',
+      'Biodegradable & eco-friendly',
+      'Compatible with wide range of agrochemicals'
+    ],
+    usage: [
+      '5 ml in 15 litres water with insecticides/fungicides',
+      '20 ml in 15 litres water with herbicides',
+      '160 ml in 80 litres water per acre for irrigation',
+      'Ensure complete canopy coverage',
+      'Use as tank mix with other agrochemicals'
+    ],
+    ingredients: [
+      'Non-ionic surfactants (82% minimum)',
+      'Wetting agents',
+      'Spreading compounds',
+      'Penetration enhancers',
+      'Biodegradable components'
+    ],
+    safetyTips: [
+      'Follow label instructions carefully',
+      'Use recommended dosage only',
+      'Ensure proper mixing',
+      'Store in cool, dry place',
+      'Compatible with most agrochemicals'
+    ],
+    price: '₹520',
+    inStock: true,
+    application: 'All Crops'
+  },
+  {
+    id: 'win-moss',
+    name: 'Win Moss',
+    category: 'liquids',
+    image: '/poduct/WIN MOSS.webp',
+    shortDescription: 'Bioactive Humic Substances with Nutrients',
+    fullDescription: `WIN Moss is an Eco-friendly Biostimulant for Lush Green Crop, improved crop growth and productivity.
+
+Product Features:
+• WIN Moss is an Eco-friendly Biostimulant for Lush Green Crop, improved crop growth and productivity.
+• Provides quick supplements of nutrients.
+• Improves chlorophyll synthesis and greenery in plants.
+• Improves quality and post-harvest life of agri products.
+• Enhances population and activity of soil microbes.
+
+Effectiveness:
+• Win Moss enhances growth and productivity of a wide range of crops such as field cross plantation crops, vegetables, fruits, ornamental, fibre crops, home & garden etc.
+
+For Better Efficacy:
+• Use along with fertilizers as per regular farmer practice.
+
+Packaging Size: 500 ml`,
+    features: [
+      'Eco-friendly biostimulant',
+      'Promotes lush green crop growth',
+      'Quick nutrient supplements',
+      'Improves chlorophyll synthesis',
+      'Enhances post-harvest life',
+      'Boosts soil microbial activity'
+    ],
+    usage: [
+      'Foliar application: 2.5ml per litre water',
+      'Soil application: 500ml per acre for drip irrigation',
+      'Use along with fertilizers as regular practice',
+      'Suitable for wide range of crops',
+      'Apply during growth stages'
+    ],
+    ingredients: [
+      'Bioactive humic substances',
+      'Essential nutrients',
+      'Biostimulant compounds',
+      'Chlorophyll enhancers',
+      'Microbial activators'
+    ],
+    safetyTips: [
+      'Follow recommended dosage',
+      'Use with regular fertilizer practice',
+      'Store in cool, dry place',
+      'Eco-friendly and safe',
+      'Suitable for organic farming'
+    ],
+    price: '₹430',
+    inStock: true,
+    application: 'All Crops'
+  },
+  {
+    id: 'win-plant-boost',
+    name: 'Win Plant Boost',
+    category: 'liquids',
+    image: '/poduct/WIN PLANT BOOST.webp',
+    shortDescription: 'Bioactive Protein Hyrolysate with Nutrients',
+    fullDescription: `Win Plant Boost is a naturally driven organic product that influences all crops plant physiological systems. Win Plant Boost penetrates through the cellular membrane to stimulate the plant's physiological process. Win Plant Boost accelerates cellular division and increases vegetative growth. Win Plant Boost enhances the enzymatic activities to strengthen the plant defense mechanism at the time of flowering & fruiting to resist pests & diseases. Win Plant Boost promotes root growth and enhances the ability to absorb plant nutrients from the soil. Win Plant Boost reduces flower and fruit drops. Win Plant Boost significance increase in quality and quantity yield.
+
+Effectiveness:
+• Suitable to improve productivity of a wide range of crops such as vegetables, fruit crops, plantation, field crops, ornamental, fiber crops. Home and gardens etc.
+
+For Better Efficacy:
+• Use along with fertilizers as per regular farmer practice.
+
+Packaging Size: 1 Ltr.`,
+    features: [
+      'Naturally driven organic product',
+      'Influences all crop physiological systems',
+      'Penetrates through cellular membrane',
+      'Accelerates cellular division',
+      'Increases vegetative growth',
+      'Enhances enzymatic activities',
+      'Strengthens plant defense mechanism',
+      'Promotes root growth and nutrient absorption',
+      'Reduces flower and fruit drops'
+    ],
+    usage: [
+      '25 ml per 10 ltr of water',
+      '2.5 ml per ltr of water',
+      '250 to 300 ml per acre',
+      'Use along with fertilizers as regular practice',
+      'Apply during growth, flowering & fruiting stages',
+      'Suitable for wide range of crops'
+    ],
+    ingredients: [
+      'Bioactive protein hydrolysate',
+      'Essential nutrients',
+      'Cellular membrane penetrators',
+      'Enzymatic activity enhancers',
+      'Root growth promoters',
+      'Defense mechanism strengtheners'
+    ],
+    safetyTips: [
+      'Naturally driven organic product',
+      'Follow recommended dosage',
+      'Use with regular fertilizer practice',
+      'Safe for all crop types',
+      'Store in cool, dry place'
+    ],
+    price: '₹690',
+    inStock: true,
+    application: 'All Crops'
+  },
+  {
+    id: 'win-plant-care',
+    name: 'Win Plant Care',
+    category: 'liquids',
+    image: '/poduct/WIN PLANT CARE.webp',
+    shortDescription: 'Bio-Chemical',
+    fullDescription: `Plant Care is virus & bacteria killer suitable for foliar application of all crop. It has strong killing effect against plant virus and bacteria so that it acts effectively against all viral and bacterial diseases of plants. The main ingredient of Plant Care is lysozyme, which is a multi purpose enzyme which protect plants from bacteria and virus, it is capable of breaking the chemical bonds of the outer cell wall of the bacteria and virus. It is capable of breaking the chemical bonds of the outer cell wall of the bacteria and virus. It stops the viral and bacterial growth & induces resistance in plant against viral and bacterial diseases. the growth of virus may be stopped by direct contact with the spray of plant care.
+
+TARGET DISEASES:
+Tobacco mosaic virus, cauliflower mosaic virus, barley yellow dwarf, bud blight, sugarcane mosaic virus lettuce mosaic virus, maize mosaic virus, peanut stunt virus, leaf curl virus, potato virus, yellow mosaic virus etc.
+
+Effectiveness:
+• Effective control of bacterial virus diseases.
+
+Recommended Dosage:
+• 2 ml per ltr.
+• 250 ml per acre
+
+For Better Efficacy:
+• Use along with fertilizers as per regular farmer practice.
+
+Packaging Size: 100 ml | 250 ml`,
+    features: [
+      'Virus & bacteria killer for foliar application',
+      'Strong killing effect against plant virus and bacteria',
+      'Acts effectively against all viral and bacterial diseases',
+      'Contains lysozyme as main ingredient',
+      'Multi-purpose enzyme protection',
+      'Breaks chemical bonds of bacteria and virus cell walls',
+      'Stops viral and bacterial growth',
+      'Induces resistance against viral diseases',
+      'Direct contact spray effectiveness'
+    ],
+    usage: [
+      '2 ml per litre of water',
+      '250 ml per acre',
+      'Foliar application on all crops',
+      'Use along with fertilizers as regular practice',
+      'Direct contact spray for virus control',
+      'Apply during disease prevention or treatment'
+    ],
+    ingredients: [
+      'Lysozyme (main active ingredient)',
+      'Multi-purpose enzyme compounds',
+      'Cell wall breaking agents',
+      'Antiviral compounds',
+      'Antibacterial agents',
+      'Resistance inducing factors'
+    ],
+    safetyTips: [
+      'Follow recommended dosage: 2ml per litre',
+      'Use with regular fertilizer practice',
+      'Suitable for foliar application',
+      'Effective against wide range of viral diseases',
+      'Store in cool, dry place'
+    ],
+    price: '₹620',
+    inStock: true,
+    application: 'All Crops - Viral & Bacterial Disease Control'
+  },
+  {
+    id: 'win-protect',
+    name: 'Win Protect',
+    category: 'liquids',
+    image: '/poduct/WIN PROTECT.webp',
+    shortDescription: 'Bio-Chemicals',
+    fullDescription: `Win Protect is a bio-chemical bio stimulant designed to enhance plant defense mechanisms and overall plant health. This advanced formulation increases water absorption from soil, enhances crop immunity, and boosts photosynthetic activity. Its defense power develops roughness in the leaves which prevent various diseases and infections. The defense power saves plants from sun stress, especially when there is shortage of irrigation water, and results in healthy growth of the plant.
+
+Effectiveness:
+• Suitable to improve productivity of a wide range of crops such as vegetables, fruit crops, plantation, field crops, ornamental, fiber crops. Home and gardens etc.
+
+Recommended Dosage:
+• For use in nursery, use 250 g/acre.
+
+For Better Efficacy:
+• Use along with fertilizers as per regular farmer practice.
+
+Packaging Size: 250 gms.`,
+    features: [
+      'Increases water absorption from soil',
+      'Enhances crop immunity',
+      'Increases photosynthetic activity',
+      'Defense power develops leaf roughness preventing diseases',
+      'Saves plants from sun stress during water shortage',
+      'Results in healthy plant growth',
+      'Bio-chemical bio stimulant formulation'
+    ],
+    usage: [
+      '250 g per acre for nursery use',
+      'Use along with fertilizers as regular practice',
+      'Apply to wide range of crops',
+      'Suitable for vegetables, fruits, plantation crops',
+      'Effective for field crops and ornamentals',
+      'Ideal for home and gardens'
+    ],
+    ingredients: [
+      'Bio-chemical compounds',
+      'Bio stimulant agents',
+      'Water absorption enhancers',
+      'Immunity boosting factors',
+      'Photosynthetic activity promoters',
+      'Defense mechanism activators'
+    ],
+    safetyTips: [
+      'Follow recommended dosage: 250g per acre',
+      'Use with regular fertilizer practice',
+      'Especially effective during water stress',
+      'Safe for wide range of crops',
+      'Store in cool, dry place'
+    ],
+    price: '₹750',
+    inStock: true,
+    application: 'All Crops - Defense & Stress Protection'
+  },
+  {
+    id: 'win-raksha',
+    name: 'Win Raksha',
+    category: 'liquids',
+    image: '/poduct/WIN RAKSHA.webp',
+    shortDescription: 'Biostimulant',
+    fullDescription: `Win Raksha is a naturally derived organic product which can make the plant healthy, vigorous and improves resistance against pests and diseases.
+
+Product Features:
+• Win Raksha is a naturally derived organic product which can make the plant healthy, vigorous and improves resistance against pests and diseases.
+
+Effectiveness:
+• Improve the resistance against pest and diseases.
+
+Recommended Dosage:
+• 2.5 ml per 1 ltr. of water
+• 250 ml per acre
+
+For Better Efficacy:
+• Use along with fertilizers as per regular farmer practice.
+
+Packaging Size: 250 ml | 500 ml | 1 ltr.`,
+    features: [
+      'Naturally derived organic product',
+      'Makes plants healthy and vigorous',
+      'Improves resistance against pests and diseases',
+      'Biostimulant properties',
+      'Enhances plant defense mechanisms',
+      'Organic crop protection solution'
+    ],
+    usage: [
+      '2.5 ml per 1 litre of water',
+      '250 ml per acre',
+      'Use along with fertilizers as regular practice',
+      'Apply to improve plant resistance',
+      'Suitable for pest and disease management',
+      'Regular application throughout growing season'
+    ],
+    ingredients: [
+      'Naturally derived organic compounds',
+      'Plant health enhancers',
+      'Resistance building factors',
+      'Biostimulant compounds',
+      'Pest and disease resistance promoters'
+    ],
+    safetyTips: [
+      'Follow recommended dosage: 2.5ml per litre',
+      'Use with regular fertilizer practice',
+      'Naturally derived and safe',
+      'Store in cool, dry place',
+      'Safe for organic farming'
+    ],
+    price: '₹820',
+    inStock: true,
+    application: 'All Crops - Pest & Disease Resistance'
+  },
+  {
+    id: 'win-speed-pro',
+    name: 'Win Speed Pro',
     category: 'powder',
-    image: '/uploads/melon soil.png',
-    shortDescription: 'Micronutrient Mixture Fertilizers',
-    fullDescription: `BENEFIT OF MELON SOIL +:
-1. Improves photosynthesis in plants and entire plants will become greenish.
-2. It will overcome micronutrient deficiency in all crops.
-3. Application of Melon soil improves and increases uptake of nutrients available in soil.
-4. It contains both macro and micro nutrient in a balance proportion.
-5. Improve disease resistance in all crops.
-6. Required in small quantity but increases yield both qualitative and quantitatively.
+    image: '/poduct/WIN SPEED PRO.webp',
+    shortDescription: 'Biostimulant - Protein Hydrolysate',
+    fullDescription: `WIN SPEED PRO is a naturally derived organic product which can make the plant healthy and vigorous and improves resistance against pest and diseases.
 
-RECOMMENDED DOSAGE:
-2 to 3 kg Per acre.
+Product Features:
+• WIN SPEED PRO is a naturally derived organic product which can make the plant healthy and vigorous and improves resistance against pest and diseases.
 
-COMPOSITION:
-Zn-10.0%. Fe-5.0%. Mn-2.0%. B-0.3%.`,
-    features: ['Cucurbit-specific formula', 'Sweet fruit enhancement', 'Vine health support', 'Disease resistance'],
-    usage: ['Apply at planting', 'Side-dress during growth', 'Use 2-3 kg per 100 sq ft', 'Water regularly'],
-    ingredients: ['Cucurbit nutrients', 'Potassium compounds', 'Organic matter', 'Beneficial microbes'],
-    safetyTips: ['Avoid fruit contact', 'Water after application', 'Store in dry place', 'Follow application timing'],
-    price: '₹1,700',
+Effectiveness:
+• Improve resistance against pest and diseases.
+
+Recommended Dosage:
+• 1gm. per 1 litre of water.
+
+For Better Efficacy:
+• Use along with fertilizers as per regular farmer practice.
+
+Packaging Size: 100 gms.`,
+    features: [
+      'Naturally derived organic product',
+      'Makes plants healthy and vigorous',
+      'Improves resistance against pest and diseases',
+      'Protein hydrolysate formulation',
+      'Biostimulant properties',
+      'Enhances plant vigor and health'
+    ],
+    usage: [
+      '1 gm per 1 litre of water',
+      'Use along with fertilizers as regular practice',
+      'Apply to improve plant resistance',
+      'Suitable for pest and disease management',
+      'Mix thoroughly before application'
+    ],
+    ingredients: [
+      'Protein hydrolysate',
+      'Naturally derived organic compounds',
+      'Plant health enhancers',
+      'Resistance building factors',
+      'Biostimulant compounds'
+    ],
+    safetyTips: [
+      'Follow recommended dosage: 1gm per litre',
+      'Use with regular fertilizer practice',
+      'Naturally derived and safe',
+      'Store in cool, dry place',
+      'Mix thoroughly before use'
+    ],
+    price: '₹880',
     inStock: true,
-    application: 'Melons & Cucurbits'
+    application: 'All Crops - Pest & Disease Resistance'
   },
   {
-    id: 'mango-king',
-    name: 'Mango King',
+    id: 'win-super-pro',
+    name: 'Win Super Pro',
     category: 'liquids',
-    image: '/uploads/mango king.png',
-    shortDescription: 'Micronutrient Mixture Fertilizers',
-    fullDescription: `BENEFIT OF MANGO KING:
-1. Better utilization of major nutrients.
-2. Increased immunity power of plants against adverse conditions.
-3. Increased yield and quality of farm produce.
-4. Participation in enzymatic functions and acting as a catalytic agent for vigorous growth.
+    image: '/poduct/WIN SUPER PRO.webp',
+    shortDescription: 'Biostimulant',
+    fullDescription: `Win Super Pro is a naturally derived organic product which can make the plant healthy, vigorous and improves resistance against trips & mites diseases.
 
-RECOMMENDED DOSAGE:
-500ml of Mango King in 200 liters of water per acre.
-Repeated application with a 15-20 day interval will keep the crop healthy.
+Product Features:
+• Win Super Pro is a naturally derived organic product which can make the plant healthy, vigorous and improves resistance against trips & mites diseases.
 
-COMPOSITION:
-Zn-3.0% (Zinc)
-Fe-2.0% (Iron)
-B-0.5% (Boron)`,
-    features: ['Mango-specific formula', 'Tropical fruit support', 'Flowering enhancement', 'Premium quality'],
-    usage: ['Apply 3-4 times per year', 'Spread around tree base', 'Use 3-5 kg per tree', 'Water thoroughly'],
-    ingredients: ['Tropical fruit nutrients', 'Flowering stimulants', 'Organic matter', 'Beneficial microbes'],
-    safetyTips: ['Avoid trunk contact', 'Water deeply after application', 'Store in dry place', 'Follow seasonal timing'],
-    price: '₹2,200',
+Effectiveness:
+• Improve the resistance against trips & mites diseases.
+
+Recommended Dosage:
+• 2.5 ml per 1 ltr. of water
+• 250 ml per acre
+
+For Better Efficacy:
+• Use along with fertilizers as per regular farmer practice.
+
+Packaging Size: 250 ml | 500 ml | 1 ltr.`,
+    features: [
+      'Naturally derived organic product',
+      'Makes plants healthy and vigorous',
+      'Improves resistance against trips & mites diseases',
+      'Bio stimulant properties',
+      'Enhances plant defense mechanisms',
+      'Specialized for trips and mites control'
+    ],
+    usage: [
+      '2.5 ml per 1 litre of water',
+      '250 ml per acre',
+      'Use along with fertilizers as regular practice',
+      'Apply to improve resistance against trips & mites',
+      'Suitable for pest management',
+      'Regular application during vulnerable periods'
+    ],
+    ingredients: [
+      'Naturally derived organic compounds',
+      'Bio stimulant compounds',
+      'Plant health enhancers',
+      'Trips & mites resistance factors',
+      'Disease resistance promoters'
+    ],
+    safetyTips: [
+      'Follow recommended dosage: 2.5ml per litre',
+      'Use with regular fertilizer practice',
+      'Naturally derived and safe',
+      'Store in cool, dry place',
+      'Effective for organic farming'
+    ],
+    price: '₹1150',
     inStock: true,
-    application: 'Mango & Tropical Fruits'
+    application: 'All Crops - Trips & Mites Control'
   },
   {
-    id: 'green-pro',
-    name: 'Green Pro',
-    category: 'liquids',
-    image: '/uploads/green pro.png',
-    shortDescription: 'straight nitrogenous fertilizer',
-    fullDescription: `BENEFIT OF GREEN PRO:
-1. Green Pro will help better utilisation of major nutrients.
-2. Green Pro will help to increase the immunity power of plants against adverse conditions.
-3. Green Pro will take part in enzymatic functions and act as a catalytic agent to produce vigorous growth.
-4. Green Pro will help to increase yield and quality of the farm produce.
-
-RECOMMENDED DOSAGE:
-Use Green Pro 3-5ml per 1 litre of water, Depending upon the Crop age & Growth Stages.
-
-COMPOSITION:
-Zn-3.0%, Fe-1.5%, B-0.5%.`,
-    features: ['Professional grade', 'Commercial farming', 'Consistent nutrition', 'Large-scale application'],
-    usage: ['Apply 5-8 kg per acre', 'Broadcast application', 'Reapply every 6-8 weeks', 'Maintain soil moisture'],
-    ingredients: ['Organic compost', 'Animal manure', 'Rock minerals', 'Beneficial microbes'],
-    safetyTips: ['Use appropriate equipment', 'Store in bulk containers', 'Follow safety protocols', 'Monitor crop response'],
-    price: '₹1,800',
+    id: 'win-veera',
+    name: 'Win Veera',
+    category: 'specialty',
+    image: '/poduct/WIN VEERA.webp',
+    shortDescription: 'Warrior Formula',
+    fullDescription: `Win Veera is a warrior formula designed to fight plant challenges effectively. This powerful solution tackles tough agricultural challenges with strength and precision.`,
+    features: ['Warrior strength', 'Challenge fighter', 'Effective formula', 'Powerful solution'],
+    usage: ['Use against challenges', 'Apply when needed', 'Follow warrior protocol', 'Strategic application'],
+    ingredients: ['Warrior compounds', 'Challenge fighters', 'Strength enhancers', 'Power agents'],
+    safetyTips: ['Handle with strength', 'Use strategically', 'Store warrior-safe', 'Follow protocols'],
+    price: '₹720',
     inStock: true,
     application: 'All Crops'
   },
   {
-    id: 'micro',
-    name: 'Micro',
-    category: 'liquids',
-    image: '/uploads/micro.png',
-    shortDescription: 'Micronutrient Mixture Fertilizers',
-    fullDescription: `BENEFIT OF MICRO STAR:
-1. MICRO STAR will help better utilisation of major nutrients.
-2. MICRO STAR will help to increase the immunity power of plants against adverse conditions.
-3. MICRO STAR will take part in enzymatic functions and act as a catalytic agent to produce vigorous growth.
-4. MICRO STAR will help to increase yield and quality of the farm produce.
-5. MICRO STAR is recommended for Cereal crops, Oil Seeds, Vegetables & All Plantation Crops.
+    id: 'win-yield-power',
+    name: 'Win Yield Power',
+    category: 'granular',
+    image: '/poduct/WIN YIELD POWER.webp',
+    shortDescription: 'Biomass Hydrolysate',
+    fullDescription: `Win Yield Power is composed with Biological enzymatic hydrolysis and double chelating technology. This technology helps in skillful blending of Alginic Acid, Seaweed extract, Protein, mineral, Fulvic, Humic and Amino Acid large and medium trace elements. It is one of the most comprehensive total nutrient Product. Due to specially added ADO, it can adjust the pH value of soil bidirectionally and has remarkable recovery- effect on Soil acidification, salinization on saline-alkali land. Helps in restoring Soil Vitality and Soil Flora balance, Rebuilds Soil aggregate structure to improve the growth environment of root system and Solve the problem of soil compaction completely. Win Yield Power works on all types of crop like Field crop, cash crop, Horticulture, plantation crop and vegetables and fruits.
 
-RECOMMENDED DOSAGE:
-500ml of Micro Star in -200ltr of water per acre. A different product among all general liquid with unique quality.
+Effectiveness:
+• Suitable to improve productivity of a wide range of crops such as vegetables, fruit crops, plantation, field crops, ornamental, fiber crops. Home and gardens etc.
 
-COMPOSITION:
-Zn-3.0%.Fe-2.0%. B-1.0%.`,
-    features: ['Complete micronutrients', 'Deficiency correction', 'Optimal nutrition', 'Trace element balance'],
-    usage: ['Apply 0.5-1 kg per acre', 'Mix with irrigation water', 'Apply during growth stages', 'Use as needed'],
-    ingredients: ['Zinc sulfate', 'Iron chelates', 'Manganese compounds', 'Copper sulfate'],
-    safetyTips: ['Follow application rates', 'Monitor plant response', 'Store in sealed container', 'Avoid over-application'],
-    price: '₹1,600',
+For Better Efficacy:
+• Use along with fertilizers as per regular farmer practice.
+
+Packaging Size: 500 gms.`,
+    features: [
+      'Biological enzymatic hydrolysis technology',
+      'Double chelating technology',
+      'Comprehensive total nutrient product',
+      'pH adjustment capability (bidirectional)',
+      'Soil acidification recovery effect',
+      'Restores soil vitality and flora balance',
+      'Rebuilds soil aggregate structure',
+      'Solves soil compaction problems',
+      'Contains alginic acid, seaweed extract, proteins'
+    ],
+    usage: [
+      '300 gm to 500 gm per Acre at sowing/planting',
+      'Top-dressing for best results - use twice in crop',
+      'After 20-25 days from first use',
+      '1gm/1tr at plant growing period',
+      'Use along with fertilizers as regular practice',
+      'Works on all types of crops'
+    ],
+    ingredients: [
+      'Biomass hydrolysate',
+      'Alginic acid',
+      'Seaweed extract',
+      'Protein compounds',
+      'Fulvic and humic acids',
+      'Amino acids',
+      'Trace elements (large and medium)',
+      'Special ADO compounds'
+    ],
+    safetyTips: [
+      'Follow recommended dosage',
+      'Use twice in crop cycle for best results',
+      'Use with regular fertilizer practice',
+      'Safe for all crop types',
+      'Store in dry place'
+    ],
+    price: '₹950',
     inStock: true,
     application: 'All Crops'
   },
   {
-    id: 'shine-citrus',
-    name: 'Shine Citrus',
-    category: 'liquids',
-    image: '/uploads/shine citrus.png',
-    shortDescription: 'Micronutrient Mixture Fertilizers',
-    fullDescription: `BENEFIT OF SHINE CITRUS:
-1. Shine Citrus will help better utilisation of major nutrients.
-2. Shine Citrus will help to increase the immunity power of plants against adverse conditions.
-3. Shine Citrus will take part in enzymatic functions and act as a catalytic agent to produce vigorous growth.
-4. Shine Citrus will help to increase yield and quality of the farm produce.
-
-RECOMMENDED DOSAGE:
-Shine Citrus 3-5ml per 1 litre of water, Depending upon the Crop age & Growth Stages.
-* Shine Citrus is recommended for Citrus crops,
-
-COMPOSITION:
-Zn-3.0%. Fe-05%. B-0.5%.`,
-    features: ['Citrus-specific formula', 'Fruit quality enhancement', 'Disease resistance', 'Abundant production'],
-    usage: ['Apply monthly during growing season', 'Spread around drip line', 'Use 2-3 kg per tree', 'Water deeply'],
-    ingredients: ['Citrus-specific nutrients', 'Iron compounds', 'Magnesium sulfate', 'Zinc oxide'],
-    safetyTips: ['Avoid contact with fruit', 'Water after application', 'Store in cool area', 'Use within 2 years'],
-    price: '₹1,900',
+    id: 'winmitra-gold',
+    name: 'Winmitra Gold',
+    category: 'specialty',
+    image: '/poduct/WINMITRA GOLD.webp',
+    shortDescription: 'Premium Gold Formula',
+    fullDescription: `Winmitra Gold represents the pinnacle of agricultural nutrition with gold-standard quality. This premium product delivers exceptional results with unmatched quality and performance.`,
+    features: ['Gold standard', 'Premium quality', 'Ultimate nutrition', 'Exceptional results'],
+    usage: ['Premium application', 'Use for gold results', 'Follow gold standards', 'Premium protocol'],
+    ingredients: ['Gold-grade nutrients', 'Premium compounds', 'Ultimate additives', 'Excellence enhancers'],
+    safetyTips: ['Handle premium product', 'Follow gold protocols', 'Premium storage', 'Quality assurance'],
+    price: '₹1350',
     inStock: true,
     application: 'All Crops'
   },
   {
-    id: 'combi-pro',
-    name: 'Combi Pro',
-    category: 'powder',
-    image: '/uploads/combi pro.png',
-    shortDescription: 'Micronutrient Mixture Fertilizers',
-    fullDescription: `BENEFIT OF COMBI PRO:
-1. Combi Pro is 100% water soluble formulation containing microelements in chelated form those are needed by crops. these vital nutrients are in readily available form.
-2. Combi Pro corrects all deficiencies those occur due to non - availability of micro elements.
-3. Combi Pro Helps to increase the uptake of major & secondary nutrients.
-4. Combi Pro Helps to plants for healthy & growth. Micronutrients in Combi Pro get completely absorbed by plants & quickly supplied to all plant parts.
-5. Combi Pro increase the quality & yield in all crops.
-6. Combi Pro Helps to increase the disease resistance power of crops.
-
-RECOMMENDED DOSAGE:
-1 to 1.2g / Liter of water
-
-COMPOSITION:
-Zn-3.0%. Fe-2.0%. Mn-1.0%. B-0.5%`,
-    features: ['Professional formula', 'All-crop suitability', 'Balanced nutrition', 'Customizable application'],
-    usage: ['Dilute according to crop', 'Apply every 2-4 weeks', 'Foliar or soil application', 'Adjust for crop stage'],
-    ingredients: ['NPK compounds', 'Micronutrients', 'Amino acids', 'Growth regulators'],
-    safetyTips: ['Follow professional guidelines', 'Use protective equipment', 'Store properly', 'Monitor crop response'],
-    price: '₹2,100',
-    inStock: true,
-    application: 'All Crops'
-  },
-  {
-    id: 'sparsha',
-    name: 'Sparsha',
-    category: 'powder',
-    image: '/uploads/sparsha.png',
-    shortDescription: 'Micronutrients',
-    fullDescription: `BENEFIT OF SPARSHA:
-1. Zinc in far more effective than Zinc Sulphate so far as uptake is concerned.
-2. Zinc is easily translocated within the plants.
-3. Zinc being Chelated is readily absorbed by the roots & assimilated within the plant system. In case of zinc sulphate, zinc when reacts with phosphorus in the soil gets precipitated & hence is not available to plants.
-4. Zinc can be easily mixed with N-P-K foliar spraying or any other micronutrients fertilizer without forming any insoluble precipitate.
-5. Zinc is environment friendly safe to human beings & plants.
-
-RECOMMENDED DOSAGE:
-Soil Application:
-Field Crops:
-1) Severe Deficiency: 0.5 to 1.0 kg/acre
-2) Maintenance: 0.25 to 0.5 kg/acre
-Fruit Crops:
-Apply: 0.25 to 0.50 kg/acre
-Foliar Spray: 50 to 100 grams per 100 liters of water
-
-COMPOSITION:
-CHELATED ZINC AS ZN-EDTA (12%Zn)`,
-    features: ['Touch-responsive', 'Gentle formula', 'Controlled release', 'Sensitive crop safe'],
-    usage: ['Apply gently to soil', 'Use 1-2 kg per acre', 'Monitor plant response', 'Adjust as needed'],
-    ingredients: ['Slow-release compounds', 'Organic acids', 'Micronutrients', 'pH stabilizers'],
-    safetyTips: ['Handle with care', 'Monitor plant health', 'Store in cool place', 'Follow application guidelines'],
-    price: '₹1,850',
-    inStock: true,
-    application: 'All Crops'
-  },
-  {
-    id: 'g-bor',
-    name: 'G-BOR',
-    category: 'powder',
-    image: '/uploads/G-BOR.png',
-    shortDescription: 'Micronutrients',
-    fullDescription: `BENEFIT OF G-BOR:
-1. It Play Vital Role in Proper Development of Roots and Shoots.
-2. Germination, Metabolic Process Can Be Improved,
-3. Flowering, Tillering and Fruit Formation Will Be Improved,
-
-RECOMMENDED DOSAGE:
-Apply 2gms | 1ltrs of water as a foliar application
-Crops recommended : paddy, maize, sugarcane, cotton, fruits, all vegetables crop like potato, tomato horticulture crops and plantation crops.
-
-COMPOSITION:
-BORON 20%`,
-    features: ['Boron enrichment', 'Fruit quality improvement', 'Seed development', 'Deficiency correction'],
-    usage: ['Apply 1-2 kg per acre', 'Mix with irrigation water', 'Apply during flowering', 'Use as needed'],
-    ingredients: ['Boron compounds', 'Micronutrients', 'Soluble minerals', 'Chelated elements'],
-    safetyTips: ['Follow application rates', 'Monitor soil levels', 'Store in sealed container', 'Avoid over-application'],
-    price: '₹1,750',
-    inStock: true,
-    application: 'All Crops'
-  },
-  {
-    id: 'super-glow',
-    name: 'Super Glow',
+    id: 'win-veera',
+    name: 'Win Veera',
     category: 'liquids',
-    image: '/uploads/super grow.png',
-    shortDescription: 'Micronutrient Mixture Fertilizers',
-    fullDescription: `BENEFIT OF SUPER GLOW:
-1. Super Glow will help better utilisation of major nutrients.
-2. Super Glow will help to increase the immunity power of plants against adverse conditions.
-3. Super Glow will take part in enzymatic functions and act as a catalytic agent to produce vigorous growth.
-4. Super Glow will help to increase yield and quality of the farm produce.
+    image: '/poduct/WIN VEERA.webp',
+    shortDescription: 'Biostimulant',
+    fullDescription: `Win Veera is a naturally driven organic product that influences all crops plant physiological systems. Win Veera penetrates through the cellular membrane to stimulate the plant's physiological process. Win Veera accelerates cellular division and increases vegetative growth. Win Veera enhances the enzymatic activities to strengthen the plant defense mechanism at the time of flowering & fruiting to resist pests & diseases. Win Veera promotes root growth and enhances the ability to absorb plant nutrients from the soil. Win Veera reduces flower and fruit drops. Win Veera significance increase in quality and quantity yield.
 
-RECOMMENDED DOSAGE:
-Super Glow 3-5ml per 1 litre of water, Depending upon the Crop age & Growth Stages.
+Effectiveness:
+• Improve the resistance for stem borer and leaf folder in paddy crop.
 
-COMPOSITION:
-Zn-3.0%. Fe-1.5%. B-0.5%.`,
-    features: ['Premium glow formula', 'Enhanced plant vigor', 'Superior nutrition', 'Maximum yield potential'],
-    usage: ['Apply for premium results', 'Use during key growth stages', 'Dilute as recommended', 'Apply regularly'],
-    ingredients: ['Premium nutrients', 'Enhanced minerals', 'Growth boosters', 'Quality enhancers'],
-    safetyTips: ['Use as directed', 'Store properly', 'Handle with care', 'Monitor results'],
-    price: '₹2,200',
+Recommended Dosage:
+• 2.5 ml per 1 ltr. of water
+• 250 ml per acre
+
+For Better Efficacy:
+• Use along with fertilizers as per regular farmer practice.
+
+Packaging Size: 250 ml | 500 ml | 1 ltr.`,
+    features: [
+      'Naturally driven organic product',
+      'Influences all crop plant physiological systems',
+      'Penetrates through cellular membrane',
+      'Stimulates plant physiological processes',
+      'Accelerates cellular division',
+      'Increases vegetative growth',
+      'Enhances enzymatic activities',
+      'Strengthens plant defense mechanism',
+      'Promotes root growth and nutrient absorption',
+      'Reduces flower and fruit drops',
+      'Improves resistance to stem borer and leaf folder in paddy'
+    ],
+    usage: [
+      '2.5 ml per 1 litre of water',
+      '250 ml per acre',
+      'Use along with fertilizers as regular practice',
+      'Apply during flowering & fruiting stages',
+      'Suitable for all crops',
+      'Especially effective for paddy crop resistance'
+    ],
+    ingredients: [
+      'Naturally driven organic compounds',
+      'Cellular membrane penetrators',
+      'Physiological process stimulants',
+      'Enzymatic activity enhancers',
+      'Root growth promoters',
+      'Defense mechanism strengtheners'
+    ],
+    safetyTips: [
+      'Follow recommended dosage: 2.5ml per litre',
+      'Use with regular fertilizer practice',
+      'Naturally driven organic formulation',
+      'Safe for all crop types',
+      'Store in cool, dry place'
+    ],
+    price: '₹680',
     inStock: true,
-    application: 'All Crops'
+    application: 'All Crops - Especially Paddy'
   },
   {
-    id: 'jeevan-plus',
-    name: 'JEEVAN PLUS',
-    category: 'liquids',
-    image: '/uploads/JEEVAN PLUS.png',
-    shortDescription: 'nature biostimulants',
-    fullDescription: `BENEFIT OF JEEVAN PLUS:
-1. Jeevan Plus contains organic constituents like humic, humates and Fulvic acids supported by naturally containing essential trace elements. Humic acids are reported to permeability of plant membranes, resulting in higher metabolic activity due to increased nutrient's availability and enzyme activity.
-2. Humic acids build up organic matter which is required for microbial growth. It stimulates the respiration rates of seeding which leads quicker germination.
-3. It also protects plants from chlorosis, enhance photosynthesis, increases vegetative growth which results in higher yields & healthier crops.
+    id: 'winmitra-gold',
+    name: 'Winmitra Gold',
+    category: 'granular',
+    image: '/poduct/WINMITRA GOLD.webp',
+    shortDescription: 'Biostimulant',
+    fullDescription: `Winmitra Gold is anatually driven organic Granules which influences all crops plant physiological systems. Winmitra Gold penetrates through the cellular membrane to stimulate the plants physiological process. Winmitra Gold accelerates cellular division and increases vegetative growth. Winmitra Gold enhances the enzymatic activities to strengthen the plant defense mechanism at the time of flowering & fruiting to resist pests & diseases. Winmitra Gold promotes root growth and enhances the ability to absorb plant nutrients from the soil. Winmitra Gold reduces flower and fruit drops. Winmitra Gold significance increase in quality and quantity yield.
 
-RECOMMENDED DOSAGE:
-Two soil applications at 5 Ltr/ha.
-For Foliar Spray: 500ml of Jeevan Plus in -200ltr of water
+Effectiveness:
+• Effective and long duration protection from early short borer and top borer with unique mode of action
 
-COMPOSITION:
-Humates 12.5% (Liquid)`,
-    features: ['Life enhancement', 'Sustainable farming', 'Soil vitality', 'Organic certification'],
-    usage: ['Apply 4-6 kg per acre', 'Mix with soil before planting', 'Reapply every 6-8 weeks', 'Maintain soil moisture'],
-    ingredients: ['Organic compost', 'Vermicompost', 'Neem cake', 'Rock minerals'],
-    safetyTips: ['Safe for organic production', 'Store in dry location', 'Compostable packaging', 'Natural ingredients only'],
-    price: '₹1,300',
+Recommended Dosage:
+• 4 kg per acre
+
+For Better Efficacy:
+• Use along with fertilizers as per regular farmer practice.
+
+Packaging Size: 4 kg.`,
+    features: [
+      'Naturally driven organic granules',
+      'Influences all crops plant physiological systems',
+      'Penetrates through cellular membrane',
+      'Stimulates plant physiological processes',
+      'Accelerates cellular division',
+      'Increases vegetative growth',
+      'Enhances enzymatic activities',
+      'Strengthens plant defense mechanism',
+      'Promotes root growth and nutrient absorption',
+      'Reduces flower and fruit drops',
+      'Effective protection from early short borer and top borer',
+      'Long duration protection with unique mode of action'
+    ],
+    usage: [
+      '4 kg per acre',
+      'Use along with fertilizers as regular practice',
+      'Apply during planting or growing season',
+      'Suitable for all crops',
+      'Effective for borer protection',
+      'Apply at flowering & fruiting stages for best results'
+    ],
+    ingredients: [
+      'Naturally driven organic compounds',
+      'Cellular membrane penetrators',
+      'Physiological process stimulants',
+      'Enzymatic activity enhancers',
+      'Root growth promoters',
+      'Defense mechanism strengtheners',
+      'Borer protection agents'
+    ],
+    safetyTips: [
+      'Follow recommended dosage: 4kg per acre',
+      'Use with regular fertilizer practice',
+      'Naturally driven organic formulation',
+      'Safe for all crop types',
+      'Store in dry place'
+    ],
+    price: '₹890',
     inStock: true,
-    application: 'Green Gram'
-  },
-  {
-    id: 'root-booster',
-    name: 'Root Booster',
-    category: 'powder',
-    image: '/uploads/Root Booster.png',
-    shortDescription: 'nature biostimulants',
-    fullDescription: `BENEFIT OF ROOT BOOSTER:
-Improves physical, chemical and biological properties of soil. increases aeration and water holding capacity of soil. improves effectiveness of metallic fungicides.
-
-RECOMMENDED DOSAGE:
-Drip irrigation : 1-2 kg/acre / Drenching : 2-3 gm/litre water
-
-COMPOSITION:
-Potassium Humate 49% (Powder)`,
-    features: ['Advanced root development', 'Soil conditioning', 'Beneficial microorganisms', 'Long-lasting effect'],
-    usage: ['Apply at transplanting', 'Work into planting hole', 'Use 1-2 kg per acre', 'Water deeply'],
-    ingredients: ['Root stimulants', 'Beneficial bacteria', 'Organic matter', 'Essential nutrients'],
-    safetyTips: ['Handle with care', 'Store in moisture-proof container', 'Use clean equipment', 'Follow application rates'],
-    price: '₹1,650',
-    inStock: true,
-    application: 'Paddy'
-  },
-  {
-    id: 'lasya',
-    name: 'Lasya',
-    category: 'liquids',
-    image: '/uploads/lasya.png',
-    shortDescription: 'nature biostimulants',
-    fullDescription: `BENEFIT OF LASYA:
-Improves photosynthesis in plants & entire plant will become greenish. It will help to overcome micronutrient deficiency in all crop. Repeated application with 15-20 days interval will keep crop Healthy Better growth. Improves disease resistance in all crops.
-
-RECOMMENDED DOSAGE:
-2-3ml / 1Ltr. of Water.
-
-COMPOSITION:
-Seaweed Extract - 15%
-Organic botanical extract- 10%`,
-    features: ['Flower enhancement', 'Color vibrancy', 'Ornamental plant formula', 'Bloom promotion'],
-    usage: ['Apply monthly during growing season', 'Use 1-2 kg per 100 sq ft', 'Water after application', 'Reduce in winter'],
-    ingredients: ['Phosphorus-rich formula', 'Potassium compounds', 'Micronutrients', 'Organic acids'],
-    safetyTips: ['Avoid over-fertilization', 'Monitor plant response', 'Store in sealed container', 'Keep away from children'],
-    price: '₹1,550',
-    inStock: true,
-    application: 'Green Gram'
-  },
-  {
-    id: 'rich-roots',
-    name: 'Rich Roots',
-    category: 'liquids',
-    image: '/uploads/rich roots.png',
-    shortDescription: 'nature biostimulants',
-    fullDescription: `BENEFIT OF RICH ROOTS:
-1. Rich Roots contains organic constituents like humic, humates and Fulvic acids supported by naturally containing essential trace elements. Humic acids are reported to permeability of plant membranes, resulting in higher metabolic activity due to increased nutrient's availability and enzyme activity.
-2. Humic acids build up organic matter which is required for microbial growth. It stimulates the respiration rates of seeding which leads quicker germination.
-3. It also protects plants from chlorosis, enhance photosynthesis, increases vegetative growth which results in higher yields & healthier crops.
-
-RECOMMENDED DOSAGE:
-Two soil applications at 5 Ltr/ha.
-For Foliar Spray: 500ml of Rich Roots in -200ltr of water
-
-COMPOSITION:
-Humates 12.5% (Liquid)`,
-    features: ['Root development', 'Beneficial microbes', 'Slow-release formula', 'Soil structure improvement'],
-    usage: ['Apply at planting time', 'Work into root zone', 'Use 2-3 kg per acre', 'Water thoroughly'],
-    ingredients: ['Phosphorus compounds', 'Mycorrhizal fungi', 'Organic matter', 'Trace elements'],
-    safetyTips: ['Avoid contact with stems', 'Water in thoroughly', 'Store in cool, dry place', 'Use before expiration'],
-    price: '₹1,400',
-    inStock: true,
-    application: 'Green Gram'
-  },
-  {
-    id: 'wake-up',
-    name: 'Wake Up',
-    category: 'liquids',
-    image: '/uploads/wake up.png',
-    shortDescription: 'nature biostimulants',
-    fullDescription: `BENEFIT OF WAKE UP:
-Wake up contains organic constituents like humic, humates & Fulvic acids supported by naturally containing essential trace elements. Humic acids are reported to increase permeability of plant membranes, resulting in higher metabolic activity due to increased nutrient's availability & enzyme activity.
-
-RECOMMENDED DOSAGE:
-Two soil applications at 1.25 Ltr/ha.
-For Foliar Spray: 500ml of Wake up in -200ltr of water
-
-COMPOSITION:
-Humates and Fulvates-22% (Liquid)`,
-    features: ['Growth stimulation', 'Stress recovery', 'Quick absorption', 'Revitalizing formula'],
-    usage: ['Apply to stressed plants', 'Use 1:50 dilution', 'Apply every 7-10 days', 'Avoid over-application'],
-    ingredients: ['Growth hormones', 'Amino acids', 'Micronutrients', 'Seaweed extract'],
-    safetyTips: ['Follow dilution rates', 'Monitor plant response', 'Store in cool place', 'Use within 6 months'],
-    price: '₹1,600',
-    inStock: true,
-    application: 'Groundnut'
-  },
-  {
-    id: 'silicron',
-    name: 'Silicron',
-    category: 'liquids',
-    image: '/uploads/silicron.png',
-    shortDescription: 'nonionic spray adjuvants',
-    fullDescription: `BENEFIT OF SILICRON:
-1. Super spreading: acti-silion solution spreads quickly, carrying insecticides into pests and carrying fungicides on those crop canopy, prone to infection by diseases. it assist herbicides to kill weeds uniformly in shorter duration
-2. Silicron is useful for faster & enhanced spreading while spraying agrochemicals
-3. Silicron can be used effectively in all seasons & for all types of crops
-4. Improves rainfastness-due to increased uptake, the solution doesn't wash off even if it rains after few minutes.
-
-COMPOSITION:
-Silicone Based Super Spreader`,
-    features: ['Silicon enrichment', 'Disease resistance', 'Stress tolerance', 'Improved yield'],
-    usage: ['Apply 1-2 kg per acre', 'Mix with irrigation water', 'Apply during early growth', 'Use monthly during growing season'],
-    ingredients: ['Soluble silicon', 'Potassium silicate', 'Micronutrients', 'Organic acids'],
-    safetyTips: ['Wear protective clothing', 'Avoid inhalation', 'Store in sealed container', 'Keep dry'],
-    price: '₹1,450',
-    inStock: true,
-    application: 'All Crops'
-  },
-  {
-    id: 'x-spa80',
-    name: 'X-SPA80',
-    category: 'liquids',
-    image: '/uploads/X-SPA80.png',
-    shortDescription: 'nonionic spray adjuvants',
-    fullDescription: `BENEFIT OF X-SPA80:
-X-spa80 is highly concentrated nonionic wetting agent with 80% active ingredients. As an Sticker - Activator - Spreader, it activates the spray fluid to moisten the plant surface and allows uniform spreading of spray deposits. powerful tool in irrigation with improves the water absorption in soil, it facilitates uniform mixing of powders, pesticides & most liquid fertilizers, it is non corrosive to spray equipment and prevents clogged nozzles. Safe & environment friendly.
-
-RECOMMENDED DOSAGE:
-5ml in 15 ltrs. of water - for insecticides, fungicides, foliar spray, plant growth nutrients. 20ml in 15 ltrs.of water herbicides.`,
-    features: ['Fast absorption', 'High concentration', 'Balanced NPK ratio', 'Foliar application ready'],
-    usage: ['Dilute 1:100 with water', 'Apply every 2-3 weeks', 'Can be used as foliar spray', 'Avoid application during hot sun'],
-    ingredients: ['NPK fertilizer', 'Micronutrients', 'Amino acids', 'Growth hormones'],
-    safetyTips: ['Use protective equipment', 'Avoid skin contact', 'Store in original container', 'Keep refrigerated after opening'],
-    price: '₹1,800',
-    inStock: true,
-    application: 'All Crops'
+    application: 'All Crops - Borer Protection'
   }
 ];
 
@@ -502,7 +1184,6 @@ export const categories = [
   { id: 'liquids', name: 'Liquids', count: products.filter(p => p.category === 'liquids').length },
   { id: 'powder', name: 'Powder', count: products.filter(p => p.category === 'powder').length },
   { id: 'organic', name: 'Organic', count: products.filter(p => p.category === 'organic').length },
-  { id: 'liquid', name: 'Liquid', count: products.filter(p => p.category === 'liquid').length },
   { id: 'granular', name: 'Granular', count: products.filter(p => p.category === 'granular').length },
   { id: 'specialty', name: 'Specialty', count: products.filter(p => p.category === 'specialty').length },
   { id: 'mineral', name: 'Mineral', count: products.filter(p => p.category === 'mineral').length }

@@ -1,5 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -10,285 +9,238 @@ interface Product {
 }
 
 const products: Product[] = [
-  { id: 1, name: 'Combi Pro', image: '/uploads/combi pro.png' },
-  { id: 2, name: 'G-BOR', image: '/uploads/G-BOR.png' },
-  { id: 3, name: 'Green Care', image: '/uploads/green care.png' },
-  { id: 4, name: 'Green Pro', image: '/uploads/green pro.png' },
-  { id: 5, name: 'Green Gro', image: '/uploads/GREENGRO.png' },
-  { id: 6, name: 'Jeevan Plus', image: '/uploads/JEEVAN PLUS.png' },
-  { id: 7, name: 'Lasya', image: '/uploads/lasya.png' },
-  { id: 8, name: 'Mango King', image: '/uploads/mango king.png' },
-  { id: 9, name: 'Melon Plus', image: '/uploads/melon plus.png' },
-  { id: 10, name: 'Melon Soil', image: '/uploads/melon soil.png' },
-  { id: 11, name: 'Micro', image: '/uploads/micro.png' },
-  { id: 12, name: 'Rich Roots', image: '/uploads/rich roots.png' },
-  { id: 13, name: 'Root Booster', image: '/uploads/Root Booster.png' },
-  { id: 14, name: 'Shine Citrus', image: '/uploads/shine citrus.png' },
-  { id: 15, name: 'Silicron', image: '/uploads/silicron.png' },
-  { id: 16, name: 'Sparsha', image: '/uploads/sparsha.png' },
-  { id: 17, name: 'Sun Shine', image: '/uploads/sun sgine.png' },
-  { id: 18, name: 'Swarna', image: '/uploads/swarna.png' },
-  { id: 19, name: 'Wake Up', image: '/uploads/wake up.png' },
-  { id: 20, name: 'X-SPA80', image: '/uploads/X-SPA80.png' },
-  { id: 21, name: 'Super Grow', image: '/uploads/super grow.png' },
+  { id: 1, name: 'Bhoomi Shakthi', image: '/poduct/BHOOMI SHAKTHI.webp' },
+  { id: 2, name: 'Win Amino Plus', image: '/poduct/WIN AMINO PLUS.webp' },
+  { id: 3, name: 'Win Crop Don', image: '/poduct/WIN CROP DON.webp' },
+  { id: 4, name: 'Win Flower', image: '/poduct/WIN FLOWER.webp' },
+  { id: 5, name: 'Win Fruits', image: '/poduct/WIN FRUITS.webp' },
+  { id: 6, name: 'Win Gold Magic', image: '/poduct/WIN GOLD MAGIC.webp' },
+  { id: 7, name: 'Win HAP Granules', image: '/poduct/WIN HAP GRANULES.webp' },
+  { id: 8, name: 'Win HAP Liquid', image: '/poduct/WIN HAP LIQUID.webp' },
+  { id: 9, name: 'Win Hi-Growth', image: '/poduct/WIN HI-GROWTH.webp' },
+  { id: 10, name: 'Win Kissan 100', image: '/poduct/Win Kissan 100.webp' },
+  { id: 11, name: 'Win Moss', image: '/poduct/WIN MOSS.webp' },
+  { id: 12, name: 'Win Plant Boost', image: '/poduct/WIN PLANT BOOST.webp' },
+  { id: 13, name: 'Win Plant Care', image: '/poduct/WIN PLANT CARE.webp' },
+  { id: 14, name: 'Win Protect', image: '/poduct/WIN PROTECT.webp' },
+  { id: 15, name: 'Win Raksha', image: '/poduct/WIN RAKSHA.webp' },
+  { id: 16, name: 'Win Speed Pro', image: '/poduct/WIN SPEED PRO.webp' },
+  { id: 17, name: 'Win Super Pro', image: '/poduct/WIN SUPER PRO.webp' },
+  { id: 18, name: 'Win Veera', image: '/poduct/WIN VEERA.webp' },
+  { id: 19, name: 'Win Yield Power', image: '/poduct/WIN YIELD POWER.webp' },
+  { id: 20, name: 'Winmitra Gold', image: '/poduct/WINMITRA GOLD.webp' },
 ];
 
+// Create URL-friendly slug from product name
+const createSlug = (name: string) =>
+  name
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^\w-]+/g, '')
+    .replace(/--+/g, '-')
+    .replace(/^-+/, '')
+    .replace(/-+$/, '');
+
 export function ProductShowcase() {
-  const [translateX, setTranslateX] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-  const [isDragging, setIsDragging] = useState(false);
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
-  const cardWidth = 300; // Width of each card including margin
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
-  // Create URL-friendly slug from product name
-  const createSlug = (name: string) => {
-    return name
-      .toLowerCase()
-      .replace(/\s+/g, '-')        // Replace spaces with hyphens
-      .replace(/[^\w\-]+/g, '')    // Remove all non-word chars except hyphens
-      .replace(/\-\-+/g, '-')      // Replace multiple hyphens with single hyphen
-      .replace(/^-+/, '')          // Trim hyphens from start
-      .replace(/-+$/, '');         // Trim hyphens from end
-  };
+  const total = products.length;
+  
+  // Number of visible cards at once
+  const visibleCards = 5;
+  
+  // Card width + gap - Making cards much larger like original
+  const cardWidth = 320; // Increased from 280 to match original size
+  const cardGap = 40; // Increased gap for better spacing
+  const totalCardWidth = cardWidth + cardGap;
 
+  const goNext = useCallback(() => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setCurrentIndex((prev) => {
+      const next = prev + 1;
+      return next >= total ? 0 : next;
+    });
+    setTimeout(() => setIsTransitioning(false), 800);
+  }, [total, isTransitioning]);
 
+  const goPrev = useCallback(() => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setCurrentIndex((prev) => {
+      const next = prev - 1;
+      return next < 0 ? total - 1 : next;
+    });
+    setTimeout(() => setIsTransitioning(false), 800);
+  }, [total, isTransitioning]);
 
-  // Manual scroll functions
-  const scrollLeft = () => {
-    setTranslateX(prev => prev + cardWidth);
-  };
-
-  const scrollRight = () => {
-    setTranslateX(prev => prev - cardWidth);
-  };
-
-  // Handle drag end for manual scrolling
-  const handleDragEnd = (event: any, info: any) => {
-    setIsDragging(false);
-    const threshold = 50;
-    
-    if (info.offset.x > threshold) {
-      scrollLeft();
-    } else if (info.offset.x < -threshold) {
-      scrollRight();
-    }
-  };
-
-  // Auto-scroll functionality - faster and smoother
+  // Auto-rotate every 4 seconds
   useEffect(() => {
-    if (!isHovered && !isDragging) {
-      intervalRef.current = setInterval(() => {
-        setTranslateX(prev => {
-          // Move faster - 2 pixels per frame
-          let newTranslateX = prev - 2;
-          
-          // Reset position when we've scrolled through one full cycle
-          if (Math.abs(newTranslateX) >= cardWidth * products.length) {
-            return 0;
-          }
-          return newTranslateX;
-        });
-      }, 16); // 60fps for smooth animation
-    }
+    if (isPaused || isTransitioning) return;
+    const id = setInterval(goNext, 4000);
+    return () => clearInterval(id);
+  }, [isPaused, goNext, isTransitioning]);
 
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
-  }, [isHovered, isDragging]);
-
-  // Create extended array for seamless loop
-  const extendedProducts = [...products, ...products, ...products];
+  // Get the center index for highlighting
+  const centerIndex = Math.floor(visibleCards / 2);
+  
+  // Calculate transform to center the current card
+  const containerWidth = visibleCards * totalCardWidth - cardGap;
+  const translateX = -currentIndex * totalCardWidth + (containerWidth / 2) - (cardWidth / 2);
 
   return (
-    <div className="py-16 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-black dark:to-gray-900 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4">
-        <motion.div 
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-            Our{' '}
-            <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-              Products
-            </span>
-          </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Discover our comprehensive range of agricultural solutions designed to boost your crop yields
-          </p>
-        </motion.div>
-
-        <div className="relative">
-          {/* Manual scroll buttons */}
-          <motion.button
-            onClick={scrollLeft}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 dark:bg-gray-800/90 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <ChevronLeft className="w-6 h-6 text-green-600 dark:text-green-400" />
-          </motion.button>
-
-          <motion.button
-            onClick={scrollRight}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 dark:bg-gray-800/90 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <ChevronRight className="w-6 h-6 text-green-600 dark:text-green-400" />
-          </motion.button>
-
-          <div 
-            className="relative h-96 overflow-hidden"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            {/* Rolling container */}
-            <motion.div 
-              className="flex items-center h-full"
-              style={{ 
-                width: `${extendedProducts.length * cardWidth}px`,
-                transform: `translateX(${translateX}px)`
-              }}
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
-              onDragStart={() => setIsDragging(true)}
-              onDragEnd={handleDragEnd}
-              whileDrag={{ scale: 0.98 }}
-              transition={{ 
-                duration: 0.1,
-                ease: "linear"
-              }}
-            >
-              {extendedProducts.map((product, index) => {
-                // Calculate center position for scaling effect
-                // The visible container center is at half the viewport width
-                const viewportCenter = typeof window !== 'undefined' ? window.innerWidth / 2 : 400;
-                
-                // Calculate the actual position of this card's center
-                const cardLeftEdge = (index * cardWidth) + translateX;
-                const cardCenter = cardLeftEdge + (cardWidth / 2);
-                
-                // Distance from the viewport center
-                const distanceFromCenter = Math.abs(viewportCenter - cardCenter);
-                const maxDistance = cardWidth * 1.5;
-                
-                // Calculate opacity and scale based on distance from center
-                const isNearCenter = distanceFromCenter < maxDistance;
-                const opacity = isNearCenter ? Math.max(0.5, 1 - (distanceFromCenter / maxDistance)) : 0.3;
-                const scale = isNearCenter ? Math.max(0.8, 1.2 - (distanceFromCenter / maxDistance) * 0.4) : 0.7;
-                
-                // More precise center detection - card is considered center when it's within 150px of viewport center
-                const isCenter = distanceFromCenter < 150;
-
-                return (
-                  <motion.div
-                    key={`${product.id}-${index}`}
-                    className="flex-shrink-0 px-2"
-                    style={{ 
-                      width: `${cardWidth}px`,
-                      opacity,
-                      scale,
-                    }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <Link 
-                      to={`/products/${createSlug(product.name)}`}
-                      className={`
-                        block relative w-72 h-80 rounded-2xl overflow-hidden shadow-2xl mx-auto group cursor-pointer
-                        ${isCenter ? 'ring-4 ring-green-500/50 dark:ring-green-400/50' : ''}
-                        transition-all duration-500 hover:shadow-3xl hover:scale-105
-                      `}
-                      style={{ 
-                        backgroundColor: isCenter 
-                          ? 'rgba(255, 255, 255, 0.95)' 
-                          : 'rgba(255, 255, 255, 0.5)',
-                      }}
-
-                    >
-
-
-                      {/* Product Image */}
-                      <div className="h-3/4 p-4 flex items-center justify-center bg-white/90 dark:bg-black/90 group-hover:bg-green-50/90 dark:group-hover:bg-green-900/20 transition-colors duration-300">
-                        <img
-                          src={product.image}
-                          alt={product.name}
-                          className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-300"
-                          onError={(e) => {
-                            const target = e.target as HTMLImageElement;
-                            target.src = 'https://via.placeholder.com/200x200/10b981/ffffff?text=Product';
-                          }}
-                        />
-                      </div>
-                      
-                      {/* Product Name */}
-                      <div className="h-1/4 p-4 flex items-center justify-center bg-gradient-to-t from-green-600/90 to-emerald-600/90 dark:from-green-700/90 dark:to-emerald-700/90 relative group-hover:from-green-700/90 group-hover:to-emerald-700/90 transition-all duration-300">
-                        <div className="text-center">
-                          <h3 className="text-white font-bold text-lg">
-                            {product.name}
-                          </h3>
-                          <motion.p 
-                            className="text-white/80 text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                            initial={{ y: 10 }}
-                            animate={{ y: 0 }}
-                          >
-                            Click to view details
-                          </motion.p>
-                        </div>
-                        
-
-                      </div>
-
-                      {/* Glow effect for center card */}
-                      {isCenter && (
-                        <motion.div
-                          className="absolute inset-0 rounded-2xl pointer-events-none"
-                          style={{
-                            background: 'linear-gradient(45deg, rgba(16, 185, 129, 0.2), rgba(5, 150, 105, 0.2))',
-                            filter: 'blur(20px)',
-                          }}
-                          animate={{
-                            scale: [1, 1.1, 1],
-                            opacity: [0.3, 0.6, 0.3],
-                          }}
-                          transition={{
-                            duration: 2,
-                            repeat: Infinity,
-                            ease: "easeInOut"
-                          }}
-                        />
-                      )}
-                    </Link>
-                  </motion.div>
-                );
-              })}
-            </motion.div>
-
-            {/* Gradient overlays for smooth edges */}
-            <motion.div 
-              className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-green-50 to-transparent dark:from-black dark:to-transparent pointer-events-none z-10"
-              animate={{ opacity: [0.5, 0.8, 0.5] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            />
-            <motion.div 
-              className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-green-50 to-transparent dark:from-black dark:to-transparent pointer-events-none z-10"
-              animate={{ opacity: [0.5, 0.8, 0.5] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            />
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="text-center mt-8">
-          <p className="text-sm text-gray-500 dark:text-gray-400">
-            {isHovered ? 'Hover to pause auto-scroll' : `Scrolling through all ${products.length} products • Use arrows to navigate manually`}
-          </p>
-        </div>
+    <section className="relative w-full overflow-hidden bg-gradient-to-b from-black via-gray-950 to-black py-20 md:py-28 select-none">
+      {/* Title */}
+      <div className="text-center mb-16">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight">
+          Our{' '}
+          <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+            Products
+          </span>
+        </h2>
+        <p className="mt-4 text-gray-400 text-lg max-w-xl mx-auto">
+          Premium agricultural solutions crafted for maximum yield
+        </p>
       </div>
-    </div>
+
+      {/* Carousel Container */}
+      <div
+        className="relative mx-auto overflow-hidden"
+        style={{ width: containerWidth, height: 500 }} // Increased height for larger cards
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        {/* Cards Container */}
+        <div
+          className="flex transition-transform duration-[800ms] ease-in-out"
+          style={{
+            transform: `translateX(${translateX}px)`,
+            width: `${total * totalCardWidth}px`,
+          }}
+        >
+          {products.map((product, index) => {
+            // Calculate distance from center
+            const distanceFromCenter = Math.abs(index - currentIndex);
+            const isCenter = index === currentIndex;
+            
+            // Scale and opacity based on position - More subtle scaling to match original
+            const scale = isCenter ? 1.05 : distanceFromCenter <= 1 ? 0.95 : distanceFromCenter <= 2 ? 0.85 : 0.75;
+            const opacity = isCenter ? 1 : distanceFromCenter <= 1 ? 0.9 : distanceFromCenter <= 2 ? 0.7 : 0.5;
+            
+            return (
+              <Link
+                key={product.id}
+                to={`/products/${createSlug(product.name)}`}
+                className="flex-shrink-0 block transition-all duration-800 ease-in-out hover:scale-105"
+                style={{
+                  width: cardWidth,
+                  marginRight: index < total - 1 ? cardGap : 0,
+                  transform: `scale(${scale})`,
+                  opacity,
+                }}
+              >
+                <div
+                  className={`
+                    w-full h-[460px] rounded-2xl overflow-hidden
+                    bg-gradient-to-b from-gray-800/80 to-gray-900/90
+                    border border-white/10
+                    shadow-2xl transition-all duration-800
+                    ${isCenter ? 'ring-2 ring-green-400/60 shadow-green-500/30' : ''}
+                  `}
+                >
+                  {/* Image area */}
+                  <div className="h-[80%] flex items-center justify-center p-8 bg-white/5">
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="max-w-full max-h-full object-contain drop-shadow-lg transition-transform duration-300"
+                      draggable={false}
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = 'https://via.placeholder.com/250x250/10b981/ffffff?text=Product';
+                      }}
+                    />
+                  </div>
+
+                  {/* Name strip - Matching original green design */}
+                  <div className="h-[20%] flex items-center justify-center bg-gradient-to-t from-green-700 to-green-600 backdrop-blur-sm">
+                    <span className="text-white font-semibold text-xl tracking-wide text-center px-3">
+                      {product.name}
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+
+        {/* Navigation Arrows */}
+        <button
+          onClick={goPrev}
+          disabled={isTransitioning}
+          aria-label="Previous product"
+          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30
+                     w-14 h-14 rounded-full
+                     bg-white/10 backdrop-blur-md border border-white/20
+                     flex items-center justify-center
+                     hover:bg-white/25 active:scale-90
+                     transition-all duration-300 cursor-pointer
+                     disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          <ChevronLeft className="w-7 h-7 text-white" />
+        </button>
+        <button
+          onClick={goNext}
+          disabled={isTransitioning}
+          aria-label="Next product"
+          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30
+                     w-14 h-14 rounded-full
+                     bg-white/10 backdrop-blur-md border border-white/20
+                     flex items-center justify-center
+                     hover:bg-white/25 active:scale-90
+                     transition-all duration-300 cursor-pointer
+                     disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          <ChevronRight className="w-7 h-7 text-white" />
+        </button>
+      </div>
+
+      {/* Active Product Label */}
+      <div className="text-center mt-12">
+        <h3 className="text-3xl md:text-4xl font-bold text-white tracking-wide transition-all duration-500 ease-in-out">
+          {products[currentIndex].name}
+        </h3>
+        <p className="mt-2 text-gray-400 text-sm uppercase tracking-[0.25em]">
+          Agricultural Excellence
+        </p>
+      </div>
+
+      {/* Indicators */}
+      <div className="flex justify-center mt-8 gap-2">
+        {products.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => {
+              if (!isTransitioning) {
+                setIsTransitioning(true);
+                setCurrentIndex(index);
+                setTimeout(() => setIsTransitioning(false), 800);
+              }
+            }}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              index === currentIndex
+                ? 'bg-green-400 w-8'
+                : 'bg-white/30 hover:bg-white/50'
+            }`}
+          />
+        ))}
+      </div>
+
+      {/* Edge Gradients */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-20" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-20" />
+    </section>
   );
 }

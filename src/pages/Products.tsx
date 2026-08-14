@@ -1,13 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ArrowRight, ChevronRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, ChevronDown, Mouse } from 'lucide-react';
 import { products } from '../data/products';
 
 export function Products() {
   const [currentProductIndex, setCurrentProductIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+  const [progress, setProgress] = useState(0);
   const [searchParams] = useSearchParams();
   const filterType = searchParams.get('filter');
+  const progressRef = useRef<number>(0);
+  const animFrameRef = useRef<number>(0);
+  const lastTimeRef = useRef<number>(0);
+
+  const ROTATE_INTERVAL = 5000; // 5 seconds
 
   const filteredProducts = filterType 
     ? products.filter(product => {
@@ -27,230 +34,282 @@ export function Products() {
 
   const currentProduct = filteredProducts[currentProductIndex] || products[0];
 
-  // Auto-change product every 7 seconds
+  // Get next products for the scrolling cards (exclude current)
+  const getNextProducts = useCallback(() => {
+    const nextProducts = [];
+    for (let i = 1; i <= Math.min(5, filteredProducts.length - 1); i++) {
+      const idx = (currentProductIndex + i) % filteredProducts.length;
+      nextProducts.push({ ...filteredProducts[idx], originalIndex: idx });
+    }
+    return nextProducts;
+  }, [currentProductIndex, filteredProducts]);
+
+  const nextProducts = getNextProducts();
+
+  // Auto-rotate with progress bar using requestAnimationFrame
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentProductIndex((prev) => (prev + 1) % filteredProducts.length);
-    }, 7000);
+    if (isHovered) {
+      cancelAnimationFrame(animFrameRef.current);
+      return;
+    }
 
-    return () => clearInterval(interval);
-  }, [filteredProducts.length]);
+    lastTimeRef.current = performance.now();
+    progressRef.current = 0;
+    setProgress(0);
 
-  const nextProduct = () => {
-    setCurrentProductIndex((prev) => (prev + 1) % filteredProducts.length);
+    const tick = (now: number) => {
+      const delta = now - lastTimeRef.current;
+      progressRef.current += delta;
+      lastTimeRef.current = now;
+
+      const pct = Math.min((progressRef.current / ROTATE_INTERVAL) * 100, 100);
+      setProgress(pct);
+
+      if (progressRef.current >= ROTATE_INTERVAL) {
+        setCurrentProductIndex((prev) => (prev + 1) % filteredProducts.length);
+        return; // useEffect will re-run and restart
+      }
+
+      animFrameRef.current = requestAnimationFrame(tick);
+    };
+
+    animFrameRef.current = requestAnimationFrame(tick);
+
+    return () => cancelAnimationFrame(animFrameRef.current);
+  }, [currentProductIndex, isHovered, filteredProducts.length]);
+
+
+  const selectProduct = (index: number) => {
+    setCurrentProductIndex(index);
+    progressRef.current = 0;
+    setProgress(0);
   };
 
   return (
     <div 
-      className="min-h-screen pt-24 bg-gradient-to-br from-black via-gray-900 to-black"
+      className="min-h-screen pt-32 bg-gradient-to-br from-black via-gray-900 to-black"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('/uploads/product%20back%20(2).png')`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.93), rgba(0, 0, 0, 0.93)), url('/uploads/product%20back%20(2).png')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
       }}
     >
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        
-        {/* Top Navigation */}
-        <div className="flex items-center justify-end mb-12">
-          <Link
-            to="/contact"
-            className="border border-white/50 text-white px-6 py-2 rounded-lg hover:bg-white/10 transition-colors font-medium"
-          >
-            Health Check
-          </Link>
-        </div>
+      <div className="max-w-7xl mx-auto px-4 py-8 md:py-12">
 
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center min-h-[600px]">
+        {/* Hero Section */}
+        <div 
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-4 items-start min-h-[650px]"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           
-          {/* Left Content - Dynamic Product Description */}
-          <div className="lg:col-span-1">
-            <motion.div
-              key={`left-${currentProduct.id}`}
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              {/* Product Category Badge */}
-              <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 mb-6">
-                <span className="text-white/80 text-sm font-medium capitalize">{currentProduct.category} Solution</span>
-              </div>
-              
-              {/* Product Description */}
-              <p className="text-white/80 text-lg mb-6 leading-relaxed">
-                {currentProduct.description || currentProduct.shortDescription}
-              </p>
-              
-              {/* Product Name as Main Heading */}
-              <h1 className="text-5xl md:text-6xl font-light text-white leading-tight mb-8">
-                {currentProduct.name.split(' ').map((word, index) => (
-                  <span key={index} className="block">
-                    {index === currentProduct.name.split(' ').length - 1 ? (
-                      <span className="font-normal">{word}</span>
-                    ) : (
-                      word
-                    )}
-                  </span>
-                ))}
-              </h1>
-              
-              {/* Product Details */}
-              <div className="grid grid-cols-2 gap-8 mt-12">
-                <div>
-                  <h4 className="text-white/60 text-sm mb-1">Category</h4>
-                  <p className="text-white font-medium capitalize">{currentProduct.category}</p>
+          {/* ===== LEFT SIDE — Large Product Image ===== */}
+          <div className="flex items-center justify-center relative lg:sticky lg:top-32 py-8">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`img-${currentProduct.id}`}
+                initial={{ opacity: 0, scale: 0.85 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className="relative"
+              >
+                {/* Ambient Glow */}
+                <div className="absolute inset-0 translate-y-8">
+                  <div className="w-[420px] h-[420px] mx-auto bg-gradient-to-b from-green-400/20 via-emerald-300/10 to-transparent rounded-full blur-[80px]"></div>
                 </div>
-                <div>
-                  <h4 className="text-white/60 text-sm mb-1">Application</h4>
-                  <p className="text-white font-medium">All Crops</p>
-                </div>
-                <div>
-                  <h4 className="text-white/60 text-sm mb-1">Availability</h4>
-                  <p className={`font-medium ${currentProduct.inStock ? 'text-green-400' : 'text-red-400'}`}>
-                    {currentProduct.inStock ? 'In Stock' : 'Out of Stock'}
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-white/60 text-sm mb-1">Type</h4>
-                  <p className="text-white font-medium">Premium Quality</p>
-                </div>
-              </div>
 
-              {/* Action Button */}
-              <div className="mt-8">
-                <Link
-                  to={`/products/${currentProduct.id}`}
-                  className="inline-flex items-center space-x-2 bg-white/20 hover:bg-white/30 text-white px-6 py-3 rounded-lg transition-all duration-300 font-medium backdrop-blur-sm border border-white/20"
-                >
-                  <span>Learn More About {currentProduct.name}</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Center - Product Showcase */}
-          <div className="lg:col-span-1 flex justify-center">
-            <motion.div
-              key={currentProduct.id}
-              initial={{ opacity: 0, scale: 0.8, rotateY: 90 }}
-              animate={{ opacity: 1, scale: 1, rotateY: 0 }}
-              transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="relative"
-            >
-              {/* Product Image Container */}
-              <div className="relative w-96 h-96 flex items-center justify-center">
-                {/* Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-b from-green-300/30 to-black/30 rounded-full blur-3xl"></div>
-                
                 {/* Product Image */}
-                <img
-                  src={currentProduct.image}
-                  alt={currentProduct.name}
-                  className="relative z-10 w-80 h-80 object-contain drop-shadow-2xl"
-                />
-                
-                {/* Reflection Effect */}
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-80 h-40 opacity-20">
+                <div className="relative w-[340px] h-[440px] md:w-[400px] md:h-[500px] flex items-center justify-center mx-auto">
+                  <img
+                    src={currentProduct.image}
+                    alt={currentProduct.name}
+                    className="relative z-10 w-full h-full object-contain drop-shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
+                  />
+                </div>
+
+                {/* Reflection */}
+                <div className="absolute bottom-[-60px] left-1/2 -translate-x-1/2 w-[300px] h-[100px] opacity-15 pointer-events-none">
                   <img
                     src={currentProduct.image}
                     alt=""
-                    className="w-full h-full object-contain transform scale-y-[-1] blur-sm"
+                    className="w-full h-full object-contain"
+                    style={{ transform: 'scaleY(-1)', filter: 'blur(6px)' }}
                   />
                 </div>
-              </div>
-            </motion.div>
+
+                {/* Subtle floor shadow */}
+                <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 w-[280px] h-[30px] bg-white/5 rounded-full blur-xl"></div>
+              </motion.div>
+            </AnimatePresence>
           </div>
 
-          {/* Right Content */}
-          <div className="lg:col-span-1">
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="text-white/80 text-lg">
-                  Select from our team<br />
-                  of highly skilled and<br />
-                  experienced products
-                </h3>
-                <button
-                  onClick={nextProduct}
-                  className="text-white/60 hover:text-white transition-colors"
-                >
-                  <span className="text-sm mr-2">Next</span>
-                  <ChevronRight className="w-5 h-5 inline" />
-                </button>
-              </div>
+          {/* ===== RIGHT SIDE — Product Details + Scrolling Cards ===== */}
+          <div className="flex flex-col min-h-[600px]">
 
-              {/* Product Card */}
+            {/* Current Product Details */}
+            <AnimatePresence mode="wait">
               <motion.div
-                key={`card-${currentProduct.id}`}
+                key={`details-${currentProduct.id}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="bg-black/30 backdrop-blur-md rounded-2xl p-6 border border-white/10 mb-6"
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.5 }}
+                className="mb-6"
               >
-                <div className="flex items-center space-x-4 mb-4">
-                  <div className="w-16 h-16 bg-white/10 rounded-xl flex items-center justify-center">
-                    <img
-                      src={currentProduct.image}
-                      alt={currentProduct.name}
-                      className="w-12 h-12 object-contain"
-                    />
+                {/* Category Badge */}
+                <div className="inline-flex items-center px-3 py-1.5 bg-white/8 backdrop-blur-sm rounded-full border border-white/15 mb-4">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-400 mr-2"></span>
+                  <span className="text-white/70 text-xs font-medium tracking-wider uppercase">{currentProduct.shortDescription}</span>
+                </div>
+
+                {/* Product Name */}
+                <h1 className="text-4xl md:text-5xl font-light text-white leading-[1.1] mb-3 tracking-tight">
+                  {currentProduct.name}
+                </h1>
+
+                {/* Product Description */}
+                <div className="text-white/55 text-sm leading-relaxed mb-5 max-w-md max-h-[160px] overflow-y-auto pr-2 scrollbar-thin">
+                  {currentProduct.fullDescription.split('\n').filter(line => line.trim()).slice(0, 6).map((line, i) => (
+                    <p key={i} className="mb-1">{line.trim()}</p>
+                  ))}
+                </div>
+
+                {/* Product Attributes Row */}
+                <div className="flex flex-wrap gap-x-8 gap-y-3 mb-5">
+                  <div>
+                    <span className="text-white/40 text-xs uppercase tracking-wider block mb-0.5">Category</span>
+                    <span className="text-white text-sm font-medium capitalize">{currentProduct.category}</span>
                   </div>
                   <div>
-                    <h4 className="text-white font-semibold text-lg">{currentProduct.name}</h4>
-                    <p className="text-white/60 text-sm capitalize">{currentProduct.category}</p>
+                    <span className="text-white/40 text-xs uppercase tracking-wider block mb-0.5">Application</span>
+                    <span className="text-white text-sm font-medium">{currentProduct.application}</span>
+                  </div>
+                  <div>
+                    <span className="text-white/40 text-xs uppercase tracking-wider block mb-0.5">Price</span>
+                    <span className="text-white text-sm font-medium">{currentProduct.price}</span>
+                  </div>
+                  <div>
+                    <span className="text-white/40 text-xs uppercase tracking-wider block mb-0.5">Status</span>
+                    <span className={`text-sm font-medium ${currentProduct.inStock ? 'text-green-400' : 'text-red-400'}`}>
+                      {currentProduct.inStock ? 'In Stock' : 'Out of Stock'}
+                    </span>
                   </div>
                 </div>
-                
-                <p className="text-white/80 text-sm mb-4 leading-relaxed">
-                  {currentProduct.shortDescription}
-                </p>
-                
-                <div className="flex items-center justify-end">
+
+                {/* Action Buttons */}
+                <div className="flex items-center gap-3">
                   <Link
                     to={`/products/${currentProduct.id}`}
-                    className="text-white/80 hover:text-white text-sm flex items-center space-x-1"
+                    className="inline-flex items-center gap-2 bg-white text-black px-5 py-2.5 rounded-lg hover:bg-white/90 transition-all duration-300 text-sm font-semibold"
                   >
-                    <span>View Details</span>
-                    <ArrowRight className="w-4 h-4" />
+                    View Details
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById('all-products')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                    className="inline-flex items-center gap-2 border border-white/20 text-white/70 px-5 py-2.5 rounded-lg hover:bg-white/5 hover:text-white transition-all duration-300 text-sm font-medium"
+                  >
+                    All Products
+                    <ChevronDown className="w-3.5 h-3.5" />
+                  </button>
                 </div>
               </motion.div>
+            </AnimatePresence>
 
-              {/* Product Navigation Dots */}
-              <div className="flex items-center space-x-2 mb-8">
-                {filteredProducts.slice(0, 5).map((_, index) => (
+            {/* Progress Bar */}
+            <div className="w-full h-[2px] bg-white/10 rounded-full mb-5 overflow-hidden">
+              <div 
+                className="h-full bg-gradient-to-r from-green-400 to-emerald-400 rounded-full transition-none"
+                style={{ width: `${progress}%` }}
+              />
+            </div>
+
+            {/* Navigation Dots */}
+            <div className="flex items-center gap-1.5 mb-5">
+              {filteredProducts.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => selectProduct(index)}
+                  className={`h-1.5 rounded-full transition-all duration-500 ${
+                    index === currentProductIndex 
+                      ? 'bg-green-400 w-6' 
+                      : 'bg-white/20 w-1.5 hover:bg-white/40'
+                  }`}
+                  aria-label={`Go to product ${index + 1}`}
+                />
+              ))}
+            </div>
+
+            {/* Scrolling Product Cards — Right to Left Loop */}
+            <div className="overflow-hidden relative rounded-xl">
+              {/* Fade edges */}
+              <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-black/80 to-transparent z-10 pointer-events-none"></div>
+              <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-black/80 to-transparent z-10 pointer-events-none"></div>
+
+              <div className="marquee-track flex gap-3 w-max">
+                {/* First set */}
+                {filteredProducts.map((product, i) => (
                   <button
-                    key={index}
-                    onClick={() => setCurrentProductIndex(index)}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      index === currentProductIndex ? 'bg-white w-6' : 'bg-white/40'
+                    key={`a-${product.id}`}
+                    onClick={() => selectProduct(i)}
+                    className={`group flex flex-col flex-shrink-0 w-[130px] h-[130px] rounded-xl border transition-all duration-300 text-left cursor-pointer overflow-hidden ${
+                      i === currentProductIndex
+                        ? 'bg-white/[0.12] border-green-400/40 scale-105'
+                        : 'bg-white/[0.04] border-white/[0.06] hover:bg-white/[0.08] hover:border-white/15'
                     }`}
-                  />
+                  >
+                    <div className="flex-1 flex items-center justify-center p-2">
+                      <img src={product.image} alt={product.name} className="w-14 h-14 object-contain group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    <div className="px-2.5 pb-2.5">
+                      <h4 className="text-white text-[11px] font-medium truncate">{product.name}</h4>
+                      <p className="text-white/35 text-[9px] truncate mt-0.5">{product.shortDescription}</p>
+                    </div>
+                  </button>
+                ))}
+                {/* Duplicate for seamless loop */}
+                {filteredProducts.map((product, i) => (
+                  <button
+                    key={`b-${product.id}`}
+                    onClick={() => selectProduct(i)}
+                    className={`group flex flex-col flex-shrink-0 w-[130px] h-[130px] rounded-xl border transition-all duration-300 text-left cursor-pointer overflow-hidden ${
+                      i === currentProductIndex
+                        ? 'bg-white/[0.12] border-green-400/40 scale-105'
+                        : 'bg-white/[0.04] border-white/[0.06] hover:bg-white/[0.08] hover:border-white/15'
+                    }`}
+                  >
+                    <div className="flex-1 flex items-center justify-center p-2">
+                      <img src={product.image} alt={product.name} className="w-14 h-14 object-contain group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    <div className="px-2.5 pb-2.5">
+                      <h4 className="text-white text-[11px] font-medium truncate">{product.name}</h4>
+                      <p className="text-white/35 text-[9px] truncate mt-0.5">{product.shortDescription}</p>
+                    </div>
+                  </button>
                 ))}
               </div>
-
-              {/* Browse All Button */}
-              <Link
-                to="#all-products"
-                className="inline-flex items-center space-x-2 text-white hover:text-white/80 transition-colors"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById('all-products')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-              >
-                <span>Browse All Products</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </motion.div>
+            </div>
           </div>
         </div>
+      </div>
+
+      {/* Scroll Down Indicator */}
+      <div className="flex flex-col items-center pb-12 pt-4">
+        <button
+          onClick={() => document.getElementById('all-products')?.scrollIntoView({ behavior: 'smooth' })}
+          className="group flex flex-col items-center gap-2 text-white/40 hover:text-white/70 transition-colors cursor-pointer"
+        >
+          <span className="text-xs uppercase tracking-[0.2em] font-medium">Scroll down to explore all products</span>
+          <div className="w-6 h-10 rounded-full border border-white/20 flex items-start justify-center p-1.5 group-hover:border-white/40 transition-colors">
+            <Mouse className="w-3 h-3 animate-bounce text-white/50 group-hover:text-green-400 transition-colors" />
+          </div>
+          <ChevronDown className="w-4 h-4 animate-bounce" style={{ animationDelay: '0.15s' }} />
+        </button>
       </div>
 
       {/* All Products Section - Changed from white to gradient */}
