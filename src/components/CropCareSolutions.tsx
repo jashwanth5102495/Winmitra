@@ -127,18 +127,18 @@ export function CropCareSolutions() {
           className="text-center mb-10 md:mb-14"
         >
           <div className="inline-flex items-center gap-3 mb-5">
-            <span className="w-10 md:w-14 h-px bg-green-600" />
-            <span className="text-green-600 font-semibold text-xs md:text-sm uppercase tracking-[0.15em]">
+            <span className="w-10 md:w-14 h-px bg-green-700" />
+            <span className="text-green-700 dark:text-green-400 font-semibold text-xs md:text-sm uppercase tracking-[0.15em]">
               OUR SOLUTIONS
             </span>
-            <span className="w-10 md:w-14 h-px bg-green-600" />
+            <span className="w-10 md:w-14 h-px bg-green-700" />
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-[2.75rem] lg:text-5xl font-bold text-gray-800 dark:text-white mb-4 leading-tight">
             Complete Crop Care Solutions
           </h2>
 
-          <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
+          <p className="text-gray-700 dark:text-gray-300 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
             Advanced bio-stimulants and crop-care products designed to support healthier plants,
             <br className="hidden md:inline" /> stronger growth, and better agricultural productivity.
           </p>
@@ -182,10 +182,10 @@ export function CropCareSolutions() {
                       <div className="w-11 h-11 md:w-[52px] md:h-[52px] bg-green-600 rounded-full flex items-center justify-center mb-3 shadow-sm">
                         <Icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
                       </div>
-                      <h3 className="font-bold text-base md:text-lg text-gray-900 dark:text-white mb-1.5 leading-snug">
+                      <h3 className="font-bold text-base md:text-lg text-gray-800 dark:text-white mb-1.5 leading-snug">
                         {solution.title}
                       </h3>
-                      <p className="text-[13px] md:text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+                      <p className="text-[13px] md:text-sm text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
                         {solution.description}
                       </p>
                       <Link
@@ -269,10 +269,10 @@ export function CropCareSolutions() {
 
                 {/* Text */}
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-bold text-sm md:text-base text-gray-900 dark:text-white leading-snug">
+                  <h3 className="font-bold text-sm md:text-base text-gray-800 dark:text-white leading-snug">
                     {solution.title}
                   </h3>
-                  <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400 leading-snug mt-0.5">
+                  <p className="text-xs md:text-sm text-gray-700 dark:text-gray-300 leading-snug mt-0.5">
                     {solution.description}
                   </p>
                 </div>
