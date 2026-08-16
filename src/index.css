@@ -112,3 +112,22 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* Product marquee – continuous right-to-left loop */
+@keyframes product-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.product-marquee-track {
+  animation: product-marquee 40s linear infinite;
+  will-change: transform;
+}
+
+.product-marquee-track:hover {
+  animation-play-state: paused;
+}
