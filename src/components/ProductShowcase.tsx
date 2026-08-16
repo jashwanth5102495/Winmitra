@@ -118,6 +118,7 @@ export function ProductShowcase() {
           style={{
             transform: `translateX(${translateX}px)`,
             width: `${total * totalCardWidth}px`,
+            willChange: 'transform',
           }}
         >
           {products.map((product, index) => {

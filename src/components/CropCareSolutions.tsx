@@ -105,14 +105,12 @@ export function CropCareSolutions() {
       id="crop-care-solutions"
       className="relative py-16 md:py-20 lg:py-24 overflow-hidden"
     >
-      {/* Background Image - Only bbbb.webp */}
+      {/* Background Image */}
       <div className="absolute inset-0">
         <div 
-          className="w-full h-full bg-cover bg-center bg-no-repeat bg-fixed"
+          className="w-full h-full bg-cover bg-center bg-no-repeat"
           style={{ 
             backgroundImage: 'url(/bbbb.webp)',
-            minHeight: '100%',
-            backgroundSize: 'cover'
           }}
         />
       </div>
@@ -220,7 +218,7 @@ export function CropCareSolutions() {
                               }}
                               src={product.image}
                               alt={product.name}
-                              className="max-h-[110px] sm:max-h-[150px] md:max-h-[190px] lg:max-h-[220px] w-auto object-contain drop-shadow-[0_6px_16px_rgba(0,0,0,0.10)] product-float-item"
+                              className="max-h-[110px] sm:max-h-[150px] md:max-h-[190px] lg:max-h-[220px] w-auto object-contain product-float-item"
                               style={{ animationDelay: `${pIdx * 0.8}s` }}
                               loading="lazy"
                               width="180"

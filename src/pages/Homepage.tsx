@@ -7,7 +7,7 @@ import { CropCareSolutions } from '../components/CropCareSolutions';
 export function Homepage() {
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300">
+    <div className="min-h-screen bg-white dark:bg-black">
       {/* Hero Section - New Design */}
       <section className="relative min-h-screen overflow-hidden">
         {/* Background Image */}
@@ -116,7 +116,7 @@ export function Homepage() {
           transition={{ duration: 0.8, delay: 2.2 }}
           className="absolute bottom-8 left-4 right-4 flex justify-center"
         >
-          <div className="bg-white/95 backdrop-blur-md rounded-2xl p-4 md:p-6 shadow-xl border border-white/20 w-full max-w-5xl">
+          <div className="bg-white/95 rounded-2xl p-4 md:p-6 shadow-xl border border-white/20 w-full max-w-5xl">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
               <div className="flex flex-col md:flex-row items-center gap-2 md:gap-3 text-center md:text-left">
                 <div className="w-10 h-10 md:w-12 md:h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
@@ -238,15 +238,18 @@ export function Homepage() {
               {/* Left - Large Image with Floating Card */}
               <div className="lg:col-span-2">
                 <div className="relative rounded-2xl overflow-hidden shadow-xl">
-                  <img
-                    src="/wb.webp"
-                    alt="Fresh Organic Produce"
+                  <video
+                    src="/vid.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
                     className="w-full h-[400px] lg:h-[450px] object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
 
                   {/* Floating Card */}
-                  <div className="absolute bottom-6 left-6 right-6 bg-gradient-to-r from-green-600/95 to-green-700/95 backdrop-blur-sm rounded-xl p-4 shadow-xl">
+                  <div className="absolute bottom-6 left-6 right-6 bg-gradient-to-r from-green-600/95 to-green-700/95 rounded-xl p-4 shadow-xl">
                     <div className="flex items-center gap-3 mb-3">
                       <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center">
                         <Leaf className="w-5 h-5 text-green-800" />
