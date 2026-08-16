@@ -1,11 +1,9 @@
 
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
-import { useTheme } from '../contexts/ThemeContext';
 
 export function Footer() {
-  const { theme } = useTheme();
-
+  
   const handleWhatsAppClick = () => {
     const phoneNumber = '9380198901';
     const message = 'Hi! I would like to know more about your agricultural products.';
@@ -21,7 +19,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <img 
-                src={theme === 'dark' ? '/uploads/dark logo.png' : '/uploads/light logo.png'} 
+                src="/uploads/dark logo.png" 
                 alt="WINMITRA AGRI TECH" 
                 className="h-8 w-auto"
               />

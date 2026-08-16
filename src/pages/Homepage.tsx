@@ -1,24 +1,15 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Leaf, Shield, Sprout, FlaskConical, CheckCircle2, ChevronLeft, ChevronRight } from 'lucide-react';
-import { ProductShowcase } from '../components/ProductShowcase';
+import { ArrowRight, Leaf, Shield, Sprout, FlaskConical } from 'lucide-react';
+import ProductCarousel from '../components/ProductCarousel';
 import { CropCareSolutions } from '../components/CropCareSolutions';
 
 export function Homepage() {
 
-  const highlights = [
-    '100% Organic',
-    'Chemical Free Solutions',
-    'Quality Control',
-    'Trusted by Farmers',
-    'Premium Quality',
-    'Eco-Friendly'
-  ];
-
   return (
     <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col">
+      {/* Hero Section - New Design */}
+      <section className="relative min-h-screen overflow-hidden">
         {/* Background Image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -26,110 +17,150 @@ export function Homepage() {
             backgroundImage: `url('/wb.webp')`
           }}
         />
-        {/* Light Gradient Overlay - Reduced opacity */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-transparent" />
 
-        {/* Centered Hero Content */}
-        <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center px-4 pt-28 pb-32">
+        {/* Main Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center min-h-[calc(100vh-120px)]">
 
+            {/* Left Content */}
+            <div className="lg:col-span-6 space-y-4">
 
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-white/80 text-sm md:text-base tracking-wide mb-4 font-medium"
-            style={{ fontFamily: "'Inter', 'Segoe UI', sans-serif" }}
-          >
-            India's Trusted Agricultural Solutions Company
-          </motion.p>
+              {/* Badge */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="inline-flex items-center gap-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-4 py-2 rounded-full text-sm font-medium"
+              >
+                <Leaf className="w-4 h-4" />
+                Better Growth, Better Tomorrow
+              </motion.div>
 
-          {/* Main Heading */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6 max-w-4xl"
-            style={{
-              fontFamily: "'Inter', 'Segoe UI', sans-serif",
-              textShadow: '0 4px 20px rgba(0,0,0,0.4)'
-            }}
-          >
-            Sustainable Growth For A Better Tomorrow
-          </motion.h1>
+              {/* Main Heading */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="space-y-2"
+              >
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
+                  Nurturing Plants.
+                </h1>
+                <div className="flex items-center gap-3">
+                  <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-green-600 leading-tight">
+                    Enriching Lives.
+                  </h1>
+                  <Leaf className="w-6 h-6 text-green-600" />
+                </div>
+              </motion.div>
 
-          {/* Description */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-white/75 text-base md:text-lg max-w-2xl mb-10 leading-relaxed"
-            style={{ fontFamily: "'Inter', 'Segoe UI', sans-serif" }}
-          >
-            High-Quality Agricultural Products Using Modern And Eco-Friendly Practices.
-          </motion.p>
+              {/* Tagline */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="flex items-center gap-4"
+              >
+                <div className="w-12 h-px bg-gray-400"></div>
+                <span className="text-base font-medium text-gray-700 dark:text-gray-300 whitespace-nowrap">
+                  100% Organic & Effective Solutions
+                </span>
+                <div className="w-12 h-px bg-gray-400"></div>
+              </motion.div>
 
-          {/* CTA Button */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-wrap items-center justify-center gap-4"
-          >
-            <Link
-              to="/products"
-              className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-8 py-3.5 rounded-lg text-base font-semibold transition-all duration-300 shadow-lg shadow-green-500/25 hover:shadow-green-500/40"
-            >
-              Explore Our Products
-            </Link>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-7 py-3.5 rounded-lg text-base font-medium transition-all duration-300 border border-white/20"
-            >
-              Get in Touch
-            </Link>
-          </motion.div>
+              {/* Description */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+                className="text-base text-gray-600 dark:text-gray-300 leading-relaxed max-w-lg"
+              >
+                WinGrow provides advanced bio-stimulants and crop care solutions that promote healthy growth, improve yield and build a sustainable future for agriculture.
+              </motion.p>
+
+              {/* CTA Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                className="flex flex-wrap gap-3"
+              >
+                <Link
+                  to="/products"
+                  className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 shadow-md hover:shadow-lg"
+                >
+                  Explore Products
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+                <Link
+                  to="/about"
+                  className="inline-flex items-center gap-2 bg-transparent border border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-6 py-2.5 rounded-lg text-sm font-medium transition-all duration-300"
+                >
+                  Our Solutions
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </motion.div>
+            </div>
+
+            {/* Right Content - Empty for clean design */}
+            <div className="lg:col-span-6 relative">
+              {/* Empty space for clean hero section */}
+            </div>
+          </div>
         </div>
 
-        {/* Bottom Features Bar */}
+        {/* Bottom Statistics Bar */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          className="relative z-10 bg-black/40 backdrop-blur-md border-t border-white/5"
+          transition={{ duration: 0.8, delay: 2.2 }}
+          className="absolute bottom-8 left-4 right-4 flex justify-center"
         >
-          <div className="max-w-7xl mx-auto px-4 py-4 flex items-center gap-6">
-            {/* Label */}
-            <div className="flex-shrink-0 hidden sm:block">
-              <h3 className="text-white font-semibold text-sm md:text-base whitespace-nowrap">
-                What Makes Us Different
-              </h3>
-            </div>
-
-            {/* Divider */}
-            <div className="hidden sm:block w-px h-8 bg-white/20 flex-shrink-0"></div>
-
-            {/* Scrolling Highlights */}
-            <div className="flex-1 overflow-hidden">
-              <div className="flex items-center gap-6 marquee-features">
-                {[...highlights, ...highlights].map((item, i) => (
-                  <div key={i} className="flex items-center gap-2 flex-shrink-0">
-                    <CheckCircle2 className="w-4 h-4 text-green-400 flex-shrink-0" />
-                    <span className="text-white/80 text-sm whitespace-nowrap">{item}</span>
-                  </div>
-                ))}
+          <div className="bg-white/95 backdrop-blur-md rounded-2xl p-4 md:p-6 shadow-xl border border-white/20 w-full max-w-5xl">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
+              <div className="flex flex-col md:flex-row items-center gap-2 md:gap-3 text-center md:text-left">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Leaf className="w-5 h-5 md:w-6 md:h-6 text-green-600" />
+                </div>
+                <div>
+                  <div className="text-lg md:text-xl font-bold text-gray-900">20+</div>
+                  <div className="text-xs md:text-sm text-gray-600">Premium Products</div>
+                </div>
               </div>
-            </div>
 
-            {/* Navigation Arrows */}
-            <div className="flex items-center gap-2 flex-shrink-0">
-              <button className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/40 transition-colors">
-                <ChevronLeft className="w-4 h-4" />
-              </button>
-              <button className="w-8 h-8 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-white hover:border-white/40 transition-colors">
-                <ChevronRight className="w-4 h-4" />
-              </button>
+              <div className="flex flex-col md:flex-row items-center gap-2 md:gap-3 text-center md:text-left">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Shield className="w-5 h-5 md:w-6 md:h-6 text-green-600" />
+                </div>
+                <div>
+                  <div className="text-lg md:text-xl font-bold text-gray-900">100%</div>
+                  <div className="text-xs md:text-sm text-gray-600">Organic & Safe</div>
+                </div>
+              </div>
+
+              <div className="flex flex-col md:flex-row items-center gap-2 md:gap-3 text-center md:text-left">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5 md:w-6 md:h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="text-sm md:text-lg font-bold text-gray-900">Trusted by</div>
+                  <div className="text-xs md:text-sm text-gray-600">Thousands</div>
+                </div>
+              </div>
+
+              <div className="flex flex-col md:flex-row items-center gap-2 md:gap-3 text-center md:text-left">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5 md:w-6 md:h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="text-sm md:text-lg font-bold text-gray-900">Higher Yield</div>
+                  <div className="text-xs md:text-sm text-gray-600">Better Growth</div>
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>
@@ -356,8 +387,8 @@ export function Homepage() {
         </div>
       </section>
 
-      {/* Product Showcase Section */}
-      <ProductShowcase />
+      {/* Product Carousel Section */}
+      <ProductCarousel />
 
 
 

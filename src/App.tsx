@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { ThemeProvider } from './contexts/ThemeContext';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { WhatsAppButton } from './components/WhatsAppButton';
@@ -17,12 +16,6 @@ function AppContent() {
   const [showIntro, setShowIntro] = useState(true);
   const [hasVisited, setHasVisited] = useState(false);
   const location = useLocation();
-
-  // Set default zoom to 100%
-  useEffect(() => {
-    document.body.style.zoom = '1.0';
-    document.documentElement.style.zoom = '1.0';
-  }, []);
 
   // Check if user has already seen the intro in this session
   useEffect(() => {
@@ -42,31 +35,12 @@ function AppContent() {
     sessionStorage.setItem('introSeen', 'true');
   };
 
-  // Debug function to reset intro (only in development)
-  useEffect(() => {
-    if (process.env.NODE_ENV === 'development') {
-      const resetIntro = () => {
-        sessionStorage.removeItem('introSeen');
-        setHasVisited(false);
-        setShowIntro(true);
-        console.log('🔄 Intro reset! Refresh the page to see intro again.');
-      };
-      
-      // Add to window for debugging
-      (window as any).resetIntro = resetIntro;
-      
-      if (location.pathname === '/' && window.location.search.includes('reset-intro')) {
-        resetIntro();
-      }
-    }
-  }, [location.pathname]);
-
   if (shouldShowIntro) {
     return <IntroAnimation onComplete={handleIntroComplete} />;
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black transition-colors duration-300">
+    <div className="min-h-screen bg-white">
       <Navigation />
       <main>
         <Routes>
@@ -85,12 +59,10 @@ function AppContent() {
 
 function App() {
   return (
-    <ThemeProvider>
-      <Router>
-        <ScrollToTop />
-        <AppContent />
-      </Router>
-    </ThemeProvider>
+    <Router>
+      <ScrollToTop />
+      <AppContent />
+    </Router>
   );
 }
 
