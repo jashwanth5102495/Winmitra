@@ -7,6 +7,10 @@ export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
+  // Pages with dark backgrounds need white nav text when transparent
+  const isDarkPage = location.pathname.startsWith('/products') || location.pathname.startsWith('/about');
+  const useWhiteText = isDarkPage && !isScrolled;
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -48,7 +52,7 @@ export function Navigation() {
               className="w-20 h-20 object-contain"
             />
             <div className="leading-tight">
-              <span className="font-bold text-2xl tracking-wide block text-gray-900">
+              <span className={`font-bold text-2xl tracking-wide block transition-colors duration-300 ${useWhiteText ? 'text-white' : 'text-gray-900'}`}>
                 winGrow
               </span>
               <span className="text-green-500 text-base italic font-medium">
@@ -65,7 +69,7 @@ export function Navigation() {
                 to={link.to}
                 className="relative group"
               >
-                <span className="text-base font-medium text-gray-900 hover:text-green-600 transition-colors duration-200">
+                <span className={`text-base font-medium transition-colors duration-200 ${useWhiteText ? 'text-white/90 hover:text-white' : 'text-gray-900 hover:text-green-600'}`}>
                   {link.label}
                 </span>
                 {location.pathname === link.to && (
@@ -97,7 +101,7 @@ export function Navigation() {
               className="w-14 h-14 object-contain"
             />
             <div className="leading-tight">
-              <span className="font-bold text-lg text-gray-900">winGrow</span>
+              <span className={`font-bold text-lg transition-colors duration-300 ${useWhiteText ? 'text-white' : 'text-gray-900'}`}>winGrow</span>
               <span className="text-green-500 text-xs italic font-medium">Way To Growth</span>
             </div>
           </Link>
@@ -105,7 +109,7 @@ export function Navigation() {
           {/* Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-2.5 text-gray-900 hover:bg-gray-100 rounded-lg transition-colors duration-200 bg-white/90 shadow-sm"
+            className={`p-2.5 rounded-lg transition-colors duration-200 shadow-sm ${useWhiteText ? 'text-white hover:bg-white/20 bg-white/10' : 'text-gray-900 hover:bg-gray-100 bg-white/90'}`}
           >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
