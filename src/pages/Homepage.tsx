@@ -239,7 +239,7 @@ export function Homepage() {
               <div className="lg:col-span-2">
                 <div className="relative rounded-2xl overflow-hidden shadow-xl">
                   <video
-                    src="/vid.mp4"
+                    src="/v.mp4"
                     autoPlay
                     loop
                     muted
