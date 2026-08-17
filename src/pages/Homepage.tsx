@@ -375,9 +375,12 @@ export function Homepage() {
               <div className="relative">
                 <div className="absolute -inset-2 bg-gradient-to-r from-yellow-400/20 to-green-400/20 rounded-full blur-xl"></div>
                 <div className="relative bg-gradient-to-br from-green-700 to-green-800 rounded-2xl p-4 shadow-xl">
-                  <img
-                    src="/wb.webp"
-                    alt="Fresh Vegetable Basket"
+                  <video
+                    src="/v1.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
                     className="w-full h-[280px] object-cover rounded-xl"
                   />
                   <div className="absolute -bottom-4 -right-4 w-20 h-20">
