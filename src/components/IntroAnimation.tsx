@@ -17,7 +17,7 @@ export function IntroAnimation({ onComplete }: IntroAnimationProps) {
 
   // Preload next few frames for smoother playback
   useEffect(() => {
-    const preloadFrames = (startFrame: number, count: number = 10) => {
+    const preloadFrames = (startFrame: number, count: number = 20) => {
       for (let i = 0; i < count && startFrame + i <= 300; i++) {
         const frameNum = startFrame + i;
         const img = new Image();
@@ -62,7 +62,7 @@ export function IntroAnimation({ onComplete }: IntroAnimationProps) {
           setShowingFinalFrame(true);
           return 300;
         }
-        return prev + 1;
+        return prev + 2; // Skip every other frame for faster playback
       });
     }, 33); // ~30fps for smooth playback
 
@@ -74,7 +74,7 @@ export function IntroAnimation({ onComplete }: IntroAnimationProps) {
     if (showingFinalFrame) {
       const finalTimeout = setTimeout(() => {
         onComplete();
-      }, 3000); // 3 second pause on final frame
+      }, 1000); // 1 second pause on final frame
 
       return () => clearTimeout(finalTimeout);
     }

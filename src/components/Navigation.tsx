@@ -28,9 +28,6 @@ export function Navigation() {
     { to: '/', label: 'Home' },
     { to: '/about', label: 'About Us' },
     { to: '/products', label: 'Products' },
-    { to: '/solutions', label: 'Solutions' },
-    { to: '/crops', label: 'Crops' },
-    { to: '/resources', label: 'Resources' },
     { to: '/contact', label: 'Contact Us' },
   ];
 
