@@ -8,7 +8,7 @@ export function Navigation() {
   const location = useLocation();
 
   // Pages with dark backgrounds need white nav text when transparent
-  const isDarkPage = location.pathname.startsWith('/products') || location.pathname.startsWith('/about');
+  const isDarkPage = ['/products', '/about', '/contact'].includes(location.pathname);
   const useWhiteText = isDarkPage && !isScrolled;
 
   useEffect(() => {
@@ -34,7 +34,7 @@ export function Navigation() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,box-shadow] duration-300 ${
-        isScrolled ? 'bg-white shadow-lg border-b border-gray-200' : 'bg-transparent'
+        isScrolled ? 'bg-white dark:bg-gray-900 shadow-lg border-b border-gray-200 dark:border-gray-800' : 'bg-transparent'
       }`}
       style={{ willChange: 'background-color' }}
     >
@@ -42,14 +42,14 @@ export function Navigation() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center justify-between h-24">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-4 flex-shrink-0">
+          <Link to="/" className="flex items-center gap-4 flex-shrink-0 outline-none">
             <img
               src="/uploads/dark logo.png"
               alt="WinGrow"
               className="w-20 h-20 object-contain"
             />
             <div className="leading-tight">
-              <span className={`font-bold text-2xl tracking-wide block transition-colors duration-300 ${useWhiteText ? 'text-white' : 'text-gray-900'}`}>
+              <span className={`font-bold text-2xl tracking-wide block transition-colors duration-300 ${useWhiteText ? 'text-white' : 'text-gray-900 dark:text-white'}`}>
                 winGrow
               </span>
               <span className="text-green-500 text-base italic font-medium">
@@ -64,9 +64,9 @@ export function Navigation() {
               <Link
                 key={link.to}
                 to={link.to}
-                className="relative group"
+                className="relative group outline-none"
               >
-                <span className={`text-base font-medium transition-colors duration-200 ${useWhiteText ? 'text-white/90 hover:text-white' : 'text-gray-900 hover:text-green-600'}`}>
+                <span className={`text-base font-medium transition-colors duration-200 ${useWhiteText ? 'text-white/90 hover:text-white' : 'text-gray-900 dark:text-gray-100 hover:text-green-600 dark:hover:text-green-400'}`}>
                   {link.label}
                 </span>
                 {location.pathname === link.to && (
@@ -81,7 +81,7 @@ export function Navigation() {
           <div className="flex items-center flex-shrink-0">
             <Link
               to="/contact"
-              className="px-6 py-2.5 rounded-lg text-sm font-medium bg-green-600 text-white hover:bg-green-700 transition-colors duration-200 shadow-md"
+              className="px-6 py-2.5 rounded-lg text-sm font-medium bg-green-600 text-white hover:bg-green-700 transition-colors duration-200 shadow-md outline-none"
             >
               Enquiry Now
             </Link>
@@ -91,14 +91,14 @@ export function Navigation() {
         {/* Mobile Navigation */}
         <div className="md:hidden flex items-center justify-between h-20 px-4">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 flex-shrink-0">
+          <Link to="/" className="flex items-center gap-3 flex-shrink-0 outline-none">
             <img
               src="/uploads/dark logo.png"
               alt="WinGrow"
               className="w-14 h-14 object-contain"
             />
             <div className="leading-tight">
-              <span className={`font-bold text-lg transition-colors duration-300 ${useWhiteText ? 'text-white' : 'text-gray-900'}`}>winGrow</span>
+              <span className={`font-bold text-lg transition-colors duration-300 ${useWhiteText ? 'text-white' : 'text-gray-900 dark:text-white'}`}>winGrow</span>
               <span className="text-green-500 text-xs italic font-medium">Way To Growth</span>
             </div>
           </Link>
@@ -106,7 +106,7 @@ export function Navigation() {
           {/* Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`p-2.5 rounded-lg transition-colors duration-200 shadow-sm ${useWhiteText ? 'text-white hover:bg-white/20 bg-white/10' : 'text-gray-900 hover:bg-gray-100 bg-white/90'}`}
+            className={`p-2.5 rounded-lg transition-colors duration-200 shadow-sm outline-none ${useWhiteText ? 'text-white hover:bg-white/20 bg-white/10' : 'text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 bg-white/90 dark:bg-gray-850'}`}
           >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>

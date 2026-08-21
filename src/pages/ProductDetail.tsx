@@ -22,7 +22,7 @@ export function ProductDetail() {
   }
 
   return (
-    <div className="min-h-screen pt-16 bg-gray-50 dark:bg-slate-900">
+    <div className="min-h-screen pt-28 md:pt-32 bg-gray-50 dark:bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Back Button */}
         <motion.div

@@ -64,9 +64,9 @@ ${formData.message}
   };
 
   return (
-    <div className="min-h-screen pt-16 bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* Hero Section */}
-      <section className="py-20 bg-green-600 text-white">
+      <section className="pt-32 pb-20 md:pt-40 md:pb-24 bg-green-600 text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

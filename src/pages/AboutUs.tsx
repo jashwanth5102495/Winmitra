@@ -26,9 +26,9 @@ export function AboutUs() {
   ];
 
   return (
-    <div className="min-h-screen pt-16 bg-white">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-green-600 to-green-800 text-white">
+      <section className="pt-32 pb-20 md:pt-40 md:pb-24 bg-gradient-to-r from-green-600 to-green-800 text-white">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
