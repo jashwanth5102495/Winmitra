@@ -1,123 +1,46 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 interface IntroAnimationProps {
   onComplete: () => void;
 }
 
 export function IntroAnimation({ onComplete }: IntroAnimationProps) {
-  const [currentFrame, setCurrentFrame] = useState(1);
-  const [isPlaying, setIsPlaying] = useState(true);
-  const [showingFinalFrame, setShowingFinalFrame] = useState(false);
-  const [frameError, setFrameError] = useState(false);
-
-  // Format frame number to 5 digits with leading zeros
-  const formatFrameNumber = (num: number) => {
-    return num.toString().padStart(5, '0');
-  };
-
-  // Preload next few frames for smoother playback
   useEffect(() => {
-    const preloadFrames = (startFrame: number, count: number = 20) => {
-      for (let i = 0; i < count && startFrame + i <= 300; i++) {
-        const frameNum = startFrame + i;
-        const img = new Image();
-        img.onload = () => {
-          // Silent preloading
-        };
-        img.onerror = () => {
-          console.warn(`Failed to preload frame ${frameNum}`);
-        };
-        img.src = `/frames/frame_${formatFrameNumber(frameNum)}.webp`;
-      }
-    };
+    // Ultra-fast 0.7s duration for instant responsiveness
+    const timer = setTimeout(() => {
+      onComplete();
+    }, 700);
 
-    // Start preloading from current frame
-    if (currentFrame <= 300) {
-      preloadFrames(currentFrame);
-    }
-  }, [currentFrame]);
-
-  // Test if first frame exists on component mount
-  useEffect(() => {
-    const testImage = new Image();
-    testImage.onload = () => {
-      setFrameError(false);
-    };
-    testImage.onerror = () => {
-      console.error('❌ First intro frame failed to load. Skipping intro.');
-      setFrameError(true);
-      setTimeout(() => onComplete(), 1000);
-    };
-    testImage.src = `/frames/frame_${formatFrameNumber(1)}.webp`;
+    return () => clearTimeout(timer);
   }, [onComplete]);
 
-  // Main animation loop
-  useEffect(() => {
-    if (!isPlaying || frameError || showingFinalFrame) return;
-
-    const interval = setInterval(() => {
-      setCurrentFrame(prev => {
-        if (prev >= 300) {
-          setIsPlaying(false);
-          setShowingFinalFrame(true);
-          return 300;
-        }
-        return prev + 2; // Skip every other frame for faster playback
-      });
-    }, 33); // ~30fps for smooth playback
-
-    return () => clearInterval(interval);
-  }, [isPlaying, frameError, showingFinalFrame]);
-
-  // Handle final frame 3-second pause
-  useEffect(() => {
-    if (showingFinalFrame) {
-      const finalTimeout = setTimeout(() => {
-        onComplete();
-      }, 1000); // 1 second pause on final frame
-
-      return () => clearTimeout(finalTimeout);
-    }
-  }, [showingFinalFrame, onComplete]);
-
-  // Show loading screen if frames are missing
-  if (frameError) {
-    return (
-      <div className="fixed inset-0 z-50 bg-black flex items-center justify-center">
-        <div className="text-center text-white">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-400 mx-auto mb-4"></div>
-          <p className="text-lg">Loading...</p>
-          <p className="text-sm text-white/60 mt-2">Preparing your experience</p>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className="fixed inset-0 z-50 bg-black overflow-hidden">
-      {/* Fullscreen Frame Display - No UI Elements */}
-      <img
-        src={`/frames/frame_${formatFrameNumber(currentFrame)}.webp`}
-        alt=""
-        className="w-full h-full object-cover"
-        style={{ 
-          willChange: 'auto',
-          transform: 'translateZ(0)',
-          backfaceVisibility: 'hidden',
-          perspective: '1000px'
-        }}
-        onError={(e) => {
-          console.warn(`⚠️ Failed to load frame ${currentFrame}`);
-          // If current frame fails but we're not at frame 1, continue
-          if (currentFrame > 10) {
-            // Skip a few frames ahead
-            setCurrentFrame(prev => Math.min(prev + 5, 300));
-          } else {
-            // If early frames fail, skip intro
-            onComplete();
-          }
-        }}
-      />
-    </div>
+    <motion.div
+      initial={{ opacity: 1 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3 }}
+      className="fixed inset-0 z-50 bg-black flex items-center justify-center overflow-hidden"
+    >
+      <motion.div
+        initial={{ scale: 0.85, opacity: 0, y: 15 }}
+        animate={{ scale: 1, opacity: 1, y: 0 }}
+        transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+        className="flex flex-col items-center justify-center text-center px-4"
+      >
+        <img
+          src="/l.webp"
+          alt="WINMITRA AGRI TECH"
+          className="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-4 drop-shadow-[0_10px_25px_rgba(34,197,94,0.35)]"
+        />
+        <h1 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent tracking-wide">
+          WINMITRA AGRI TECH
+        </h1>
+        <p className="text-green-400 text-sm italic font-medium mt-1">
+          ...Way To Farmer's Growth
+        </p>
+      </motion.div>
+    </motion.div>
   );
 }
