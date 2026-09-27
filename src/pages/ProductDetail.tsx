@@ -8,6 +8,16 @@ export function ProductDetail() {
   const { id } = useParams();
   const product = products.find(p => p.id === id);
 
+  const relatedProducts = React.useMemo(() => {
+    if (!product) return [];
+    const sameCategory = products.filter(p => p.category === product.category && p.id !== product.id);
+    if (sameCategory.length >= 4) {
+      return sameCategory.slice(0, 4);
+    }
+    const otherProducts = products.filter(p => p.id !== product.id && !sameCategory.some(sc => sc.id === p.id));
+    return [...sameCategory, ...otherProducts].slice(0, 4);
+  }, [product]);
+
   if (!product) {
     return (
       <div className="min-h-screen pt-16 flex items-center justify-center bg-gray-50 dark:bg-slate-900">
@@ -110,10 +120,7 @@ export function ProductDetail() {
         >
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">Related Products</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {products
-              .filter(p => p.category === product.category && p.id !== product.id)
-              .slice(0, 4)
-              .map((relatedProduct) => (
+            {relatedProducts.map((relatedProduct) => (
                 <Link
                   key={relatedProduct.id}
                   to={`/products/${relatedProduct.id}`}

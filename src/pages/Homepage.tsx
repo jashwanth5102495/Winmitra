@@ -14,7 +14,7 @@ export function Homepage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('/wb.webp')`
+            backgroundImage: `url('/nb.png')`
           }}
         />
 
@@ -186,7 +186,7 @@ export function Homepage() {
             >
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-                style={{ backgroundImage: `url('/wb.webp')` }}
+                style={{ backgroundImage: `url('/nb.png')` }}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60"></div>
 
