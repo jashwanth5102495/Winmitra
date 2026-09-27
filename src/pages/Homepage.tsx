@@ -1,10 +1,42 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Leaf, Shield, Sprout, FlaskConical } from 'lucide-react';
 import ProductCarousel from '../components/ProductCarousel';
 import { CropCareSolutions } from '../components/CropCareSolutions';
 
+const podiumProducts = [
+  {
+    id: 'win-hi-growth',
+    name: 'Win Hi-Growth',
+    tagline: 'Bioactive Fulvic Acid, Amino Acid & Vitamins',
+    image: '/poduct/WIN HI-GROWTH.webp',
+  },
+  {
+    id: 'win-kissan-100',
+    name: 'Win Kissan 100',
+    tagline: 'Non-Ionic Wetter, Spreader & Penetrator',
+    image: '/poduct/Win Kissan 100.webp',
+  },
+  {
+    id: 'win-hap-granules',
+    name: 'Win HAP Granules',
+    tagline: 'Bioactive Humic Substances Granules',
+    image: '/poduct/WIN HAP GRANULES.webp',
+  },
+];
+
 export function Homepage() {
+  const [podiumIndex, setPodiumIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setPodiumIndex((prev) => (prev + 1) % podiumProducts.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const currentPodiumProduct = podiumProducts[podiumIndex];
 
   return (
     <div className="min-h-screen bg-white dark:bg-black">
@@ -102,9 +134,69 @@ export function Homepage() {
               </motion.div>
             </div>
 
-            {/* Right Content - Empty for clean design */}
-            <div className="lg:col-span-6 relative">
-              {/* Empty space for clean hero section */}
+            {/* Right Content - Stone Base Product Showcase */}
+            <div className="lg:col-span-6 relative flex flex-col items-center justify-end min-h-[440px] md:min-h-[520px]">
+              <div className="relative w-full h-[400px] md:h-[460px] flex flex-col items-center justify-end pb-6 md:pb-10">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentPodiumProduct.id}
+                    initial={{ opacity: 0, y: -25, scale: 0.88 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 20, scale: 0.92 }}
+                    transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                    className="flex flex-col items-center relative z-20"
+                  >
+                    {/* Floating Product Image over Stone Base */}
+                    <motion.div
+                      animate={{ y: [0, -7, 0] }}
+                      transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
+                      className="relative flex justify-center items-center"
+                    >
+                      <img
+                        src={currentPodiumProduct.image}
+                        alt={currentPodiumProduct.name}
+                        className="h-60 sm:h-72 md:h-80 w-auto object-contain drop-shadow-[0_25px_30px_rgba(0,0,0,0.45)] select-none pointer-events-none"
+                      />
+                    </motion.div>
+
+                    {/* Floor Shadow on Stone Base */}
+                    <div className="w-48 sm:w-56 h-4 bg-black/35 rounded-full blur-md -mt-2 mb-3 pointer-events-none"></div>
+
+                    {/* Interactive Badge & Details Link */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.2, duration: 0.4 }}
+                      className="flex flex-col items-center text-center"
+                    >
+                      <Link
+                        to={`/products/${currentPodiumProduct.id}`}
+                        className="group inline-flex items-center gap-2 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md px-5 py-2 rounded-full shadow-lg border border-green-500/40 hover:border-green-500 hover:bg-green-600 hover:text-white transition-all duration-300"
+                      >
+                        <span className="w-2 h-2 rounded-full bg-green-500 group-hover:bg-white animate-pulse"></span>
+                        <span className="text-sm font-bold text-gray-900 dark:text-white group-hover:text-white tracking-wide">
+                          {currentPodiumProduct.name}
+                        </span>
+                        <ArrowRight className="w-4 h-4 text-green-600 group-hover:text-white group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    </motion.div>
+                  </motion.div>
+                </AnimatePresence>
+
+                {/* Podium Indicator Dots */}
+                <div className="flex items-center gap-2 mt-4 z-20">
+                  {podiumProducts.map((prod, idx) => (
+                    <button
+                      key={prod.id}
+                      onClick={() => setPodiumIndex(idx)}
+                      className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                        idx === podiumIndex ? 'w-7 bg-green-600' : 'w-2 bg-gray-400/50 hover:bg-green-400/80'
+                      }`}
+                      aria-label={`Show ${prod.name}`}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
