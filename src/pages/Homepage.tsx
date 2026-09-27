@@ -75,7 +75,7 @@ export function Homepage() {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="text-base text-gray-600 dark:text-gray-300 leading-relaxed max-w-lg"
               >
-                WinGrow provides advanced bio-stimulants and crop care solutions that promote healthy growth, improve yield and build a sustainable future for agriculture.
+                WINMITRA AGRI TECH provides advanced bio-stimulants and crop care solutions that promote healthy growth, improve yield and build a sustainable future for agriculture.
               </motion.p>
 
               {/* CTA Buttons */}
@@ -123,7 +123,7 @@ export function Homepage() {
                   <Leaf className="w-5 h-5 md:w-6 md:h-6 text-green-600" />
                 </div>
                 <div>
-                  <div className="text-lg md:text-xl font-bold text-gray-900">20+</div>
+                  <div className="text-lg md:text-xl font-bold text-gray-900">25+</div>
                   <div className="text-xs md:text-sm text-gray-600">Premium Products</div>
                 </div>
               </div>

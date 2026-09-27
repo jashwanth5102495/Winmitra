@@ -19,9 +19,9 @@ export function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <img 
-                src="/uploads/dark logo.png" 
+                src="/l.webp" 
                 alt="WINMITRA AGRI TECH" 
-                className="h-8 w-auto"
+                className="h-10 w-auto"
               />
               <div>
                 <span className="text-xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent block">
@@ -56,7 +56,7 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-green-400" />
-                <span className="text-gray-300">+91 9380198901</span>
+                <span className="text-gray-300">+91 9148849491 / +91 9380198901</span>
               </div>
               <div className="flex items-center space-x-3">
                 <button
@@ -81,7 +81,7 @@ export function Footer() {
 
         <div className="border-t border-gray-800 dark:border-gray-700 mt-12 pt-8 text-center">
           <p className="text-gray-400 dark:text-gray-500">
-            © 2025 Winmitra Agri Tech. All rights reserved. | Privacy Policy | Terms of Service
+            © 2025 WINMITRA AGRI TECH. All rights reserved. | Privacy Policy | Terms of Service
           </p>
         </div>
       </div>

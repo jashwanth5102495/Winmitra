@@ -44,13 +44,13 @@ export function Navigation() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-4 flex-shrink-0 outline-none">
             <img
-              src="/uploads/dark logo.png"
-              alt="WinGrow"
+              src="/l.webp"
+              alt="WINMITRA AGRI TECH"
               className="w-20 h-20 object-contain"
             />
             <div className="leading-tight">
               <span className={`font-bold text-2xl tracking-wide block transition-colors duration-300 ${useWhiteText ? 'text-white' : 'text-gray-900 dark:text-white'}`}>
-                winGrow
+                WINMITRA AGRI TECH
               </span>
               <span className="text-green-500 text-base italic font-medium">
                 Way To Farmer's Growth
@@ -93,13 +93,13 @@ export function Navigation() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 flex-shrink-0 outline-none">
             <img
-              src="/uploads/dark logo.png"
-              alt="WinGrow"
+              src="/l.webp"
+              alt="WINMITRA AGRI TECH"
               className="w-14 h-14 object-contain"
             />
             <div className="leading-tight">
-              <span className={`font-bold text-lg transition-colors duration-300 ${useWhiteText ? 'text-white' : 'text-gray-900 dark:text-white'}`}>winGrow</span>
-              <span className="text-green-500 text-xs italic font-medium">Way To Growth</span>
+              <span className={`font-bold text-sm transition-colors duration-300 ${useWhiteText ? 'text-white' : 'text-gray-900 dark:text-white'}`}>WINMITRA AGRI TECH</span>
+              <span className="text-green-500 text-xs italic font-medium block">Way To Growth</span>
             </div>
           </Link>
 

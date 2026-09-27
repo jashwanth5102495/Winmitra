@@ -33,7 +33,7 @@ const ProductCarousel = () => {
         <div className="text-center mt-12">
           <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-4">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-            20+ Premium Products Available
+            25+ Premium Products Available
           </div>
           <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Discover our complete range of bio-stimulants and crop care solutions designed to maximize your agricultural success.

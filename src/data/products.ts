@@ -9,7 +9,7 @@ export interface Product {
   usage: string[];
   ingredients: string[];
   safetyTips: string[];
-  price: string;
+  price?: string;
   inStock: boolean;
   application: string;
 }
@@ -20,8 +20,8 @@ export const products: Product[] = [
     name: 'Bhoomi Shakthi',
     category: 'organic',
     image: '/poduct/BHOOMI SHAKTHI.webp',
-    shortDescription: 'Potassium Humate 98%',
-    fullDescription: `Bhoomi Shakthi is a Bio-stimulate boost enhancer for soil and crop containing Potassium Humate 98%. This organic granular formulation improves soil health, enhances root growth, increases nutrient uptake, and boosts yield & quality. The product works as a soil conditioner and helps improve overall crop productivity.
+    shortDescription: 'Potassium Humate 49%',
+    fullDescription: `Bhoomi Shakthi is a Bio-stimulate boost enhancer for soil and crop containing Potassium Humate 49%. This organic granular formulation improves soil health, enhances root growth, increases nutrient uptake, and boosts yield & quality. The product works as a soil conditioner and helps improve overall crop productivity.
 
 Key Benefits:
 • Improves Soil Health
@@ -29,15 +29,13 @@ Key Benefits:
 • Increases Nutrient Uptake
 • Boosts Yield & Quality
 
-Recommended Dosage:
-• 1 kg per acre at the time of sowing/planting, top-dressing.
 
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 1 kg.`,
+Packaging Size: 4 kg and 25 kg.`,
     features: [
-      'Potassium Humate 98% concentration',
+      'Potassium Humate 49% concentration',
       'Bio-stimulate boost enhancer',
       'Improves soil health significantly',
       'Enhances root growth and development',
@@ -47,7 +45,6 @@ Packaging Size: 1 kg.`,
       'Soil conditioner properties'
     ],
     usage: [
-      '1 kg per acre at sowing/planting time',
       'Apply during top-dressing',
       'Use along with fertilizers as regular practice',
       'Suitable for wide range of crops',
@@ -55,7 +52,7 @@ Packaging Size: 1 kg.`,
       'Apply to vegetables, fruits, field crops'
     ],
     ingredients: [
-      'Potassium Humate (98%)',
+      'Potassium Humate (49%)',
       'Organic soil enhancers',
       'Soil conditioning compounds',
       'Root growth promoters',
@@ -63,13 +60,11 @@ Packaging Size: 1 kg.`,
       'Yield boosting agents'
     ],
     safetyTips: [
-      'Follow recommended dosage of 1kg per acre',
       'Use with regular fertilizer practice',
       'Safe for all crop types',
       'Store in cool, dry place',
       'Organic and eco-friendly'
     ],
-    price: '₹450',
     inStock: true,
     application: 'All Crops'
   },
@@ -87,7 +82,7 @@ Effectiveness:
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 250 ml`,
+Packaging Size: 4 kg and 25 kg.`,
     features: [
       'Unique residue free plant bio stimulator',
       'Based on protein hydrolyzed with amino acids & vitamins',
@@ -99,9 +94,6 @@ Packaging Size: 250 ml`,
       'Maintains fruit size and shine'
     ],
     usage: [
-      '25 ml per 10 ltr of water',
-      '2.5 ml per ltr of water',
-      '250 to 300 ml per acre',
       'Use along with fertilizers as regular practice',
       'Apply during growth and flowering stages',
       'Suitable for wide range of crops'
@@ -116,12 +108,10 @@ Packaging Size: 250 ml`,
     ],
     safetyTips: [
       'Residue free formulation',
-      'Follow recommended dosage',
       'Use with regular fertilizer practice',
       'Safe for all crop types',
       'Store in cool, dry place'
     ],
-    price: '₹750',
     inStock: true,
     application: 'All Crops'
   },
@@ -139,14 +129,11 @@ Product Features:
 Effectiveness:
 • Improve the resistance against pest and diseases.
 
-Recommended Dosage:
-• 2.5 ml per 1 ltr. of water
-• 250 ml per acre
 
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 250 ml | 500 ml | 1 ltr.`,
+Packaging Size: 4 kg and 25 kg.`,
     features: [
       'Naturally derived organic product',
       'Makes plants healthy and vigorous',
@@ -156,8 +143,6 @@ Packaging Size: 250 ml | 500 ml | 1 ltr.`,
       'Organic crop protection solution'
     ],
     usage: [
-      '2.5 ml per 1 litre of water',
-      '250 ml per acre',
       'Use along with fertilizers as regular practice',
       'Apply to improve plant resistance',
       'Suitable for pest and disease management',
@@ -171,13 +156,11 @@ Packaging Size: 250 ml | 500 ml | 1 ltr.`,
       'Pest and disease resistance promoters'
     ],
     safetyTips: [
-      'Follow recommended dosage: 2.5ml per litre',
       'Use with regular fertilizer practice',
       'Naturally derived and safe',
       'Store in cool, dry place',
       'Safe for organic farming'
     ],
-    price: '₹890',
     inStock: true,
     application: 'All Crops - Pest & Disease Resistance'
   },
@@ -195,7 +178,7 @@ Effectiveness:
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 500 ml`,
+Packaging Size: 4 kg and 25 kg.`,
     features: [
       'Initiates flower bud differentiation',
       'Helps quick emergence of flower/inflorescence',
@@ -207,9 +190,6 @@ Packaging Size: 500 ml`,
       'Bioactive protein hydrolysate 25%'
     ],
     usage: [
-      '25 ml per 10 ltr of water',
-      '2.5 ml per ltr of water',
-      '250 to 300 ml per acre',
       'Use along with fertilizers as regular practice',
       'Apply during pre-flowering and flowering stages',
       'Suitable for field and horticultural crops'
@@ -223,13 +203,11 @@ Packaging Size: 500 ml`,
       'Yield improvement compounds'
     ],
     safetyTips: [
-      'Follow recommended dosage',
       'Use with regular fertilizer practice',
       'Apply at right flowering stage',
       'Store in cool, dry place',
       'Suitable for organic farming'
     ],
-    price: '₹680',
     inStock: true,
     application: 'Flowering Plants'
   },
@@ -247,7 +225,7 @@ Effectiveness:
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 500 ml`,
+Packaging Size: 4 kg and 25 kg.`,
     features: [
       'Initiates flower bud differentiation',
       'Helps quick emergence of fruits',
@@ -259,8 +237,6 @@ Packaging Size: 500 ml`,
       'Biomass hydrolysate formula'
     ],
     usage: [
-      '750-1500 ml per hectare',
-      'Drenching/Drip irrigation: 2500 ml per hectare',
       'Use along with fertilizers as regular practice',
       'Apply during flowering and fruit development',
       'Suitable for field and horticultural crops',
@@ -275,13 +251,11 @@ Packaging Size: 500 ml`,
       'Yield improvement compounds'
     ],
     safetyTips: [
-      'Follow recommended dosage',
       'Use with regular fertilizer practice',
       'Apply at flowering and fruiting stages',
       'Store in cool, dry place',
       'Safe for horticultural crops'
     ],
-    price: '₹920',
     inStock: true,
     application: 'Fruit Crops'
   },
@@ -306,14 +280,11 @@ Product Features:
 Effectiveness:
 • Suitable to improve productivity of a wide range of crops such as vegetables, fruit crops, plantation, field crops, ornamental, fiber crops. Home and gardens etc.
 
-Recommended Dosage:
-• Seed Dressing: Mix 5ml of Win Gold Magic with 1 kg of seed thoroughly and sow. During growth flowering and fruit formation stages: Apply Win Magic at 2 ml per litre of water as a spray (Shake the container before use).
-• 750 to 1500 ml per hectare (300 to 600 ml per acre)for foliar spray and up to 2500 ml per hectare (1000 ml per acre) for drenching or drip irrigation.
 
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 500 ml | 5 ltr`,
+Packaging Size: 4 kg and 25 kg.`,
     features: [
       'NPK consortium with humic substances',
       'Improves nutrient uptake efficiency',
@@ -325,10 +296,6 @@ Packaging Size: 500 ml | 5 ltr`,
       'Higher yield and better quality'
     ],
     usage: [
-      'Seed dressing: 5ml per kg seed',
-      'Foliar spray: 2ml per litre water',
-      '750-1500ml per hectare for foliar spray',
-      'Up to 2500ml per hectare for drip irrigation',
       'Shake container before use',
       'Use with regular fertilizers'
     ],
@@ -341,12 +308,10 @@ Packaging Size: 500 ml | 5 ltr`,
     ],
     safetyTips: [
       'Shake container before use',
-      'Follow recommended dosage',
       'Compatible with drip irrigation',
       'Store in cool, dry place',
       'Use with regular fertilizer practice'
     ],
-    price: '₹1200',
     inStock: true,
     application: 'All Crops'
   },
@@ -372,7 +337,7 @@ Effectiveness:
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 2 kg | 5 kg.`,
+Packaging Size: 4 kg and 25 kg.`,
     features: [
       'Plant biostimulant in granular form',
       'Contains humic substances & nutrients',
@@ -385,7 +350,6 @@ Packaging Size: 2 kg | 5 kg.`,
       'Boosts soil microbial activity'
     ],
     usage: [
-      '12.5- 25 kg per hectare',
       'Use along with fertilizers as regular practice',
       'Apply during planting or growing season',
       'Broadcast or incorporate into soil',
@@ -402,13 +366,11 @@ Packaging Size: 2 kg | 5 kg.`,
       'Soil microbe enhancers'
     ],
     safetyTips: [
-      'Follow recommended dosage',
       'Use with regular fertilizer practice',
       'Safe for all crop types',
       'Enhances soil microbial activity',
       'Store in dry place'
     ],
-    price: '₹580',
     inStock: true,
     application: 'All Crops'
   },
@@ -434,7 +396,7 @@ For Better Efficacy:
 • Win HAP Liquid applications at vegetative stage and early reproductive growth state is more effective.
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 500 ml | 1 ltr. | 5 ltr.`,
+Packaging Size: 4 kg and 25 kg.`,
     features: [
       'Plant biostimulant with 6% humic substances',
       'Derived from renewable agro biomass',
@@ -446,8 +408,6 @@ Packaging Size: 500 ml | 1 ltr. | 5 ltr.`,
       'Improves quality and shelf life'
     ],
     usage: [
-      '750-1500 ml per hectare',
-      'Drenching/Drip irrigation: 2500 ml per hectare',
       'Apply at vegetative stage for better efficacy',
       'Apply during early reproductive growth',
       'Use along with fertilizers as regular practice',
@@ -463,12 +423,10 @@ Packaging Size: 500 ml | 1 ltr. | 5 ltr.`,
     ],
     safetyTips: [
       'Most effective at vegetative stage',
-      'Follow recommended dosage',
       'Use with regular fertilizer practice',
       'Derived from renewable sources',
       'Store in cool, dry place'
     ],
-    price: '₹650',
     inStock: true,
     application: 'All Crops'
   },
@@ -486,7 +444,7 @@ Effectiveness:
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 500 ml`,
+Packaging Size: 4 kg and 25 kg.`,
     features: [
       'Plant Growth Promoter with Amino Peptides',
       'Develops healthy root system',
@@ -497,9 +455,6 @@ Packaging Size: 500 ml`,
       'Safe for humans, animals and environment'
     ],
     usage: [
-      '25 ml per 10 ltr of water',
-      '2.5 ml per ltr of water',
-      '250 to 300 ml per acre',
       'Use along with fertilizers as regular practice',
       'Apply during growth stages',
       'Suitable for wide range of crops'
@@ -513,13 +468,11 @@ Packaging Size: 500 ml`,
       'Photosynthesis enhancers'
     ],
     safetyTips: [
-      'Follow recommended dosage',
       'Use with regular fertilizer practice',
       'Safe for humans and animals',
       'Environment friendly',
       'Store in cool, dry place'
     ],
-    price: '₹780',
     inStock: true,
     application: 'All Crops'
   },
@@ -542,16 +495,12 @@ Product Features:
 Effectiveness:
 • Can be used for all crops including vegetables, fruits, floriculture and plantation as a tank mix.
 
-Recommended Dosage:
-• 5 ml in 15 litres of water (with recommended dosage of insecticides, fungicides, foliar fertilizers and plant nutrients as per label instruction)
-• 20 ml in 15 litres of water (with herbicides)
-• 160 ml in 80 litres of water per acre (for irrigation)
 
 For Better Efficacy:
 • Ensure complete coverage of canopy
 • Follow the label
 
-Packaging Size: 100 ml | 500 ml | 5 ltr`,
+Packaging Size: 4 kg and 25 kg.`,
     features: [
       'Multi-action spray adjuvant',
       'Minimum 82% active ingredients',
@@ -561,9 +510,6 @@ Packaging Size: 100 ml | 500 ml | 5 ltr`,
       'Compatible with wide range of agrochemicals'
     ],
     usage: [
-      '5 ml in 15 litres water with insecticides/fungicides',
-      '20 ml in 15 litres water with herbicides',
-      '160 ml in 80 litres water per acre for irrigation',
       'Ensure complete canopy coverage',
       'Use as tank mix with other agrochemicals'
     ],
@@ -576,12 +522,10 @@ Packaging Size: 100 ml | 500 ml | 5 ltr`,
     ],
     safetyTips: [
       'Follow label instructions carefully',
-      'Use recommended dosage only',
       'Ensure proper mixing',
       'Store in cool, dry place',
       'Compatible with most agrochemicals'
     ],
-    price: '₹520',
     inStock: true,
     application: 'All Crops'
   },
@@ -606,7 +550,7 @@ Effectiveness:
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 500 ml`,
+Packaging Size: 4 kg and 25 kg.`,
     features: [
       'Eco-friendly biostimulant',
       'Promotes lush green crop growth',
@@ -616,8 +560,6 @@ Packaging Size: 500 ml`,
       'Boosts soil microbial activity'
     ],
     usage: [
-      'Foliar application: 2.5ml per litre water',
-      'Soil application: 500ml per acre for drip irrigation',
       'Use along with fertilizers as regular practice',
       'Suitable for wide range of crops',
       'Apply during growth stages'
@@ -630,13 +572,11 @@ Packaging Size: 500 ml`,
       'Microbial activators'
     ],
     safetyTips: [
-      'Follow recommended dosage',
       'Use with regular fertilizer practice',
       'Store in cool, dry place',
       'Eco-friendly and safe',
       'Suitable for organic farming'
     ],
-    price: '₹430',
     inStock: true,
     application: 'All Crops'
   },
@@ -654,7 +594,7 @@ Effectiveness:
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 1 Ltr.`,
+Packaging Size: 4 kg and 25 kg.`,
     features: [
       'Naturally driven organic product',
       'Influences all crop physiological systems',
@@ -667,9 +607,6 @@ Packaging Size: 1 Ltr.`,
       'Reduces flower and fruit drops'
     ],
     usage: [
-      '25 ml per 10 ltr of water',
-      '2.5 ml per ltr of water',
-      '250 to 300 ml per acre',
       'Use along with fertilizers as regular practice',
       'Apply during growth, flowering & fruiting stages',
       'Suitable for wide range of crops'
@@ -684,12 +621,10 @@ Packaging Size: 1 Ltr.`,
     ],
     safetyTips: [
       'Naturally driven organic product',
-      'Follow recommended dosage',
       'Use with regular fertilizer practice',
       'Safe for all crop types',
       'Store in cool, dry place'
     ],
-    price: '₹690',
     inStock: true,
     application: 'All Crops'
   },
@@ -707,14 +642,11 @@ Tobacco mosaic virus, cauliflower mosaic virus, barley yellow dwarf, bud blight,
 Effectiveness:
 • Effective control of bacterial virus diseases.
 
-Recommended Dosage:
-• 2 ml per ltr.
-• 250 ml per acre
 
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 100 ml | 250 ml`,
+Packaging Size: 4 kg and 25 kg.`,
     features: [
       'Virus & bacteria killer for foliar application',
       'Strong killing effect against plant virus and bacteria',
@@ -727,8 +659,6 @@ Packaging Size: 100 ml | 250 ml`,
       'Direct contact spray effectiveness'
     ],
     usage: [
-      '2 ml per litre of water',
-      '250 ml per acre',
       'Foliar application on all crops',
       'Use along with fertilizers as regular practice',
       'Direct contact spray for virus control',
@@ -743,13 +673,11 @@ Packaging Size: 100 ml | 250 ml`,
       'Resistance inducing factors'
     ],
     safetyTips: [
-      'Follow recommended dosage: 2ml per litre',
       'Use with regular fertilizer practice',
       'Suitable for foliar application',
       'Effective against wide range of viral diseases',
       'Store in cool, dry place'
     ],
-    price: '₹620',
     inStock: true,
     application: 'All Crops - Viral & Bacterial Disease Control'
   },
@@ -764,13 +692,11 @@ Packaging Size: 100 ml | 250 ml`,
 Effectiveness:
 • Suitable to improve productivity of a wide range of crops such as vegetables, fruit crops, plantation, field crops, ornamental, fiber crops. Home and gardens etc.
 
-Recommended Dosage:
-• For use in nursery, use 250 g/acre.
 
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 250 gms.`,
+Packaging Size: 4 kg and 25 kg.`,
     features: [
       'Increases water absorption from soil',
       'Enhances crop immunity',
@@ -781,7 +707,6 @@ Packaging Size: 250 gms.`,
       'Bio-chemical bio stimulant formulation'
     ],
     usage: [
-      '250 g per acre for nursery use',
       'Use along with fertilizers as regular practice',
       'Apply to wide range of crops',
       'Suitable for vegetables, fruits, plantation crops',
@@ -797,13 +722,11 @@ Packaging Size: 250 gms.`,
       'Defense mechanism activators'
     ],
     safetyTips: [
-      'Follow recommended dosage: 250g per acre',
       'Use with regular fertilizer practice',
       'Especially effective during water stress',
       'Safe for wide range of crops',
       'Store in cool, dry place'
     ],
-    price: '₹750',
     inStock: true,
     application: 'All Crops - Defense & Stress Protection'
   },
@@ -821,14 +744,11 @@ Product Features:
 Effectiveness:
 • Improve the resistance against pest and diseases.
 
-Recommended Dosage:
-• 2.5 ml per 1 ltr. of water
-• 250 ml per acre
 
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 250 ml | 500 ml | 1 ltr.`,
+Packaging Size: 4 kg and 25 kg.`,
     features: [
       'Naturally derived organic product',
       'Makes plants healthy and vigorous',
@@ -838,8 +758,6 @@ Packaging Size: 250 ml | 500 ml | 1 ltr.`,
       'Organic crop protection solution'
     ],
     usage: [
-      '2.5 ml per 1 litre of water',
-      '250 ml per acre',
       'Use along with fertilizers as regular practice',
       'Apply to improve plant resistance',
       'Suitable for pest and disease management',
@@ -853,13 +771,11 @@ Packaging Size: 250 ml | 500 ml | 1 ltr.`,
       'Pest and disease resistance promoters'
     ],
     safetyTips: [
-      'Follow recommended dosage: 2.5ml per litre',
       'Use with regular fertilizer practice',
       'Naturally derived and safe',
       'Store in cool, dry place',
       'Safe for organic farming'
     ],
-    price: '₹820',
     inStock: true,
     application: 'All Crops - Pest & Disease Resistance'
   },
@@ -877,13 +793,11 @@ Product Features:
 Effectiveness:
 • Improve resistance against pest and diseases.
 
-Recommended Dosage:
-• 1gm. per 1 litre of water.
 
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 100 gms.`,
+Packaging Size: 4 kg and 25 kg.`,
     features: [
       'Naturally derived organic product',
       'Makes plants healthy and vigorous',
@@ -893,7 +807,6 @@ Packaging Size: 100 gms.`,
       'Enhances plant vigor and health'
     ],
     usage: [
-      '1 gm per 1 litre of water',
       'Use along with fertilizers as regular practice',
       'Apply to improve plant resistance',
       'Suitable for pest and disease management',
@@ -907,13 +820,11 @@ Packaging Size: 100 gms.`,
       'Biostimulant compounds'
     ],
     safetyTips: [
-      'Follow recommended dosage: 1gm per litre',
       'Use with regular fertilizer practice',
       'Naturally derived and safe',
       'Store in cool, dry place',
       'Mix thoroughly before use'
     ],
-    price: '₹880',
     inStock: true,
     application: 'All Crops - Pest & Disease Resistance'
   },
@@ -931,14 +842,11 @@ Product Features:
 Effectiveness:
 • Improve the resistance against trips & mites diseases.
 
-Recommended Dosage:
-• 2.5 ml per 1 ltr. of water
-• 250 ml per acre
 
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 250 ml | 500 ml | 1 ltr.`,
+Packaging Size: 4 kg and 25 kg.`,
     features: [
       'Naturally derived organic product',
       'Makes plants healthy and vigorous',
@@ -948,8 +856,6 @@ Packaging Size: 250 ml | 500 ml | 1 ltr.`,
       'Specialized for trips and mites control'
     ],
     usage: [
-      '2.5 ml per 1 litre of water',
-      '250 ml per acre',
       'Use along with fertilizers as regular practice',
       'Apply to improve resistance against trips & mites',
       'Suitable for pest management',
@@ -963,13 +869,11 @@ Packaging Size: 250 ml | 500 ml | 1 ltr.`,
       'Disease resistance promoters'
     ],
     safetyTips: [
-      'Follow recommended dosage: 2.5ml per litre',
       'Use with regular fertilizer practice',
       'Naturally derived and safe',
       'Store in cool, dry place',
       'Effective for organic farming'
     ],
-    price: '₹1150',
     inStock: true,
     application: 'All Crops - Trips & Mites Control'
   },
@@ -979,12 +883,23 @@ Packaging Size: 250 ml | 500 ml | 1 ltr.`,
     category: 'specialty',
     image: '/poduct/WIN VEERA.webp',
     shortDescription: 'Warrior Formula',
-    fullDescription: `Win Veera is a warrior formula designed to fight plant challenges effectively. This powerful solution tackles tough agricultural challenges with strength and precision.`,
+    fullDescription: `Win Veera is a warrior formula designed to fight plant challenges effectively. This powerful solution tackles tough agricultural challenges with strength and precision.
+
+Packaging Size: 4 kg and 25 kg.`,
     features: ['Warrior strength', 'Challenge fighter', 'Effective formula', 'Powerful solution'],
-    usage: ['Use against challenges', 'Apply when needed', 'Follow warrior protocol', 'Strategic application'],
+    usage: [
+      'Use against challenges',
+      'Apply when needed',
+      'Follow warrior protocol',
+      'Strategic application'
+    ],
     ingredients: ['Warrior compounds', 'Challenge fighters', 'Strength enhancers', 'Power agents'],
-    safetyTips: ['Handle with strength', 'Use strategically', 'Store warrior-safe', 'Follow protocols'],
-    price: '₹720',
+    safetyTips: [
+      'Handle with strength',
+      'Use strategically',
+      'Store warrior-safe',
+      'Follow protocols'
+    ],
     inStock: true,
     application: 'All Crops'
   },
@@ -1002,7 +917,7 @@ Effectiveness:
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 500 gms.`,
+Packaging Size: 4 kg and 25 kg.`,
     features: [
       'Biological enzymatic hydrolysis technology',
       'Double chelating technology',
@@ -1015,10 +930,8 @@ Packaging Size: 500 gms.`,
       'Contains alginic acid, seaweed extract, proteins'
     ],
     usage: [
-      '300 gm to 500 gm per Acre at sowing/planting',
       'Top-dressing for best results - use twice in crop',
       'After 20-25 days from first use',
-      '1gm/1tr at plant growing period',
       'Use along with fertilizers as regular practice',
       'Works on all types of crops'
     ],
@@ -1033,13 +946,11 @@ Packaging Size: 500 gms.`,
       'Special ADO compounds'
     ],
     safetyTips: [
-      'Follow recommended dosage',
       'Use twice in crop cycle for best results',
       'Use with regular fertilizer practice',
       'Safe for all crop types',
       'Store in dry place'
     ],
-    price: '₹950',
     inStock: true,
     application: 'All Crops'
   },
@@ -1049,12 +960,23 @@ Packaging Size: 500 gms.`,
     category: 'specialty',
     image: '/poduct/WINMITRA GOLD.webp',
     shortDescription: 'Premium Gold Formula',
-    fullDescription: `Winmitra Gold represents the pinnacle of agricultural nutrition with gold-standard quality. This premium product delivers exceptional results with unmatched quality and performance.`,
+    fullDescription: `Winmitra Gold represents the pinnacle of agricultural nutrition with gold-standard quality. This premium product delivers exceptional results with unmatched quality and performance.
+
+Packaging Size: 4 kg and 25 kg.`,
     features: ['Gold standard', 'Premium quality', 'Ultimate nutrition', 'Exceptional results'],
-    usage: ['Premium application', 'Use for gold results', 'Follow gold standards', 'Premium protocol'],
+    usage: [
+      'Premium application',
+      'Use for gold results',
+      'Follow gold standards',
+      'Premium protocol'
+    ],
     ingredients: ['Gold-grade nutrients', 'Premium compounds', 'Ultimate additives', 'Excellence enhancers'],
-    safetyTips: ['Handle premium product', 'Follow gold protocols', 'Premium storage', 'Quality assurance'],
-    price: '₹1350',
+    safetyTips: [
+      'Handle premium product',
+      'Follow gold protocols',
+      'Premium storage',
+      'Quality assurance'
+    ],
     inStock: true,
     application: 'All Crops'
   },
@@ -1069,14 +991,11 @@ Packaging Size: 500 gms.`,
 Effectiveness:
 • Improve the resistance for stem borer and leaf folder in paddy crop.
 
-Recommended Dosage:
-• 2.5 ml per 1 ltr. of water
-• 250 ml per acre
 
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 250 ml | 500 ml | 1 ltr.`,
+Packaging Size: 4 kg and 25 kg.`,
     features: [
       'Naturally driven organic product',
       'Influences all crop plant physiological systems',
@@ -1091,8 +1010,6 @@ Packaging Size: 250 ml | 500 ml | 1 ltr.`,
       'Improves resistance to stem borer and leaf folder in paddy'
     ],
     usage: [
-      '2.5 ml per 1 litre of water',
-      '250 ml per acre',
       'Use along with fertilizers as regular practice',
       'Apply during flowering & fruiting stages',
       'Suitable for all crops',
@@ -1107,13 +1024,11 @@ Packaging Size: 250 ml | 500 ml | 1 ltr.`,
       'Defense mechanism strengtheners'
     ],
     safetyTips: [
-      'Follow recommended dosage: 2.5ml per litre',
       'Use with regular fertilizer practice',
       'Naturally driven organic formulation',
       'Safe for all crop types',
       'Store in cool, dry place'
     ],
-    price: '₹680',
     inStock: true,
     application: 'All Crops - Especially Paddy'
   },
@@ -1128,13 +1043,11 @@ Packaging Size: 250 ml | 500 ml | 1 ltr.`,
 Effectiveness:
 • Effective and long duration protection from early short borer and top borer with unique mode of action
 
-Recommended Dosage:
-• 4 kg per acre
 
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 4 kg.`,
+Packaging Size: 4 kg and 25 kg.`,
     features: [
       'Naturally driven organic granules',
       'Influences all crops plant physiological systems',
@@ -1150,7 +1063,6 @@ Packaging Size: 4 kg.`,
       'Long duration protection with unique mode of action'
     ],
     usage: [
-      '4 kg per acre',
       'Use along with fertilizers as regular practice',
       'Apply during planting or growing season',
       'Suitable for all crops',
@@ -1167,13 +1079,11 @@ Packaging Size: 4 kg.`,
       'Borer protection agents'
     ],
     safetyTips: [
-      'Follow recommended dosage: 4kg per acre',
       'Use with regular fertilizer practice',
       'Naturally driven organic formulation',
       'Safe for all crop types',
       'Store in dry place'
     ],
-    price: '₹890',
     inStock: true,
     application: 'All Crops - Borer Protection'
   }

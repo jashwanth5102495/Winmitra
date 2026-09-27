@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.greenplanttechnologies.in/sitemap.xml
+# Disallow internal assets / private temp paths if any
+Disallow: /scratch/
+
+# Sitemap location for Google, Bing, DuckDuckGo & Yahoo crawlers
+Sitemap: https://www.winmitraagritech.com/sitemap.xml

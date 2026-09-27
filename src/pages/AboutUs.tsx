@@ -36,7 +36,7 @@ export function AboutUs() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-5xl font-bold mb-6">About Winmitra Agri Tech</h1>
+            <h1 className="text-5xl font-bold mb-6">About WINMITRA AGRI TECH</h1>
             <p className="text-xl max-w-3xl mx-auto">
               Leading the way in sustainable agriculture with innovative bio-stimulants and crop care solutions
             </p>

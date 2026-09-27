@@ -33,7 +33,7 @@ ${formData.message}
       `;
 
       // Create mailto link
-      const mailtoLink = `mailto:contactus@greenplanttechnologies.in?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+      const mailtoLink = `mailto:winmitraagritech@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
       
       // Open default email client
       window.location.href = mailtoLink;
@@ -99,9 +99,9 @@ ${formData.message}
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white">Visit Our Office</h3>
                     <p className="text-gray-600 dark:text-gray-300 mt-1">
-                      No. 134, KEB Office Beside<br />
-                      Vijayapura Road, Devanahalli<br />
-                      Bengaluru Rural District - 562110
+                      No. 68/10, Kammasandra Main Road,<br />
+                      Dasanapura Hobli, Kadabagere,<br />
+                      Bangalore Urban, Karnataka-562162.
                     </p>
                   </div>
                 </div>
@@ -111,8 +111,8 @@ ${formData.message}
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white">Call Us</h3>
                     <p className="text-gray-600 dark:text-gray-300 mt-1">
-                      +91 9513487926<br />
-                      +91 8310355433
+                      +91 9148849491<br />
+                      +91 9380198901
                     </p>
                   </div>
                 </div>
@@ -122,7 +122,7 @@ ${formData.message}
                   <div>
                     <h3 className="font-semibold text-gray-900 dark:text-white">Email Us</h3>
                     <p className="text-gray-600 dark:text-gray-300 mt-1">
-                      contactus@greenplanttechnologies.in
+                      winmitraagritech@gmail.com
                     </p>
                   </div>
                 </div>

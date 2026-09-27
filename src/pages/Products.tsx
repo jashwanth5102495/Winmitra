@@ -187,10 +187,6 @@ export function Products() {
                     <span className="text-white text-sm font-medium">{currentProduct.application}</span>
                   </div>
                   <div>
-                    <span className="text-white/40 text-xs uppercase tracking-wider block mb-0.5">Price</span>
-                    <span className="text-white text-sm font-medium">{currentProduct.price}</span>
-                  </div>
-                  <div>
                     <span className="text-white/40 text-xs uppercase tracking-wider block mb-0.5">Status</span>
                     <span className={`text-sm font-medium ${currentProduct.inStock ? 'text-green-400' : 'text-red-400'}`}>
                       {currentProduct.inStock ? 'In Stock' : 'Out of Stock'}
