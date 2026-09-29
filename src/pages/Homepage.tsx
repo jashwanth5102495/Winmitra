@@ -24,6 +24,30 @@ const podiumProducts = [
     tagline: 'Bioactive Humic Substances Granules',
     image: '/poduct/WIN HAP GRANULES.webp',
   },
+  {
+    id: 'win-hap-liquid',
+    name: 'Win Humic (HAP Liquid)',
+    tagline: 'Bioactive Humic Substances 6%',
+    image: '/poduct/WIN HAP LIQUID.webp',
+  },
+  {
+    id: 'bhoomi-shakthi',
+    name: 'Bhoomi Shakthi (Humate)',
+    tagline: 'Potassium Humate 49%',
+    image: '/poduct/BHOOMI SHAKTHI.webp',
+  },
+  {
+    id: 'winmitra-crop-care',
+    name: 'Winmitra Crop Care',
+    tagline: 'High Performance Crop Care Formula',
+    image: '/1.png',
+  },
+  {
+    id: 'winmitra-bio-stimulant',
+    name: 'Winmitra Bio-Stimulant',
+    tagline: 'Advanced Organic Bio-Stimulant',
+    image: '/2.png',
+  },
 ];
 
 export function Homepage() {
@@ -170,7 +194,7 @@ export function Homepage() {
                       className="flex flex-col items-center text-center"
                     >
                       <Link
-                        to={`/products/${currentPodiumProduct.id}`}
+                        to={['winmitra-crop-care', 'winmitra-bio-stimulant'].includes(currentPodiumProduct.id) ? '/products' : `/products/${currentPodiumProduct.id}`}
                         className="group inline-flex items-center gap-2 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md px-5 py-2 rounded-full shadow-lg border border-green-500/40 hover:border-green-500 hover:bg-green-600 hover:text-white transition-all duration-300"
                       >
                         <span className="w-2 h-2 rounded-full bg-green-500 group-hover:bg-white animate-pulse"></span>
