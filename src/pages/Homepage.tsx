@@ -61,22 +61,60 @@ export function Homepage() {
   const [isWhyChooseMuted, setIsWhyChooseMuted] = useState(true);
   const [isFarmMuted, setIsFarmMuted] = useState(true);
 
-  const whyChooseRef = useRef<HTMLVideoElement>(null);
-  const farmRef = useRef<HTMLVideoElement>(null);
+  const whyChooseRefs = useRef<(HTMLVideoElement | null)[]>([]);
+  const farmRefs = useRef<(HTMLVideoElement | null)[]>([]);
+
+  const handleWhyChooseEnded = (endedIdx: number) => {
+    const nextIdx = (endedIdx + 1) % whyChooseVideos.length;
+    const nextEl = whyChooseRefs.current[nextIdx];
+    if (nextEl) {
+      nextEl.currentTime = 0;
+      nextEl.muted = isWhyChooseMuted;
+      nextEl.play().catch(() => {});
+    }
+    setWhyChooseVideoIdx(nextIdx);
+  };
+
+  const handleFarmEnded = (endedIdx: number) => {
+    const nextIdx = (endedIdx + 1) % farmToTableVideos.length;
+    const nextEl = farmRefs.current[nextIdx];
+    if (nextEl) {
+      nextEl.currentTime = 0;
+      nextEl.muted = isFarmMuted;
+      nextEl.play().catch(() => {});
+    }
+    setFarmVideoIdx(nextIdx);
+  };
+
+  const toggleWhyChooseMute = () => {
+    const nextMuted = !isWhyChooseMuted;
+    setIsWhyChooseMuted(nextMuted);
+    whyChooseRefs.current.forEach((el) => {
+      if (el) el.muted = nextMuted;
+    });
+  };
+
+  const toggleFarmMute = () => {
+    const nextMuted = !isFarmMuted;
+    setIsFarmMuted(nextMuted);
+    farmRefs.current.forEach((el) => {
+      if (el) el.muted = nextMuted;
+    });
+  };
 
   useEffect(() => {
-    if (whyChooseRef.current) {
-      whyChooseRef.current.load();
-      whyChooseRef.current.muted = isWhyChooseMuted;
-      whyChooseRef.current.play().catch(() => {});
+    const el = whyChooseRefs.current[whyChooseVideoIdx];
+    if (el) {
+      el.muted = isWhyChooseMuted;
+      el.play().catch(() => {});
     }
   }, [whyChooseVideoIdx]);
 
   useEffect(() => {
-    if (farmRef.current) {
-      farmRef.current.load();
-      farmRef.current.muted = isFarmMuted;
-      farmRef.current.play().catch(() => {});
+    const el = farmRefs.current[farmVideoIdx];
+    if (el) {
+      el.muted = isFarmMuted;
+      el.play().catch(() => {});
     }
   }, [farmVideoIdx]);
 
@@ -381,26 +419,27 @@ export function Homepage() {
               {/* Left - Large Image with Floating Card */}
               <div className="lg:col-span-2 flex justify-center">
                 <div className="relative w-full max-w-[320px] sm:max-w-[360px] aspect-[9/16] rounded-2xl overflow-hidden shadow-xl bg-black">
-                  <video
-                    ref={whyChooseRef}
-                    src={whyChooseVideos[whyChooseVideoIdx]}
-                    autoPlay
-                    muted={isWhyChooseMuted}
-                    playsInline
-                    onEnded={() => setWhyChooseVideoIdx((prev) => (prev + 1) % whyChooseVideos.length)}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none"></div>
+                  {whyChooseVideos.map((src, idx) => (
+                    <video
+                      key={src}
+                      ref={(el) => (whyChooseRefs.current[idx] = el)}
+                      src={src}
+                      autoPlay={idx === 0}
+                      muted={isWhyChooseMuted}
+                      playsInline
+                      preload="auto"
+                      aria-hidden="true"
+                      onEnded={() => handleWhyChooseEnded(idx)}
+                      className={`absolute inset-0 w-full h-full object-cover pointer-events-none transform-gpu transition-opacity duration-300 ${
+                        idx === whyChooseVideoIdx ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                      }`}
+                    />
+                  ))}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none z-15"></div>
 
                   {/* Audio Mute/Unmute Toggle Button */}
                   <button
-                    onClick={() => {
-                      const nextState = !isWhyChooseMuted;
-                      setIsWhyChooseMuted(nextState);
-                      if (whyChooseRef.current) {
-                        whyChooseRef.current.muted = nextState;
-                      }
-                    }}
+                    onClick={toggleWhyChooseMute}
                     className="absolute top-4 right-4 z-20 px-3 py-1.5 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-md transition-all shadow-lg flex items-center gap-1.5 text-xs font-semibold border border-white/20"
                     title={isWhyChooseMuted ? "Unmute Sound" : "Mute Sound"}
                     aria-label={isWhyChooseMuted ? "Unmute Sound" : "Mute Sound"}
@@ -544,25 +583,26 @@ export function Homepage() {
               {/* Right - Vegetable Basket Image / Video */}
               <div className="relative">
                 <div className="absolute -inset-2 bg-gradient-to-r from-yellow-400/20 to-green-400/20 rounded-full blur-xl"></div>
-                <div className="relative bg-gradient-to-br from-green-700 to-green-800 rounded-2xl p-4 shadow-xl overflow-hidden">
-                  <video
-                    ref={farmRef}
-                    src={farmToTableVideos[farmVideoIdx]}
-                    autoPlay
-                    muted={isFarmMuted}
-                    playsInline
-                    onEnded={() => setFarmVideoIdx((prev) => (prev + 1) % farmToTableVideos.length)}
-                    className="w-full h-[280px] sm:h-[320px] object-cover rounded-xl"
-                  />
+                <div className="relative bg-gradient-to-br from-green-700 to-green-800 rounded-2xl p-4 shadow-xl overflow-hidden h-[310px] sm:h-[350px]">
+                  {farmToTableVideos.map((src, idx) => (
+                    <video
+                      key={src}
+                      ref={(el) => (farmRefs.current[idx] = el)}
+                      src={src}
+                      autoPlay={idx === 0}
+                      muted={isFarmMuted}
+                      playsInline
+                      preload="auto"
+                      aria-hidden="true"
+                      onEnded={() => handleFarmEnded(idx)}
+                      className={`absolute inset-4 w-[calc(100%-2rem)] h-[calc(100%-2rem)] object-cover rounded-xl pointer-events-none transform-gpu transition-opacity duration-300 ${
+                        idx === farmVideoIdx ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                      }`}
+                    />
+                  ))}
                   {/* Audio Mute/Unmute Toggle Button */}
                   <button
-                    onClick={() => {
-                      const nextState = !isFarmMuted;
-                      setIsFarmMuted(nextState);
-                      if (farmRef.current) {
-                        farmRef.current.muted = nextState;
-                      }
-                    }}
+                    onClick={toggleFarmMute}
                     className="absolute top-7 right-7 z-20 px-3 py-1.5 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-md transition-all shadow-lg flex items-center gap-1.5 text-xs font-semibold border border-white/20"
                     title={isFarmMuted ? "Unmute Sound" : "Mute Sound"}
                     aria-label={isFarmMuted ? "Unmute Sound" : "Mute Sound"}
@@ -579,7 +619,7 @@ export function Homepage() {
                       </>
                     )}
                   </button>
-                  <div className="absolute -bottom-4 -right-4 w-20 h-20 pointer-events-none">
+                  <div className="absolute -bottom-4 -right-4 w-20 h-20 pointer-events-none z-10">
                     <div className="w-full h-full border-2 border-yellow-400 rounded-full border-dashed opacity-50"></div>
                   </div>
                 </div>

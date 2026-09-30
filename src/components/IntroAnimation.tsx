@@ -46,7 +46,7 @@ export function IntroAnimation({ onComplete }: IntroAnimationProps) {
 
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d', { alpha: false });
 
     const handleResize = () => {
       if (!canvas) return;
@@ -64,7 +64,8 @@ export function IntroAnimation({ onComplete }: IntroAnimationProps) {
         lastTime = now - (delta % frameInterval);
 
         if (ctx && canvas) {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.fillStyle = '#000000';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
           const img = images[currentFrameIndex];
 
           if (img && img.complete && img.naturalWidth > 0) {
@@ -119,7 +120,7 @@ export function IntroAnimation({ onComplete }: IntroAnimationProps) {
     >
       <canvas
         ref={canvasRef}
-        className="w-full h-full object-cover block"
+        className="w-full h-full object-cover block transform-gpu will-change-transform"
       />
 
       {/* Skip Button */}
