@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Leaf, Shield, Sprout, FlaskConical } from 'lucide-react';
+import { ArrowRight, Leaf, Shield, Sprout, FlaskConical, Volume2, VolumeX } from 'lucide-react';
 import ProductCarousel from '../components/ProductCarousel';
 import { CropCareSolutions } from '../components/CropCareSolutions';
 
@@ -50,8 +50,35 @@ const podiumProducts = [
   },
 ];
 
+const whyChooseVideos = ['/1.mp4', '/5.mp4', '/6.mp4', '/7.mp4', '/8.mp4'];
+const farmToTableVideos = ['/3.mp4', '/4.mp4'];
+
 export function Homepage() {
   const [podiumIndex, setPodiumIndex] = useState(0);
+  const [whyChooseVideoIdx, setWhyChooseVideoIdx] = useState(0);
+  const [farmVideoIdx, setFarmVideoIdx] = useState(0);
+
+  const [isWhyChooseMuted, setIsWhyChooseMuted] = useState(true);
+  const [isFarmMuted, setIsFarmMuted] = useState(true);
+
+  const whyChooseRef = useRef<HTMLVideoElement>(null);
+  const farmRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (whyChooseRef.current) {
+      whyChooseRef.current.load();
+      whyChooseRef.current.muted = isWhyChooseMuted;
+      whyChooseRef.current.play().catch(() => {});
+    }
+  }, [whyChooseVideoIdx]);
+
+  useEffect(() => {
+    if (farmRef.current) {
+      farmRef.current.load();
+      farmRef.current.muted = isFarmMuted;
+      farmRef.current.play().catch(() => {});
+    }
+  }, [farmVideoIdx]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -70,7 +97,7 @@ export function Homepage() {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('/nb.png')`
+            backgroundImage: `url('/nb.webp')`
           }}
         />
 
@@ -302,7 +329,7 @@ export function Homepage() {
             >
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-                style={{ backgroundImage: `url('/nb.png')` }}
+                style={{ backgroundImage: `url('/nb.webp')` }}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/60"></div>
 
@@ -352,22 +379,49 @@ export function Homepage() {
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
 
               {/* Left - Large Image with Floating Card */}
-              <div className="lg:col-span-2">
-                <div className="relative rounded-2xl overflow-hidden shadow-xl">
+              <div className="lg:col-span-2 flex justify-center">
+                <div className="relative w-full max-w-[320px] sm:max-w-[360px] aspect-[9/16] rounded-2xl overflow-hidden shadow-xl bg-black">
                   <video
-                    src="/v.mp4"
+                    ref={whyChooseRef}
+                    src={whyChooseVideos[whyChooseVideoIdx]}
                     autoPlay
-                    loop
-                    muted
+                    muted={isWhyChooseMuted}
                     playsInline
-                    className="w-full h-[400px] lg:h-[450px] object-cover"
+                    onEnded={() => setWhyChooseVideoIdx((prev) => (prev + 1) % whyChooseVideos.length)}
+                    className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none"></div>
+
+                  {/* Audio Mute/Unmute Toggle Button */}
+                  <button
+                    onClick={() => {
+                      const nextState = !isWhyChooseMuted;
+                      setIsWhyChooseMuted(nextState);
+                      if (whyChooseRef.current) {
+                        whyChooseRef.current.muted = nextState;
+                      }
+                    }}
+                    className="absolute top-4 right-4 z-20 px-3 py-1.5 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-md transition-all shadow-lg flex items-center gap-1.5 text-xs font-semibold border border-white/20"
+                    title={isWhyChooseMuted ? "Unmute Sound" : "Mute Sound"}
+                    aria-label={isWhyChooseMuted ? "Unmute Sound" : "Mute Sound"}
+                  >
+                    {isWhyChooseMuted ? (
+                      <>
+                        <VolumeX className="w-3.5 h-3.5 text-red-400" />
+                        <span>Unmute</span>
+                      </>
+                    ) : (
+                      <>
+                        <Volume2 className="w-3.5 h-3.5 text-green-400" />
+                        <span>Mute</span>
+                      </>
+                    )}
+                  </button>
 
                   {/* Floating Card */}
-                  <div className="absolute bottom-6 left-6 right-6 bg-gradient-to-r from-green-600/95 to-green-700/95 rounded-xl p-4 shadow-xl">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center">
+                  <div className="absolute bottom-6 left-4 right-4 bg-gradient-to-r from-green-600/95 to-green-700/95 rounded-xl p-4 shadow-xl">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center shrink-0">
                         <Leaf className="w-5 h-5 text-green-800" />
                       </div>
                       <div>
@@ -487,19 +541,45 @@ export function Homepage() {
                 </Link>
               </div>
 
-              {/* Right - Vegetable Basket Image */}
+              {/* Right - Vegetable Basket Image / Video */}
               <div className="relative">
                 <div className="absolute -inset-2 bg-gradient-to-r from-yellow-400/20 to-green-400/20 rounded-full blur-xl"></div>
-                <div className="relative bg-gradient-to-br from-green-700 to-green-800 rounded-2xl p-4 shadow-xl">
+                <div className="relative bg-gradient-to-br from-green-700 to-green-800 rounded-2xl p-4 shadow-xl overflow-hidden">
                   <video
-                    src="/v1.mp4"
+                    ref={farmRef}
+                    src={farmToTableVideos[farmVideoIdx]}
                     autoPlay
-                    loop
-                    muted
+                    muted={isFarmMuted}
                     playsInline
-                    className="w-full h-[280px] object-cover rounded-xl"
+                    onEnded={() => setFarmVideoIdx((prev) => (prev + 1) % farmToTableVideos.length)}
+                    className="w-full h-[280px] sm:h-[320px] object-cover rounded-xl"
                   />
-                  <div className="absolute -bottom-4 -right-4 w-20 h-20">
+                  {/* Audio Mute/Unmute Toggle Button */}
+                  <button
+                    onClick={() => {
+                      const nextState = !isFarmMuted;
+                      setIsFarmMuted(nextState);
+                      if (farmRef.current) {
+                        farmRef.current.muted = nextState;
+                      }
+                    }}
+                    className="absolute top-7 right-7 z-20 px-3 py-1.5 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-md transition-all shadow-lg flex items-center gap-1.5 text-xs font-semibold border border-white/20"
+                    title={isFarmMuted ? "Unmute Sound" : "Mute Sound"}
+                    aria-label={isFarmMuted ? "Unmute Sound" : "Mute Sound"}
+                  >
+                    {isFarmMuted ? (
+                      <>
+                        <VolumeX className="w-3.5 h-3.5 text-red-400" />
+                        <span>Unmute</span>
+                      </>
+                    ) : (
+                      <>
+                        <Volume2 className="w-3.5 h-3.5 text-green-400" />
+                        <span>Mute</span>
+                      </>
+                    )}
+                  </button>
+                  <div className="absolute -bottom-4 -right-4 w-20 h-20 pointer-events-none">
                     <div className="w-full h-full border-2 border-yellow-400 rounded-full border-dashed opacity-50"></div>
                   </div>
                 </div>
