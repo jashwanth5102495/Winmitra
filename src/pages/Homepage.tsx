@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Leaf, Shield, Sprout, FlaskConical, Volume2, VolumeX } from 'lucide-react';
 import ProductCarousel from '../components/ProductCarousel';
 import { CropCareSolutions } from '../components/CropCareSolutions';
+import { CanvasFrameAudioPlayer } from '../components/CanvasFrameAudioPlayer';
 
 const podiumProducts = [
   {
@@ -439,44 +440,20 @@ export function Homepage() {
           >
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
 
-              {/* Left - Large Image with Floating Card */}
+              {/* Left - Frame Animation Player with Audio */}
               <div className="lg:col-span-2 flex justify-center">
                 <div className="relative w-full max-w-[320px] sm:max-w-[360px] aspect-[9/16] rounded-2xl overflow-hidden shadow-xl bg-black">
-                  <video
-                    ref={whyChooseRef}
-                    key={whyChooseVideos[whyChooseVideoIdx]}
-                    src={whyChooseVideos[whyChooseVideoIdx]}
-                    autoPlay
-                    muted={isWhyChooseMuted}
-                    playsInline
-                    preload="auto"
-                    onEnded={() => setWhyChooseVideoIdx((prev) => (prev + 1) % whyChooseVideos.length)}
-                    className="w-full h-full object-cover transform-gpu"
+                  <CanvasFrameAudioPlayer
+                    folderPath="/New folder/r"
+                    totalFrames={302}
+                    audioPath="/New folder/1.mp3"
+                    fps={30}
+                    className="w-full h-full"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none z-15"></div>
-
-                  {/* Audio Mute/Unmute Toggle Button */}
-                  <button
-                    onClick={toggleWhyChooseMute}
-                    className="absolute top-4 right-4 z-20 px-3 py-1.5 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-md transition-all shadow-lg flex items-center gap-1.5 text-xs font-semibold border border-white/20"
-                    title={isWhyChooseMuted ? "Unmute Sound" : "Mute Sound"}
-                    aria-label={isWhyChooseMuted ? "Unmute Sound" : "Mute Sound"}
-                  >
-                    {isWhyChooseMuted ? (
-                      <>
-                        <VolumeX className="w-3.5 h-3.5 text-red-400" />
-                        <span>Unmute</span>
-                      </>
-                    ) : (
-                      <>
-                        <Volume2 className="w-3.5 h-3.5 text-green-400" />
-                        <span>Mute</span>
-                      </>
-                    )}
-                  </button>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none z-10"></div>
 
                   {/* Floating Card */}
-                  <div className="absolute bottom-6 left-4 right-4 bg-gradient-to-r from-green-600/95 to-green-700/95 rounded-xl p-4 shadow-xl">
+                  <div className="absolute bottom-6 left-4 right-4 bg-gradient-to-r from-green-600/95 to-green-700/95 rounded-xl p-4 shadow-xl z-20">
                     <div className="flex items-center gap-3 mb-2">
                       <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center shrink-0">
                         <Leaf className="w-5 h-5 text-green-800" />
@@ -598,40 +575,17 @@ export function Homepage() {
                 </Link>
               </div>
 
-              {/* Right - Vegetable Basket Image / Video */}
+              {/* Right - Frame Animation Player with Audio */}
               <div className="relative">
                 <div className="absolute -inset-2 bg-gradient-to-r from-yellow-400/20 to-green-400/20 rounded-full blur-xl"></div>
                 <div className="relative bg-gradient-to-br from-green-700 to-green-800 rounded-2xl p-4 shadow-xl overflow-hidden h-[310px] sm:h-[350px]">
-                  <video
-                    ref={farmRef}
-                    key={farmToTableVideos[farmVideoIdx]}
-                    src={farmToTableVideos[farmVideoIdx]}
-                    autoPlay
-                    muted={isFarmMuted}
-                    playsInline
-                    preload="auto"
-                    onEnded={() => setFarmVideoIdx((prev) => (prev + 1) % farmToTableVideos.length)}
-                    className="w-full h-full object-cover rounded-xl transform-gpu"
+                  <CanvasFrameAudioPlayer
+                    folderPath="/f/frames"
+                    totalFrames={1811}
+                    audioPath="/f/3.mp3"
+                    fps={30}
+                    className="w-full h-full rounded-xl"
                   />
-                  {/* Audio Mute/Unmute Toggle Button */}
-                  <button
-                    onClick={toggleFarmMute}
-                    className="absolute top-7 right-7 z-20 px-3 py-1.5 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-md transition-all shadow-lg flex items-center gap-1.5 text-xs font-semibold border border-white/20"
-                    title={isFarmMuted ? "Unmute Sound" : "Mute Sound"}
-                    aria-label={isFarmMuted ? "Unmute Sound" : "Mute Sound"}
-                  >
-                    {isFarmMuted ? (
-                      <>
-                        <VolumeX className="w-3.5 h-3.5 text-red-400" />
-                        <span>Unmute</span>
-                      </>
-                    ) : (
-                      <>
-                        <Volume2 className="w-3.5 h-3.5 text-green-400" />
-                        <span>Mute</span>
-                      </>
-                    )}
-                  </button>
                   <div className="absolute -bottom-4 -right-4 w-20 h-20 pointer-events-none z-10">
                     <div className="w-full h-full border-2 border-yellow-400 rounded-full border-dashed opacity-50"></div>
                   </div>
