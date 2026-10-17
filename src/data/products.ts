@@ -12,6 +12,7 @@ export interface Product {
   price?: string;
   inStock: boolean;
   application: string;
+  packagingSize: string;
 }
 
 export const products: Product[] = [
@@ -33,7 +34,7 @@ Key Benefits:
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 4 kg and 25 kg.`,
+Packaging Size: 4 kg`,
     features: [
       'Potassium Humate 49% concentration',
       'Bio-stimulate boost enhancer',
@@ -66,7 +67,8 @@ Packaging Size: 4 kg and 25 kg.`,
       'Organic and eco-friendly'
     ],
     inStock: true,
-    application: 'All Crops'
+    application: 'All Crops',
+    packagingSize: '4 kg'
   },
   {
     id: 'win-amino-plus',
@@ -82,7 +84,7 @@ Effectiveness:
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 4 kg and 25 kg.`,
+Packaging Size: 250 ml`,
     features: [
       'Unique residue free plant bio stimulator',
       'Based on protein hydrolyzed with amino acids & vitamins',
@@ -113,7 +115,8 @@ Packaging Size: 4 kg and 25 kg.`,
       'Store in cool, dry place'
     ],
     inStock: true,
-    application: 'All Crops'
+    application: 'All Crops',
+    packagingSize: '250 ml'
   },
   {
     id: 'win-crop-don',
@@ -133,7 +136,7 @@ Effectiveness:
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 4 kg and 25 kg.`,
+Packaging Size: 250 ml | 500 ml | 1 ltr.`,
     features: [
       'Naturally derived organic product',
       'Makes plants healthy and vigorous',
@@ -162,7 +165,8 @@ Packaging Size: 4 kg and 25 kg.`,
       'Safe for organic farming'
     ],
     inStock: true,
-    application: 'All Crops - Pest & Disease Resistance'
+    application: 'All Crops - Pest & Disease Resistance',
+    packagingSize: '250 ml | 500 ml | 1 ltr.'
   },
   {
     id: 'win-flower',
@@ -178,7 +182,7 @@ Effectiveness:
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 4 kg and 25 kg.`,
+Packaging Size: 500 ml`,
     features: [
       'Initiates flower bud differentiation',
       'Helps quick emergence of flower/inflorescence',
@@ -209,7 +213,8 @@ Packaging Size: 4 kg and 25 kg.`,
       'Suitable for organic farming'
     ],
     inStock: true,
-    application: 'Flowering Plants'
+    application: 'Flowering Plants',
+    packagingSize: '500 ml'
   },
   {
     id: 'win-fruits',
@@ -225,7 +230,7 @@ Effectiveness:
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 4 kg and 25 kg.`,
+Packaging Size: 500 ml`,
     features: [
       'Initiates flower bud differentiation',
       'Helps quick emergence of fruits',
@@ -257,7 +262,8 @@ Packaging Size: 4 kg and 25 kg.`,
       'Safe for horticultural crops'
     ],
     inStock: true,
-    application: 'Fruit Crops'
+    application: 'Fruit Crops',
+    packagingSize: '500 ml'
   },
   {
     id: 'win-gold-magic',
@@ -284,7 +290,7 @@ Effectiveness:
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 4 kg and 25 kg.`,
+Packaging Size: 500 ml | 5 ltr`,
     features: [
       'NPK consortium with humic substances',
       'Improves nutrient uptake efficiency',
@@ -313,7 +319,8 @@ Packaging Size: 4 kg and 25 kg.`,
       'Use with regular fertilizer practice'
     ],
     inStock: true,
-    application: 'All Crops'
+    application: 'All Crops',
+    packagingSize: '500 ml | 5 ltr'
   },
   {
     id: 'win-hap-granules',
@@ -337,7 +344,7 @@ Effectiveness:
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 4 kg and 25 kg.`,
+Packaging Size: 2 kg | 5 kg.`,
     features: [
       'Plant biostimulant in granular form',
       'Contains humic substances & nutrients',
@@ -372,7 +379,8 @@ Packaging Size: 4 kg and 25 kg.`,
       'Store in dry place'
     ],
     inStock: true,
-    application: 'All Crops'
+    application: 'All Crops',
+    packagingSize: '2 kg | 5 kg.'
   },
   {
     id: 'win-hap-liquid',
@@ -396,7 +404,7 @@ For Better Efficacy:
 • Win HAP Liquid applications at vegetative stage and early reproductive growth state is more effective.
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 4 kg and 25 kg.`,
+Packaging Size: 500 ml | 1 ltr. | 5 ltr.`,
     features: [
       'Plant biostimulant with 6% humic substances',
       'Derived from renewable agro biomass',
@@ -428,7 +436,8 @@ Packaging Size: 4 kg and 25 kg.`,
       'Store in cool, dry place'
     ],
     inStock: true,
-    application: 'All Crops'
+    application: 'All Crops',
+    packagingSize: '500 ml | 1 ltr. | 5 ltr.'
   },
   {
     id: 'win-hi-growth',
@@ -444,7 +453,7 @@ Effectiveness:
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 4 kg and 25 kg.`,
+Packaging Size: 500 ml`,
     features: [
       'Plant Growth Promoter with Amino Peptides',
       'Develops healthy root system',
@@ -474,7 +483,8 @@ Packaging Size: 4 kg and 25 kg.`,
       'Store in cool, dry place'
     ],
     inStock: true,
-    application: 'All Crops'
+    application: 'All Crops',
+    packagingSize: '500 ml'
   },
   {
     id: 'win-kissan-100',
@@ -500,7 +510,7 @@ For Better Efficacy:
 • Ensure complete coverage of canopy
 • Follow the label
 
-Packaging Size: 4 kg and 25 kg.`,
+Packaging Size: 100 ml | 500 ml | 5 ltr`,
     features: [
       'Multi-action spray adjuvant',
       'Minimum 82% active ingredients',
@@ -527,7 +537,8 @@ Packaging Size: 4 kg and 25 kg.`,
       'Compatible with most agrochemicals'
     ],
     inStock: true,
-    application: 'All Crops'
+    application: 'All Crops',
+    packagingSize: '100 ml | 500 ml | 5 ltr'
   },
   {
     id: 'win-moss',
@@ -550,7 +561,7 @@ Effectiveness:
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 4 kg and 25 kg.`,
+Packaging Size: 500 ml`,
     features: [
       'Eco-friendly biostimulant',
       'Promotes lush green crop growth',
@@ -578,7 +589,8 @@ Packaging Size: 4 kg and 25 kg.`,
       'Suitable for organic farming'
     ],
     inStock: true,
-    application: 'All Crops'
+    application: 'All Crops',
+    packagingSize: '500 ml'
   },
   {
     id: 'win-plant-boost',
@@ -594,7 +606,7 @@ Effectiveness:
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 4 kg and 25 kg.`,
+Packaging Size: 1 ltr.`,
     features: [
       'Naturally driven organic product',
       'Influences all crop physiological systems',
@@ -626,7 +638,8 @@ Packaging Size: 4 kg and 25 kg.`,
       'Store in cool, dry place'
     ],
     inStock: true,
-    application: 'All Crops'
+    application: 'All Crops',
+    packagingSize: '1 ltr.'
   },
   {
     id: 'win-plant-care',
@@ -646,7 +659,7 @@ Effectiveness:
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 4 kg and 25 kg.`,
+Packaging Size: 100 ml | 250 ml`,
     features: [
       'Virus & bacteria killer for foliar application',
       'Strong killing effect against plant virus and bacteria',
@@ -679,7 +692,8 @@ Packaging Size: 4 kg and 25 kg.`,
       'Store in cool, dry place'
     ],
     inStock: true,
-    application: 'All Crops - Viral & Bacterial Disease Control'
+    application: 'All Crops - Viral & Bacterial Disease Control',
+    packagingSize: '100 ml | 250 ml'
   },
   {
     id: 'win-protect',
@@ -696,7 +710,7 @@ Effectiveness:
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 4 kg and 25 kg.`,
+Packaging Size: 250 gms.`,
     features: [
       'Increases water absorption from soil',
       'Enhances crop immunity',
@@ -728,7 +742,8 @@ Packaging Size: 4 kg and 25 kg.`,
       'Store in cool, dry place'
     ],
     inStock: true,
-    application: 'All Crops - Defense & Stress Protection'
+    application: 'All Crops - Defense & Stress Protection',
+    packagingSize: '250 gms.'
   },
   {
     id: 'win-raksha',
@@ -748,7 +763,7 @@ Effectiveness:
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 4 kg and 25 kg.`,
+Packaging Size: 250 ml | 500 ml | 1 ltr.`,
     features: [
       'Naturally derived organic product',
       'Makes plants healthy and vigorous',
@@ -777,7 +792,8 @@ Packaging Size: 4 kg and 25 kg.`,
       'Safe for organic farming'
     ],
     inStock: true,
-    application: 'All Crops - Pest & Disease Resistance'
+    application: 'All Crops - Pest & Disease Resistance',
+    packagingSize: '250 ml | 500 ml | 1 ltr.'
   },
   {
     id: 'win-speed-pro',
@@ -797,7 +813,7 @@ Effectiveness:
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 4 kg and 25 kg.`,
+Packaging Size: 100 gms.`,
     features: [
       'Naturally derived organic product',
       'Makes plants healthy and vigorous',
@@ -826,7 +842,8 @@ Packaging Size: 4 kg and 25 kg.`,
       'Mix thoroughly before use'
     ],
     inStock: true,
-    application: 'All Crops - Pest & Disease Resistance'
+    application: 'All Crops - Pest & Disease Resistance',
+    packagingSize: '100 gms.'
   },
   {
     id: 'win-super-pro',
@@ -846,7 +863,7 @@ Effectiveness:
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 4 kg and 25 kg.`,
+Packaging Size: 250 ml | 500 ml | 1 ltr.`,
     features: [
       'Naturally derived organic product',
       'Makes plants healthy and vigorous',
@@ -875,33 +892,8 @@ Packaging Size: 4 kg and 25 kg.`,
       'Effective for organic farming'
     ],
     inStock: true,
-    application: 'All Crops - Trips & Mites Control'
-  },
-  {
-    id: 'win-veera',
-    name: 'Win Veera',
-    category: 'specialty',
-    image: '/poduct/WIN VEERA.webp',
-    shortDescription: 'Warrior Formula',
-    fullDescription: `Win Veera is a warrior formula designed to fight plant challenges effectively. This powerful solution tackles tough agricultural challenges with strength and precision.
-
-Packaging Size: 4 kg and 25 kg.`,
-    features: ['Warrior strength', 'Challenge fighter', 'Effective formula', 'Powerful solution'],
-    usage: [
-      'Use against challenges',
-      'Apply when needed',
-      'Follow warrior protocol',
-      'Strategic application'
-    ],
-    ingredients: ['Warrior compounds', 'Challenge fighters', 'Strength enhancers', 'Power agents'],
-    safetyTips: [
-      'Handle with strength',
-      'Use strategically',
-      'Store warrior-safe',
-      'Follow protocols'
-    ],
-    inStock: true,
-    application: 'All Crops'
+    application: 'All Crops - Trips & Mites Control',
+    packagingSize: '250 ml | 500 ml | 1 ltr.'
   },
   {
     id: 'win-yield-power',
@@ -917,7 +909,7 @@ Effectiveness:
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 4 kg and 25 kg.`,
+Packaging Size: 500 ml`,
     features: [
       'Biological enzymatic hydrolysis technology',
       'Double chelating technology',
@@ -952,33 +944,8 @@ Packaging Size: 4 kg and 25 kg.`,
       'Store in dry place'
     ],
     inStock: true,
-    application: 'All Crops'
-  },
-  {
-    id: 'winmitra-gold',
-    name: 'Winmitra Gold',
-    category: 'specialty',
-    image: '/poduct/WINMITRA GOLD.webp',
-    shortDescription: 'Premium Gold Formula',
-    fullDescription: `Winmitra Gold represents the pinnacle of agricultural nutrition with gold-standard quality. This premium product delivers exceptional results with unmatched quality and performance.
-
-Packaging Size: 4 kg and 25 kg.`,
-    features: ['Gold standard', 'Premium quality', 'Ultimate nutrition', 'Exceptional results'],
-    usage: [
-      'Premium application',
-      'Use for gold results',
-      'Follow gold standards',
-      'Premium protocol'
-    ],
-    ingredients: ['Gold-grade nutrients', 'Premium compounds', 'Ultimate additives', 'Excellence enhancers'],
-    safetyTips: [
-      'Handle premium product',
-      'Follow gold protocols',
-      'Premium storage',
-      'Quality assurance'
-    ],
-    inStock: true,
-    application: 'All Crops'
+    application: 'All Crops',
+    packagingSize: '500 ml'
   },
   {
     id: 'win-veera',
@@ -995,7 +962,7 @@ Effectiveness:
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 4 kg and 25 kg.`,
+Packaging Size: 250 ml | 500 ml | 1 ltr.`,
     features: [
       'Naturally driven organic product',
       'Influences all crop plant physiological systems',
@@ -1030,7 +997,8 @@ Packaging Size: 4 kg and 25 kg.`,
       'Store in cool, dry place'
     ],
     inStock: true,
-    application: 'All Crops - Especially Paddy'
+    application: 'All Crops - Especially Paddy',
+    packagingSize: '250 ml | 500 ml | 1 ltr.'
   },
   {
     id: 'winmitra-gold',
@@ -1047,7 +1015,7 @@ Effectiveness:
 For Better Efficacy:
 • Use along with fertilizers as per regular farmer practice.
 
-Packaging Size: 4 kg and 25 kg.`,
+Packaging Size: 4 kg`,
     features: [
       'Naturally driven organic granules',
       'Influences all crops plant physiological systems',
@@ -1085,7 +1053,8 @@ Packaging Size: 4 kg and 25 kg.`,
       'Store in dry place'
     ],
     inStock: true,
-    application: 'All Crops - Borer Protection'
+    application: 'All Crops - Borer Protection',
+    packagingSize: '4 kg'
   }
 ];
 

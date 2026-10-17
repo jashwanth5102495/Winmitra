@@ -570,7 +570,7 @@ export function Homepage() {
                   to="/products"
                   className="inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-black px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
-                  Explore Our Products
+                  Explore Our Results
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>

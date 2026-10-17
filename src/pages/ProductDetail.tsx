@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Download, Star, Shield, Leaf, CheckCircle, Info } from 'lucide-react';
+import { ArrowLeft, Download, Star, Shield, Leaf, CheckCircle, Info, Package } from 'lucide-react';
 import { products } from '../data/products';
 
 export function ProductDetail() {
@@ -90,6 +90,29 @@ export function ProductDetail() {
               <p className="text-xl text-gray-600 dark:text-gray-300">{product.shortDescription}</p>
             </div>
 
+            {/* Packaging Size & Key Specs */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="flex items-center gap-3 p-3.5 bg-white dark:bg-slate-800 rounded-xl border border-green-100 dark:border-slate-700 shadow-sm">
+                <div className="p-2.5 rounded-lg bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400">
+                  <Package className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 block font-medium">Packaging Size</span>
+                  <span className="text-sm font-semibold text-gray-900 dark:text-white">{product.packagingSize}</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 p-3.5 bg-white dark:bg-slate-800 rounded-xl border border-gray-100 dark:border-slate-700 shadow-sm">
+                <div className="p-2.5 rounded-lg bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400">
+                  <Leaf className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 block font-medium">Application</span>
+                  <span className="text-sm font-semibold text-gray-900 dark:text-white">{product.application}</span>
+                </div>
+              </div>
+            </div>
+
 
 
             {/* Product Description & Benefits */}
@@ -140,6 +163,10 @@ export function ProductDetail() {
                     <p className="text-gray-600 dark:text-gray-400 text-sm mb-3 line-clamp-2">
                       {relatedProduct.shortDescription}
                     </p>
+                    <div className="text-xs text-green-700 dark:text-green-400 bg-green-50 dark:bg-green-950/50 border border-green-200/60 dark:border-green-800/50 px-2 py-1 rounded inline-flex items-center gap-1 font-medium">
+                      <Package className="w-3 h-3" />
+                      <span>{relatedProduct.packagingSize}</span>
+                    </div>
                   </div>
                 </Link>
               ))}

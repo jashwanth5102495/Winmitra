@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, ChevronDown, Mouse } from 'lucide-react';
+import { ArrowRight, ChevronDown, Mouse, Package } from 'lucide-react';
 import { products } from '../data/products';
 
 export function Products() {
@@ -187,6 +187,10 @@ export function Products() {
                     <span className="text-white text-sm font-medium">{currentProduct.application}</span>
                   </div>
                   <div>
+                    <span className="text-white/40 text-xs uppercase tracking-wider block mb-0.5">Packaging Size</span>
+                    <span className="text-white text-sm font-medium text-emerald-300">{currentProduct.packagingSize}</span>
+                  </div>
+                  <div>
                     <span className="text-white/40 text-xs uppercase tracking-wider block mb-0.5">Status</span>
                     <span className={`text-sm font-medium ${currentProduct.inStock ? 'text-green-400' : 'text-red-400'}`}>
                       {currentProduct.inStock ? 'In Stock' : 'Out of Stock'}
@@ -325,7 +329,7 @@ export function Products() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white/80 dark:bg-black/80 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group border border-green-200/50 dark:border-gray-800 hover:border-green-300 dark:hover:border-green-600"
+                className="bg-white/80 dark:bg-black/80 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 group border border-green-200/50 dark:border-gray-800 hover:border-green-300 dark:hover:border-green-600 flex flex-col"
               >
                 <div className="relative overflow-hidden rounded-t-xl">
                   <img
@@ -342,20 +346,30 @@ export function Products() {
                   </div>
                 </div>
 
-                <div className="p-6">
-                  <div className="mb-3">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-green-700 dark:group-hover:text-green-400 transition-colors">
-                      {product.name}
-                    </h3>
-                  </div>
+                <div className="p-6 flex flex-col flex-1 justify-between">
+                  <div>
+                    <div className="mb-2">
+                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-green-700 dark:group-hover:text-green-400 transition-colors">
+                        {product.name}
+                      </h3>
+                    </div>
 
-                  <p className="text-gray-600 dark:text-gray-300 mb-4 text-sm line-clamp-2">
-                    {product.shortDescription}
-                  </p>
+                    <p className="text-gray-600 dark:text-gray-300 mb-3 text-sm line-clamp-2">
+                      {product.shortDescription}
+                    </p>
+
+                    <div className="mb-4">
+                      <div className="inline-flex items-center gap-1.5 text-xs text-emerald-800 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200/70 dark:border-emerald-800/60 px-2.5 py-1.5 rounded-md font-medium">
+                        <Package className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                        <span className="text-gray-500 dark:text-gray-400 font-normal">Pack:</span>
+                        <span>{product.packagingSize}</span>
+                      </div>
+                    </div>
+                  </div>
 
                   <Link
                     to={`/products/${product.id}`}
-                    className="w-full bg-gradient-to-r from-green-600 to-emerald-600 text-white text-center py-2 px-4 rounded-lg hover:from-green-700 hover:to-emerald-700 transition-all duration-300 font-medium text-sm block shadow-md hover:shadow-lg"
+                    className="w-full bg-gradient-to-r from-green-600 to-emerald-600 text-white text-center py-2 px-4 rounded-lg hover:from-green-700 hover:to-emerald-700 transition-all duration-300 font-medium text-sm block shadow-md hover:shadow-lg mt-auto"
                   >
                     View Details
                   </Link>
