@@ -1,41 +1,42 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Leaf, Shield, Sprout, FlaskConical, Volume2, VolumeX } from 'lucide-react';
+import { ArrowRight, Leaf, Shield, Sprout, FlaskConical } from 'lucide-react';
 import ProductCarousel from '../components/ProductCarousel';
 import { CropCareSolutions } from '../components/CropCareSolutions';
 import { CanvasFrameAudioPlayer } from '../components/CanvasFrameAudioPlayer';
+import { FarmYouTubeVideoPlayer } from '../components/FarmYouTubeVideoPlayer';
 
 const podiumProducts = [
   {
     id: 'win-hi-growth',
     name: 'Win Hi-Growth',
     tagline: 'Bioactive Fulvic Acid, Amino Acid & Vitamins',
-    image: '/poduct/WIN HI-GROWTH.webp',
+    image: '/poduct/New folder/WIN HI-GROWTH.webp',
   },
   {
     id: 'win-kissan-100',
     name: 'Win Kissan 100',
     tagline: 'Non-Ionic Wetter, Spreader & Penetrator',
-    image: '/poduct/Win Kissan 100.webp',
+    image: '/poduct/New folder/Win Kissan 100.webp',
   },
   {
     id: 'win-hap-granules',
     name: 'Win HAP Granules',
     tagline: 'Bioactive Humic Substances Granules',
-    image: '/poduct/WIN HAP GRANULES.webp',
+    image: '/poduct/New folder/WIN HAP GRANULES.webp',
   },
   {
     id: 'win-hap-liquid',
     name: 'Win Humic (HAP Liquid)',
     tagline: 'Bioactive Humic Substances 6%',
-    image: '/poduct/WIN HAP LIQUID.webp',
+    image: '/poduct/New folder/WIN HAP LIQUID.webp',
   },
   {
     id: 'bhoomi-shakthi',
     name: 'Bhoomi Shakthi (Humate)',
     tagline: 'Potassium Humate 49%',
-    image: '/poduct/BHOOMI SHAKTHI.webp',
+    image: '/poduct/New folder/BHOOMI SHAKTHI.webp',
   },
   {
     id: 'winmitra-crop-care',
@@ -51,96 +52,8 @@ const podiumProducts = [
   },
 ];
 
-const whyChooseVideos = ['/1.mp4', '/5.mp4', '/6.mp4', '/7.mp4', '/8.mp4'];
-const farmToTableVideos = ['/3.mp4', '/4.mp4'];
-
 export function Homepage() {
   const [podiumIndex, setPodiumIndex] = useState(0);
-  const [whyChooseVideoIdx, setWhyChooseVideoIdx] = useState(0);
-  const [farmVideoIdx, setFarmVideoIdx] = useState(0);
-
-  const [isWhyChooseMuted, setIsWhyChooseMuted] = useState(true);
-  const [isFarmMuted, setIsFarmMuted] = useState(true);
-
-  const whyChooseRef = useRef<HTMLVideoElement>(null);
-  const farmRef = useRef<HTMLVideoElement>(null);
-
-  const toggleWhyChooseMute = () => {
-    const nextMuted = !isWhyChooseMuted;
-    setIsWhyChooseMuted(nextMuted);
-    if (whyChooseRef.current) {
-      whyChooseRef.current.muted = nextMuted;
-    }
-  };
-
-  const toggleFarmMute = () => {
-    const nextMuted = !isFarmMuted;
-    setIsFarmMuted(nextMuted);
-    if (farmRef.current) {
-      farmRef.current.muted = nextMuted;
-    }
-  };
-
-  // Autoplay & play trigger when whyChooseVideoIdx or mute state changes
-  useEffect(() => {
-    const el = whyChooseRef.current;
-    if (el) {
-      el.muted = isWhyChooseMuted;
-      el.playsInline = true;
-      const playPromise = el.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          el.muted = true;
-          el.play().catch(() => {});
-        });
-      }
-    }
-  }, [whyChooseVideoIdx, isWhyChooseMuted]);
-
-  // Autoplay & play trigger when farmVideoIdx or mute state changes
-  useEffect(() => {
-    const el = farmRef.current;
-    if (el) {
-      el.muted = isFarmMuted;
-      el.playsInline = true;
-      const playPromise = el.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          el.muted = true;
-          el.play().catch(() => {});
-        });
-      }
-    }
-  }, [farmVideoIdx, isFarmMuted]);
-
-  // Preload next upcoming video files in background
-  useEffect(() => {
-    const nextWhyUrl = whyChooseVideos[(whyChooseVideoIdx + 1) % whyChooseVideos.length];
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.as = 'video';
-    link.href = nextWhyUrl;
-    document.head.appendChild(link);
-    return () => {
-      if (document.head.contains(link)) {
-        document.head.removeChild(link);
-      }
-    };
-  }, [whyChooseVideoIdx]);
-
-  useEffect(() => {
-    const nextFarmUrl = farmToTableVideos[(farmVideoIdx + 1) % farmToTableVideos.length];
-    const link = document.createElement('link');
-    link.rel = 'preload';
-    link.as = 'video';
-    link.href = nextFarmUrl;
-    document.head.appendChild(link);
-    return () => {
-      if (document.head.contains(link)) {
-        document.head.removeChild(link);
-      }
-    };
-  }, [farmVideoIdx]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -575,21 +488,10 @@ export function Homepage() {
                 </Link>
               </div>
 
-              {/* Right - Frame Animation Player with Audio */}
-              <div className="relative">
-                <div className="absolute -inset-2 bg-gradient-to-r from-yellow-400/20 to-green-400/20 rounded-full blur-xl"></div>
-                <div className="relative bg-gradient-to-br from-green-700 to-green-800 rounded-2xl p-4 shadow-xl overflow-hidden h-[310px] sm:h-[350px]">
-                  <CanvasFrameAudioPlayer
-                    folderPath="/f/frames"
-                    totalFrames={1811}
-                    audioPath="/f/3.mp3"
-                    fps={30}
-                    className="w-full h-full rounded-xl"
-                  />
-                  <div className="absolute -bottom-4 -right-4 w-20 h-20 pointer-events-none z-10">
-                    <div className="w-full h-full border-2 border-yellow-400 rounded-full border-dashed opacity-50"></div>
-                  </div>
-                </div>
+              {/* Right - YouTube Video Player & Modal */}
+              <div className="relative w-full">
+                <div className="absolute -inset-2 bg-gradient-to-r from-yellow-400/20 to-green-400/20 rounded-2xl blur-xl pointer-events-none"></div>
+                <FarmYouTubeVideoPlayer className="relative z-10 w-full" />
               </div>
             </div>
           </motion.div>

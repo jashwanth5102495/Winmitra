@@ -490,7 +490,7 @@ Packaging Size: 500 ml`,
     id: 'win-kissan-100',
     name: 'Win Kissan 100',
     category: 'liquids',
-    image: '/poduct/Win Kissan 100.webp',
+    image: '/poduct/WIN KISSAN 100.webp',
     shortDescription: 'Wetter, Spreader & Penetrator',
     fullDescription: `WIN KISSAN 100 is a new generation multi-action, highly concentrated non-ionic spray adjuvant with minimum 82% active ingredients.
 
@@ -645,7 +645,7 @@ Packaging Size: 1 ltr.`,
     id: 'win-plant-care',
     name: 'Win Plant Care',
     category: 'liquids',
-    image: '/poduct/WIN PLANT CARE.webp',
+    image: '/poduct/PLANT CARE.webp',
     shortDescription: 'Bio-Chemical',
     fullDescription: `Plant Care is virus & bacteria killer suitable for foliar application of all crop. It has strong killing effect against plant virus and bacteria so that it acts effectively against all viral and bacterial diseases of plants. The main ingredient of Plant Care is lysozyme, which is a multi purpose enzyme which protect plants from bacteria and virus, it is capable of breaking the chemical bonds of the outer cell wall of the bacteria and virus. It is capable of breaking the chemical bonds of the outer cell wall of the bacteria and virus. It stops the viral and bacterial growth & induces resistance in plant against viral and bacterial diseases. the growth of virus may be stopped by direct contact with the spray of plant care.
 
@@ -1055,6 +1055,161 @@ Packaging Size: 4 kg`,
     inStock: true,
     application: 'All Crops - Borer Protection',
     packagingSize: '4 kg'
+  },
+  {
+    id: 'win-3-in-1-natural',
+    name: 'WIN 3 in 1 Natural',
+    category: 'organic',
+    image: '/poduct/WIN 3 IN 1 NATURAL.webp',
+    shortDescription: 'Total Plant Care',
+    fullDescription: `WIN 3 in 1 Natural is a multi-action organic formulation engineered for total plant care and comprehensive crop protection. It combines plant vigor enhancement, natural immunity boosting, and balanced nutrition in a single powerful solution.
+
+Product Features:
+• Total plant care with 3-in-1 multi-action natural formulation.
+• Enhances plant vigor, root growth, and vegetative development.
+• Strengthens natural defense mechanisms against biotic and abiotic stresses.
+• Promotes uniform flowering, fruit setting, and quality produce.
+• Eco-friendly, residue-free, and suitable for sustainable farming.
+
+Effectiveness:
+• Suitable to improve health and productivity of a wide range of crops such as vegetables, fruit crops, plantation, field crops, floriculture, home and gardens.
+
+For Better Efficacy:
+• Use along with fertilizers as per regular farmer practice.
+
+Packaging Size: 250 ml`,
+    features: [
+      '3-in-1 multi-action natural formulation',
+      'Total plant care and protection',
+      'Enhances plant vigor and root health',
+      'Strengthens natural immunity and resistance',
+      'Improves flowering, fruit set, and yield quality',
+      'Residue-free and eco-friendly'
+    ],
+    usage: [
+      'Foliar spray application for all crops',
+      'Apply during vegetative, flowering, and fruit development stages',
+      'Use along with regular fertilizer practice'
+    ],
+    ingredients: [
+      'Natural plant extracts',
+      'Bio-active growth promoters',
+      'Organic immunity enhancers',
+      'Essential micronutrients'
+    ],
+    safetyTips: [
+      'Natural and eco-friendly formulation',
+      'Safe for organic farming and all crop types',
+      'Store in a cool, dry place away from direct sunlight'
+    ],
+    inStock: true,
+    application: 'All Crops - Total Plant Care',
+    packagingSize: '250 ml'
+  },
+  {
+    id: 'potash',
+    name: 'Potash',
+    category: 'mineral',
+    image: '/poduct/POTASH.webp',
+    shortDescription: 'Chelated Plant Nutrient',
+    fullDescription: `Potash is an advanced chelated plant nutrient formulation specially developed to deliver readily available potassium for optimal plant growth and development. The chelated form ensures maximum absorption and translocation of potassium within the plant system.
+
+Product Features:
+• Essential chelated potassium for rapid uptake and translocation.
+• Regulates water balance and stomatal activity in plants.
+• Enhances crop tolerance to drought, frost, and environmental stresses.
+• Promotes uniform fruit development, weight, color, and sugar content.
+• Strengthens cell walls, stem rigidity, and disease resistance.
+• 100% bio-available and compatible with drip irrigation and foliar sprays.
+
+Effectiveness:
+• Suitable to improve quality, size, and shelf life of fruits, vegetables, plantation crops, field crops, and cash crops.
+
+For Better Efficacy:
+• Apply during fruit development and maturity stages.
+• Use along with fertilizers as per regular farmer practice.
+
+Packaging Size: 1 ltr.`,
+    features: [
+      'Chelated plant nutrient formulation',
+      'High bio-availability and rapid uptake',
+      'Regulates stomatal conductance and water relations',
+      'Enhances fruit size, coloration, and shelf life',
+      'Improves disease and climate stress resilience',
+      'ISO 9001:2015 certified quality standard'
+    ],
+    usage: [
+      'Foliar spray and fertigation / drip irrigation',
+      'Apply during fruit development and maturity stages',
+      'Use along with regular fertilizer practice'
+    ],
+    ingredients: [
+      'Chelated Potassium (Potash)',
+      'Organic chelating agents',
+      'Essential plant nutrient co-factors'
+    ],
+    safetyTips: [
+      'Use with regular fertilizer practice',
+      'Shake container well before use',
+      'Store in a cool, dry place'
+    ],
+    inStock: true,
+    application: 'All Crops - Potassium Nutrition & Fruit Quality',
+    packagingSize: '1 ltr.'
+  },
+  {
+    id: 'win-aquogel',
+    name: 'Win Aquogel',
+    category: 'granular',
+    image: '/poduct/WIN AQUOGEL.webp',
+    shortDescription: 'Super-Absorbent Organic Gel',
+    fullDescription: `Win Aquagel is super-absorbent polymer, which is used to hold water in the soil because of its superior organic soluble polymers that enhance water holding and moisture retaining capacity. It binds the nutrients of water soil & fertilizers and releases nutrients according to the plant requirement. Use of Win Aquagel prevents fertilizer leaching, helps plants in stressed conditions and regulates moisture content during fluctuating weather conditions. It also prevents erosion of top layer of soil. Prolonged use of this product gives the required power and strengths to the roots of the crop to manage the water absorption at their level.
+
+Key Features & Benefits:
+• 500X Water Holding Capacity
+• Save Upto 50% Water
+• Saves Upto 40% Fertilizer
+• Prevents fertilizer leaching and nutrient runoff
+• Regulates soil moisture content during fluctuating weather
+• Prevents erosion of top layer of soil
+• Strengthens root systems for optimal water and nutrient uptake
+
+Dosage:
+• For Field Application : 1-2 kg per acre
+• For Plants/Trees : 40-80 g per plant/tree
+
+For Better Efficacy:
+• Mix with soil around root zone at the time of sowing, planting, or top-dressing.
+
+Packaging Size: 1 kg`,
+    features: [
+      'Super-absorbent polymer technology',
+      '500X water holding and moisture retaining capacity',
+      'Saves up to 50% irrigation water',
+      'Saves up to 40% fertilizer by preventing leaching',
+      'Buffers plants against drought and heat stress',
+      'Prevents topsoil erosion and soil degradation',
+      'Strengthens roots for self-regulated moisture absorption'
+    ],
+    usage: [
+      'Field Application: 1-2 kg per acre',
+      'Plants / Trees: 40-80 g per plant/tree',
+      'Incorporate into soil near the root zone during sowing or planting'
+    ],
+    ingredients: [
+      'Super-absorbent polymer (SAP)',
+      'Superior organic soluble polymers',
+      'Moisture binding compounds',
+      'Nutrient retention matrix'
+    ],
+    safetyTips: [
+      'Store in a cool, dry place to prevent moisture absorption',
+      'Keep bag tightly sealed when not in use',
+      'Non-toxic and environmentally safe'
+    ],
+    inStock: true,
+    application: 'All Crops, Trees & Plants - Water & Fertilizer Retention',
+    packagingSize: '1 kg'
   }
 ];
 

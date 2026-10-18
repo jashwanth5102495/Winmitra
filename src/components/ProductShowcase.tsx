@@ -18,10 +18,10 @@ const products: Product[] = [
   { id: 7, name: 'Win HAP Granules', image: '/poduct/WIN HAP GRANULES.webp' },
   { id: 8, name: 'Win HAP Liquid', image: '/poduct/WIN HAP LIQUID.webp' },
   { id: 9, name: 'Win Hi-Growth', image: '/poduct/WIN HI-GROWTH.webp' },
-  { id: 10, name: 'Win Kissan 100', image: '/poduct/Win Kissan 100.webp' },
+  { id: 10, name: 'Win Kissan 100', image: '/poduct/WIN KISSAN 100.webp' },
   { id: 11, name: 'Win Moss', image: '/poduct/WIN MOSS.webp' },
   { id: 12, name: 'Win Plant Boost', image: '/poduct/WIN PLANT BOOST.webp' },
-  { id: 13, name: 'Win Plant Care', image: '/poduct/WIN PLANT CARE.webp' },
+  { id: 13, name: 'Win Plant Care', image: '/poduct/PLANT CARE.webp' },
   { id: 14, name: 'Win Protect', image: '/poduct/WIN PROTECT.webp' },
   { id: 15, name: 'Win Raksha', image: '/poduct/WIN RAKSHA.webp' },
   { id: 16, name: 'Win Speed Pro', image: '/poduct/WIN SPEED PRO.webp' },
@@ -29,6 +29,9 @@ const products: Product[] = [
   { id: 18, name: 'Win Veera', image: '/poduct/WIN VEERA.webp' },
   { id: 19, name: 'Win Yield Power', image: '/poduct/WIN YIELD POWER.webp' },
   { id: 20, name: 'Winmitra Gold', image: '/poduct/WINMITRA GOLD.webp' },
+  { id: 21, name: 'Win 3 in 1 Natural', image: '/poduct/WIN 3 IN 1 NATURAL.webp' },
+  { id: 22, name: 'Potash', image: '/poduct/POTASH.webp' },
+  { id: 23, name: 'Win Aquogel', image: '/poduct/WIN AQUOGEL.webp' },
 ];
 
 // Create URL-friendly slug from product name

@@ -15,10 +15,10 @@ const solutionsData = [
       'Provide essential nutrition and bio-stimulants that promote vigorous growth and strong plant development.',
     icon: Leaf,
     products: [
-      { name: 'WIN HI-GROWTH', image: '/poduct/WIN HI-GROWTH.webp' },
-      { name: 'WIN AMINO PLUS', image: '/poduct/WIN AMINO PLUS.webp' },
-      { name: 'WIN PLANT BOOST', image: '/poduct/WIN PLANT BOOST.webp' },
-      { name: 'WINMITRA GOLD', image: '/poduct/WINMITRA GOLD.webp' },
+      { name: 'WIN HI-GROWTH', image: '/poduct/New folder/WIN HI-GROWTH.webp' },
+      { name: 'WIN AMINO PLUS', image: '/poduct/New folder/WIN AMINO PLUS.webp' },
+      { name: 'WIN PLANT BOOST', image: '/poduct/New folder/WIN PLANT BOOST.webp' },
+      { name: 'WINMITRA GOLD', image: '/poduct/New folder/WINMITRA GOLD.webp' },
     ],
   },
   {
@@ -28,10 +28,10 @@ const solutionsData = [
       'Solutions that improve flowering, fruiting and overall yield.',
     icon: TrendingUp,
     products: [
-      { name: 'WIN YIELD POWER', image: '/poduct/WIN YIELD POWER.webp' },
-      { name: 'WIN SUPER PRO', image: '/poduct/WIN SUPER PRO.webp' },
-      { name: 'WIN SPEED PRO', image: '/poduct/WIN SPEED PRO.webp' },
-      { name: 'Win Kissan 100', image: '/poduct/Win Kissan 100.webp' },
+      { name: 'WIN YIELD POWER', image: '/poduct/New folder/WIN YIELD POWER.webp' },
+      { name: 'WIN SUPER PRO', image: '/poduct/New folder/WIN SUPER PRO.webp' },
+      { name: 'WIN SPEED PRO', image: '/poduct/New folder/WIN SPEED PRO.webp' },
+      { name: 'Win Kissan 100', image: '/poduct/New folder/Win Kissan 100.webp' },
     ],
   },
   {
@@ -41,10 +41,10 @@ const solutionsData = [
       'Protect crops from stress, pests and environmental challenges.',
     icon: Shield,
     products: [
-      { name: 'WIN PROTECT', image: '/poduct/WIN PROTECT.webp' },
-      { name: 'WIN RAKSHA', image: '/poduct/WIN RAKSHA.webp' },
-      { name: 'WIN CROP DON', image: '/poduct/WIN CROP DON.webp' },
-      { name: 'WIN VEERA', image: '/poduct/WIN VEERA.webp' },
+      { name: 'WIN PROTECT', image: '/poduct/New folder/WIN PROTECT.webp' },
+      { name: 'WIN RAKSHA', image: '/poduct/New folder/WIN RAKSHA.webp' },
+      { name: 'WIN CROP DON', image: '/poduct/New folder/WIN CROP DON.webp' },
+      { name: 'WIN VEERA', image: '/poduct/New folder/WIN VEERA.webp' },
     ],
   },
   {
@@ -54,10 +54,10 @@ const solutionsData = [
       'Specialized products to enhance flowering, fruit development and quality.',
     icon: Flower,
     products: [
-      { name: 'WIN FLOWER', image: '/poduct/WIN FLOWER.webp' },
-      { name: 'WIN FRUITS', image: '/poduct/WIN FRUITS.webp' },
-      { name: 'WIN GOLD MAGIC', image: '/poduct/WIN GOLD MAGIC.webp' },
-      { name: 'WIN PLANT CARE', image: '/poduct/WIN PLANT CARE.webp' },
+      { name: 'WIN FLOWER', image: '/poduct/New folder/WIN FLOWER.webp' },
+      { name: 'WIN FRUITS', image: '/poduct/New folder/WIN FRUITS.webp' },
+      { name: 'WIN GOLD MAGIC', image: '/poduct/New folder/WIN GOLD MAGIC.webp' },
+      { name: 'WIN PLANT CARE', image: '/poduct/New folder/WIN PLANT CARE.webp' },
     ],
   },
   {
@@ -67,10 +67,10 @@ const solutionsData = [
       'Targeted nutrition for fruits, vegetables and horticultural crops.',
     icon: Apple,
     products: [
-      { name: 'WIN FRUITS', image: '/poduct/WIN FRUITS.webp' },
-      { name: 'WIN PLANT CARE', image: '/poduct/WIN PLANT CARE.webp' },
-      { name: 'WIN MOSS', image: '/poduct/WIN MOSS.webp' },
-      { name: 'BHOOMI SHAKTHI', image: '/poduct/BHOOMI SHAKTHI.webp' },
+      { name: 'WIN FRUITS', image: '/poduct/New folder/WIN FRUITS.webp' },
+      { name: 'WIN PLANT CARE', image: '/poduct/New folder/WIN PLANT CARE.webp' },
+      { name: 'WIN MOSS', image: '/poduct/New folder/WIN MOSS.webp' },
+      { name: 'BHOOMI SHAKTHI', image: '/poduct/New folder/BHOOMI SHAKTHI.webp' },
     ],
   },
   {
@@ -80,10 +80,10 @@ const solutionsData = [
       'Improve soil health, root development and nutrient uptake.',
     icon: Beaker,
     products: [
-      { name: 'BHOOMI SHAKTHI', image: '/poduct/BHOOMI SHAKTHI.webp' },
-      { name: 'WIN HAP GRANULES', image: '/poduct/WIN HAP GRANULES.webp' },
-      { name: 'WIN HAP LIQUID', image: '/poduct/WIN HAP LIQUID.webp' },
-      { name: 'WIN MOSS', image: '/poduct/WIN MOSS.webp' },
+      { name: 'BHOOMI SHAKTHI', image: '/poduct/New folder/BHOOMI SHAKTHI.webp' },
+      { name: 'WIN HAP GRANULES', image: '/poduct/New folder/WIN HAP GRANULES.webp' },
+      { name: 'WIN HAP LIQUID', image: '/poduct/New folder/WIN HAP LIQUID.webp' },
+      { name: 'WIN MOSS', image: '/poduct/New folder/WIN MOSS.webp' },
     ],
   },
 ];
