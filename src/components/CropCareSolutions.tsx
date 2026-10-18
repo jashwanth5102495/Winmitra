@@ -31,7 +31,7 @@ const solutionsData = [
       { name: 'WIN YIELD POWER', image: '/poduct/New folder/WIN YIELD POWER.webp' },
       { name: 'WIN SUPER PRO', image: '/poduct/New folder/WIN SUPER PRO.webp' },
       { name: 'WIN SPEED PRO', image: '/poduct/New folder/WIN SPEED PRO.webp' },
-      { name: 'Win Kissan 100', image: '/poduct/New folder/Win Kissan 100.webp' },
+      { name: 'Win Kissan 100', image: '/poduct/New folder/WIN KISSAN 100 500ML.webp' },
     ],
   },
   {

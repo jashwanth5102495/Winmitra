@@ -18,7 +18,7 @@ const podiumProducts = [
     id: 'win-kissan-100',
     name: 'Win Kissan 100',
     tagline: 'Non-Ionic Wetter, Spreader & Penetrator',
-    image: '/poduct/New folder/Win Kissan 100.webp',
+    image: '/poduct/New folder/WIN KISSAN 100 500ML.webp',
   },
   {
     id: 'win-hap-granules',
