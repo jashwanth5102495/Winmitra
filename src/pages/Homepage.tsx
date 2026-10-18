@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Leaf, Shield, Sprout, FlaskConical } from 'lucide-react';
 import ProductCarousel from '../components/ProductCarousel';
 import { CropCareSolutions } from '../components/CropCareSolutions';
-import { CanvasFrameAudioPlayer } from '../components/CanvasFrameAudioPlayer';
+import { WhyChooseShortsPlayer } from '../components/WhyChooseShortsPlayer';
 import { FarmYouTubeVideoPlayer } from '../components/FarmYouTubeVideoPlayer';
 
 const podiumProducts = [
@@ -353,34 +353,9 @@ export function Homepage() {
           >
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
 
-              {/* Left - Frame Animation Player with Audio */}
+              {/* Left - YouTube Shorts Player */}
               <div className="lg:col-span-2 flex justify-center">
-                <div className="relative w-full max-w-[320px] sm:max-w-[360px] aspect-[9/16] rounded-2xl overflow-hidden shadow-xl bg-black">
-                  <CanvasFrameAudioPlayer
-                    folderPath="/New folder/r"
-                    totalFrames={302}
-                    audioPath="/New folder/1.mp3"
-                    fps={30}
-                    className="w-full h-full"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none z-10"></div>
-
-                  {/* Floating Card */}
-                  <div className="absolute bottom-6 left-4 right-4 bg-gradient-to-r from-green-600/95 to-green-700/95 rounded-xl p-4 shadow-xl z-20">
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center shrink-0">
-                        <Leaf className="w-5 h-5 text-green-800" />
-                      </div>
-                      <div>
-                        <div className="font-bold text-white text-sm">Sustainable Today,</div>
-                        <div className="font-bold text-yellow-300 text-sm">Better Tomorrow</div>
-                      </div>
-                    </div>
-                    <p className="text-white/90 text-xs leading-relaxed">
-                      We follow eco-friendly practices that nurture the soil, protect the environment and secure a better future.
-                    </p>
-                  </div>
-                </div>
+                <WhyChooseShortsPlayer />
               </div>
 
               {/* Middle - Why Choose Us Content */}
