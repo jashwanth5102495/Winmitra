@@ -175,6 +175,15 @@ export function Homepage() {
                       <img
                         src={currentPodiumProduct.image}
                         alt={currentPodiumProduct.name}
+                        onError={(e) => {
+                          const target = e.currentTarget;
+                          if (!target.dataset.fallback) {
+                            target.dataset.fallback = '1';
+                            if (target.src.toLowerCase().includes('kissan')) {
+                              target.src = '/poduct/win-kissan-100.webp';
+                            }
+                          }
+                        }}
                         className="h-60 sm:h-72 md:h-80 w-auto object-contain drop-shadow-[0_25px_30px_rgba(0,0,0,0.45)] select-none pointer-events-none"
                       />
                     </motion.div>
