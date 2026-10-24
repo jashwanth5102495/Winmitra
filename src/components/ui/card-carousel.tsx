@@ -59,6 +59,7 @@ export const CardCarousel: React.FC<CarouselProps> = ({ images }) => {
                       alt={image.alt}
                       className="w-full h-full object-contain p-3"
                       loading="lazy"
+                      decoding="async"
                       draggable={false}
                     />
                   </div>

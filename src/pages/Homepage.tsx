@@ -175,6 +175,9 @@ export function Homepage() {
                       <img
                         src={currentPodiumProduct.image}
                         alt={currentPodiumProduct.name}
+                        loading="eager"
+                        fetchPriority="high"
+                        decoding="async"
                         onError={(e) => {
                           const target = e.currentTarget;
                           if (!target.dataset.fallback) {

@@ -1,20 +1,18 @@
-
-import { useState, useEffect, lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { WhatsAppButton } from './components/WhatsAppButton';
 import { ScrollToTop } from './components/ScrollToTop';
-import { IntroAnimation } from './components/IntroAnimation';
+import { Homepage } from './pages/Homepage';
 
-// Lazy-load pages so they are only downloaded when navigated to
-const Homepage = lazy(() => import('./pages/Homepage').then(m => ({ default: m.Homepage })));
+// Lazy-load secondary pages so they are only downloaded when navigated to
 const AboutUs = lazy(() => import('./pages/AboutUs').then(m => ({ default: m.AboutUs })));
 const Products = lazy(() => import('./pages/Products').then(m => ({ default: m.Products })));
 const ProductDetail = lazy(() => import('./pages/ProductDetail').then(m => ({ default: m.ProductDetail })));
 const Contact = lazy(() => import('./pages/Contact').then(m => ({ default: m.Contact })));
 
-// Minimal loading fallback
+// Minimal loading fallback for secondary route transitions
 function PageLoader() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-white">
@@ -27,32 +25,6 @@ function PageLoader() {
 }
 
 function AppContent() {
-  const [showIntro, setShowIntro] = useState(true);
-  const [hasVisited, setHasVisited] = useState(false);
-  const location = useLocation();
-
-  // Check if user has already seen the intro in this session
-  useEffect(() => {
-    const visited = sessionStorage.getItem('introSeen');
-    if (visited && location.pathname === '/') {
-      setHasVisited(true);
-      setShowIntro(false);
-    }
-  }, [location.pathname]);
-
-  // Only show intro on homepage first visit
-  const shouldShowIntro = showIntro && !hasVisited && location.pathname === '/';
-
-  const handleIntroComplete = () => {
-    setShowIntro(false);
-    setHasVisited(true);
-    sessionStorage.setItem('introSeen', 'true');
-  };
-
-  if (shouldShowIntro) {
-    return <IntroAnimation onComplete={handleIntroComplete} />;
-  }
-
   return (
     <div className="min-h-screen bg-white">
       <Navigation />

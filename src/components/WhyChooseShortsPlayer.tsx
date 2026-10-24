@@ -121,6 +121,8 @@ export const WhyChooseShortsPlayer: React.FC<WhyChooseShortsPlayerProps> = ({ cl
               <img
                 src={`https://img.youtube.com/vi/${currentShort.id}/hqdefault.jpg`}
                 alt={currentShort.title}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
 

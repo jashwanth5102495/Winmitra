@@ -221,6 +221,7 @@ export function CropCareSolutions() {
                               className="max-h-[110px] sm:max-h-[150px] md:max-h-[190px] lg:max-h-[220px] w-auto object-contain product-float-item"
                               style={{ animationDelay: `${pIdx * 0.8}s` }}
                               loading="lazy"
+                              decoding="async"
                               width="180"
                               height="260"
                             />
