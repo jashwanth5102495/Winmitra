@@ -18,7 +18,7 @@ const podiumProducts = [
     id: 'win-kissan-100',
     name: 'Win Kissan 100',
     tagline: 'Non-Ionic Wetter, Spreader & Penetrator',
-    image: '/poduct/New folder/Win Kissan 100.webp',
+    image: '/poduct/New folder/WIN KISSAN 100.webp',
   },
   {
     id: 'win-hap-granules',
@@ -39,9 +39,9 @@ const podiumProducts = [
     image: '/poduct/New folder/BHOOMI SHAKTHI.webp',
   },
   {
-    id: 'winmitra-bio-stimulant',
-    name: 'Winmitra Bio-Stimulant',
-    tagline: 'Advanced Organic Bio-Stimulant',
+    id: 'win-humic',
+    name: 'WIN HUMIC',
+    tagline: 'Humic Substances 6% Bio Stimulant',
     image: '/2.png',
   },
 ];
@@ -190,7 +190,7 @@ export function Homepage() {
                       className="flex flex-col items-center text-center"
                     >
                       <Link
-                        to={currentPodiumProduct.id === 'winmitra-bio-stimulant' ? '/products' : `/products/${currentPodiumProduct.id}`}
+                        to={currentPodiumProduct.id === 'win-humic' ? '/products/win-hap-liquid' : `/products/${currentPodiumProduct.id}`}
                         className="group inline-flex items-center gap-2 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md px-5 py-2 rounded-full shadow-lg border border-green-500/40 hover:border-green-500 hover:bg-green-600 hover:text-white transition-all duration-300"
                       >
                         <span className="w-2 h-2 rounded-full bg-green-500 group-hover:bg-white animate-pulse"></span>

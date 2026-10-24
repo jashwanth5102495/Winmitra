@@ -11,7 +11,7 @@ const ProductCarousel = () => {
     { src: "/poduct/New folder/WIN HAP GRANULES.webp", alt: "Win HAP Granules", id: "win-hap-granules" },
     { src: "/poduct/New folder/WIN HAP LIQUID.webp", alt: "Win HAP Liquid", id: "win-hap-liquid" },
     { src: "/poduct/New folder/WIN HI-GROWTH.webp", alt: "Win Hi-Growth", id: "win-hi-growth" },
-    { src: "/poduct/New folder/Win Kissan 100.webp", alt: "Win Kissan 100", id: "win-kissan-100" },
+    { src: "/poduct/New folder/WIN KISSAN 100.webp", alt: "Win Kissan 100", id: "win-kissan-100" },
     { src: "/poduct/New folder/WIN MOSS.webp", alt: "Win Moss", id: "win-moss" },
     { src: "/poduct/New folder/WIN PLANT BOOST.webp", alt: "Win Plant Boost", id: "win-plant-boost" },
     { src: "/poduct/New folder/WIN PLANT CARE.webp", alt: "Win Plant Care", id: "win-plant-care" },

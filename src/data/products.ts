@@ -490,7 +490,7 @@ Packaging Size: 500 ml`,
     id: 'win-kissan-100',
     name: 'Win Kissan 100',
     category: 'liquids',
-    image: '/poduct/New folder/Win Kissan 100.webp',
+    image: '/poduct/New folder/WIN KISSAN 100.webp',
     shortDescription: 'Wetter, Spreader & Penetrator',
     fullDescription: `WIN KISSAN 100 is a new generation multi-action, highly concentrated non-ionic spray adjuvant with minimum 82% active ingredients.
 
