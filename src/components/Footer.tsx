@@ -79,11 +79,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 dark:border-gray-700 mt-12 pt-8 text-center">
-          <p className="text-gray-400 dark:text-gray-500">
-            © 2025 WINMITRA AGRI TECH. All rights reserved. | Privacy Policy | Terms of Service
-          </p>
-        </div>
+
       </div>
     </footer>
   );
