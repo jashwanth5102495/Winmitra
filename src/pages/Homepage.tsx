@@ -71,7 +71,7 @@ export function Homepage() {
         />
 
         {/* Main Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-28 md:pt-32 pb-16 md:pb-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center min-h-[calc(100vh-120px)]">
 
             {/* Left Content */}
@@ -237,8 +237,8 @@ export function Homepage() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 2.2 }}
-          className="absolute bottom-8 left-4 right-4 flex justify-center"
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="relative lg:absolute lg:bottom-8 left-0 right-0 px-4 flex justify-center mt-6 lg:mt-0 z-20"
         >
           <div className="bg-white/95 rounded-2xl p-4 md:p-6 shadow-xl border border-white/20 w-full max-w-5xl">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">

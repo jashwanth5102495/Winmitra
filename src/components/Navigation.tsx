@@ -99,7 +99,7 @@ export function Navigation() {
             />
             <div className="leading-tight">
               <span className={`font-bold text-sm transition-colors duration-300 ${useWhiteText ? 'text-white' : 'text-gray-900 dark:text-white'}`}>WINMITRA AGRI TECH</span>
-              <span className="text-green-500 text-xs italic font-medium block">Way To Growth</span>
+              <span className="text-green-500 text-xs italic font-medium block">Way To Farmer's Growth</span>
             </div>
           </Link>
 
