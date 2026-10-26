@@ -15,7 +15,7 @@ const products: Product[] = [
   { id: 4, name: 'Win Flower', image: '/poduct/WIN FLOWER.webp' },
   { id: 5, name: 'Win Fruits', image: '/poduct/WIN FRUITS.webp' },
   { id: 6, name: 'Win Gold Magic', image: '/poduct/WIN GOLD MAGIC.webp' },
-  { id: 7, name: 'Win HAP Granules', image: '/poduct/WIN HAP GRANULES.webp' },
+  { id: 7, name: 'Win HAP Granules', image: '/poduct/new Win HAP Fertilizer.webp' },
   { id: 8, name: 'Win HAP Liquid', image: '/poduct/WIN HAP LIQUID.webp' },
   { id: 9, name: 'Win Hi-Growth', image: '/poduct/WIN HI-GROWTH.webp' },
   { id: 10, name: 'Win Kissan 100', image: '/poduct/New folder/WIN KISSAN 100.webp' },

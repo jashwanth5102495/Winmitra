@@ -384,7 +384,7 @@ Packaging Size: 500 ml`,
     id: 'win-hap-granules',
     name: 'Win HAP Granules',
     category: 'granular',
-    image: '/poduct/WIN HAP GRANULES.webp',
+    image: '/poduct/new Win HAP Fertilizer.webp',
     shortDescription: 'Bioactive Humic Substances Granules',
     fullDescription: `Win HAP Granules is a plant Biostimulant in granular form containing Humic substances & nutrients.
 

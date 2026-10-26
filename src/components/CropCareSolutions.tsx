@@ -81,7 +81,7 @@ const solutionsData = [
     icon: Beaker,
     products: [
       { name: 'BHOOMI SHAKTHI', image: '/poduct/New folder/BHOOMI SHAKTHI.webp' },
-      { name: 'WIN HAP GRANULES', image: '/poduct/New folder/WIN HAP GRANULES.webp' },
+      { name: 'WIN HAP GRANULES', image: '/poduct/new Win HAP Fertilizer.webp' },
       { name: 'WIN HAP LIQUID', image: '/poduct/New folder/WIN HAP LIQUID.webp' },
       { name: 'WIN MOSS', image: '/poduct/New folder/WIN MOSS.webp' },
     ],

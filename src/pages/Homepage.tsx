@@ -24,7 +24,7 @@ const podiumProducts = [
     id: 'win-hap-granules',
     name: 'Win HAP Granules',
     tagline: 'Bioactive Humic Substances Granules',
-    image: '/poduct/New folder/WIN HAP GRANULES.webp',
+    image: '/poduct/new Win HAP Fertilizer.webp',
   },
   {
     id: 'win-hap-liquid',
