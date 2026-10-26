@@ -20,7 +20,7 @@ export function Products() {
     ? products.filter(product => {
         switch (filterType) {
           case 'biostimulants':
-            return product.shortDescription.toLowerCase().includes('nature biostimulants');
+            return product.shortDescription.toLowerCase().includes('biostimulant');
           case 'adjuvants':
             return product.shortDescription.toLowerCase().includes('nonionic spray adjuvants');
           case 'micronutrients':

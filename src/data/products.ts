@@ -323,6 +323,64 @@ Packaging Size: 500 ml | 5 ltr`,
     packagingSize: '500 ml | 5 ltr'
   },
   {
+    id: 'win-humic',
+    name: 'WIN HUMIC',
+    category: 'liquids',
+    image: '/poduct/WIN HUMIC.webp',
+    shortDescription: 'Biostimulant',
+    fullDescription: `WIN HUMIC is a consortium of NPK duly fortified with highly active Humic substances.
+
+Product Features:
+• WIN HUMIC is a consortium of NPK duly fortified with highly active Humic substances
+• Improves plant capacity to uptake and utilize the nutrients in a more efficient way.
+• Improves seed germination and ensures early establishment of the plants.
+• Promotes canopy growth, tillering / branching and crop productivity.
+• Strengthens resistance power and helps the plants to withstand biotic and abiotic stresses
+• Improves the soil structure and enhances its ability to hold more water and nutrients.
+• 100% water soluble: no-deposit, no-clogging on drip irrigation systems.
+• Promotes higher yield and better quality of the produce.
+
+Effectiveness:
+• Suitable to improve productivity of a wide range of crops such as vegetables, fruit crops, plantation, field crops, ornamental, fiber crops. Home and gardens etc.
+
+
+For Better Efficacy:
+• Use along with fertilizers as per regular farmer practice.
+
+Packaging Size: 500 ml`,
+    features: [
+      'NPK consortium with humic substances',
+      'Improves nutrient uptake efficiency',
+      'Enhances seed germination',
+      'Promotes canopy growth & productivity',
+      'Strengthens stress resistance',
+      '100% water soluble formula',
+      'Improves soil structure',
+      'Higher yield and better quality'
+    ],
+    usage: [
+      'Shake container before use',
+      'Use with regular fertilizers'
+    ],
+    ingredients: [
+      'NPK nutrients',
+      'Highly active humic substances',
+      'Biostimulant compounds',
+      'Water soluble nutrients',
+      'Stress resistance factors'
+    ],
+    safetyTips: [
+      'Shake container before use',
+      'Compatible with drip irrigation',
+      'Store in cool, dry place',
+      'Use with regular fertilizer practice'
+    ],
+    inStock: true,
+    application: 'All Crops',
+    packagingSize: '500 ml'
+  },
+
+  {
     id: 'win-hap-granules',
     name: 'Win HAP Granules',
     category: 'granular',
@@ -443,7 +501,7 @@ Packaging Size: 500 ml | 1 ltr. | 5 ltr.`,
     id: 'win-hi-growth',
     name: 'Win Hi-Growth',
     category: 'liquids',
-    image: '/poduct/WIN HI-GROWTH.webp',
+    image: '/poduct/new Win Hi-Growth.webp',
     shortDescription: 'Bioactive Fulvic Acid, Amino Acid and Vitamins',
     fullDescription: `Win Hi-Growth is a Plant Growth Promoter (Enriched with Amino Peptides). Win Hi-Growth and development of healthy roots of the plant which absorb essential nutrients and moisture from the soil and make the plants strong. Win Hi-Growth increases the plant photo synthetic activity, strength in the plant to face adverse weather conditions. Win Hi-Growth increases the quality and yield of crops and profits at low cost investment. Win Hi-Growth develops resistance against pests and diseases completely safe for humans, animals and the environment.
 

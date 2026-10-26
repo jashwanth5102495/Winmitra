@@ -15,7 +15,7 @@ const solutionsData = [
       'Provide essential nutrition and bio-stimulants that promote vigorous growth and strong plant development.',
     icon: Leaf,
     products: [
-      { name: 'WIN HI-GROWTH', image: '/poduct/New folder/WIN HI-GROWTH.webp' },
+      { name: 'WIN HI-GROWTH', image: '/poduct/new Win Hi-Growth.webp' },
       { name: 'WIN AMINO PLUS', image: '/poduct/New folder/WIN AMINO PLUS.webp' },
       { name: 'WIN PLANT BOOST', image: '/poduct/New folder/WIN PLANT BOOST.webp' },
       { name: 'WINMITRA GOLD', image: '/poduct/New folder/WINMITRA GOLD.webp' },
